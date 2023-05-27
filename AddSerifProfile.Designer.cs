@@ -38,6 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.sortComboBox = new System.Windows.Forms.ComboBox();
             this.jimakuCheck = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.HoseiBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -85,7 +87,7 @@
             // exoLabel
             // 
             this.exoLabel.AutoSize = true;
-            this.exoLabel.Location = new System.Drawing.Point(28, 119);
+            this.exoLabel.Location = new System.Drawing.Point(117, 119);
             this.exoLabel.Name = "exoLabel";
             this.exoLabel.Size = new System.Drawing.Size(23, 12);
             this.exoLabel.TabIndex = 5;
@@ -131,7 +133,7 @@
             // jimakuCheck
             // 
             this.jimakuCheck.AutoSize = true;
-            this.jimakuCheck.Location = new System.Drawing.Point(231, 86);
+            this.jimakuCheck.Location = new System.Drawing.Point(30, 118);
             this.jimakuCheck.Name = "jimakuCheck";
             this.jimakuCheck.Size = new System.Drawing.Size(81, 16);
             this.jimakuCheck.TabIndex = 9;
@@ -139,11 +141,29 @@
             this.jimakuCheck.UseVisualStyleBackColor = true;
             this.jimakuCheck.CheckedChanged += new System.EventHandler(this.jimakuCheck_CheckedChanged);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(229, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 12);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "音声の長さ補正";
+            // 
+            // HoseiBox
+            // 
+            this.HoseiBox.Location = new System.Drawing.Point(231, 86);
+            this.HoseiBox.Name = "HoseiBox";
+            this.HoseiBox.Size = new System.Drawing.Size(84, 19);
+            this.HoseiBox.TabIndex = 11;
+            // 
             // AddSerifProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 323);
+            this.Controls.Add(this.HoseiBox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.jimakuCheck);
             this.Controls.Add(this.sortComboBox);
             this.Controls.Add(this.label4);
@@ -174,5 +194,7 @@
         public System.Windows.Forms.TextBox exoBox;
         public System.Windows.Forms.ComboBox sortComboBox;
         public System.Windows.Forms.CheckBox jimakuCheck;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox HoseiBox;
     }
 }

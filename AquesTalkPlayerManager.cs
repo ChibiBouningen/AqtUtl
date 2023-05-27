@@ -33,10 +33,10 @@ namespace AqT_Utl
             
         }
 
-        public int VoiceGenerate(string hatsuon, string jimaku, SerifProfile p)   //音声を生成
+        public int VoiceGenerate(string hatsuon, string jimaku, SerifProfile p, int fps)   //音声を生成
         {
             
-            int fps = 60;
+            fps = 60;
             string output_folder = "output";
             if (Properties.Settings.Default.output_folder == "output")
             {
@@ -66,7 +66,7 @@ namespace AqT_Utl
 
             string filepath = output_folder + "\\" + filename + ".wav";
 
-            string 引数 = "/T \"" + hatsuon + "\" " + "/W \"" + filepath + "\"";
+            string 引数 = "/T \"" + hatsuon + "\" " + "/P \"" + p.UsePreset + "\" " + "/W \"" + filepath + "\"";
 
 
             ProcessStartInfo GenerateProcessStartInfo = new ProcessStartInfo();
@@ -75,7 +75,7 @@ namespace AqT_Utl
 
             ProcessStartInfo ListenProcessStartInfo = new ProcessStartInfo();
             ListenProcessStartInfo.FileName = PlayerPath;
-            ListenProcessStartInfo.Arguments = "/T \"" + hatsuon + "\"";
+            ListenProcessStartInfo.Arguments = "/T \"" + hatsuon + "\"" + "/P \"" + p.UsePreset + "\"";
 
             Process voiceGenerate = Process.Start(GenerateProcessStartInfo);
             Process voiceListen = Process.Start(ListenProcessStartInfo);

@@ -216,6 +216,7 @@
             this.JimakuBox.Name = "JimakuBox";
             this.JimakuBox.Size = new System.Drawing.Size(383, 191);
             this.JimakuBox.TabIndex = 0;
+            this.JimakuBox.TextChanged += new System.EventHandler(this.JimakuBox_TextChanged);
             // 
             // HatsuonSprit
             // 
@@ -247,6 +248,7 @@
             this.JimakuCopy_Check.TabIndex = 1;
             this.JimakuCopy_Check.Text = "字幕をコピー";
             this.JimakuCopy_Check.UseVisualStyleBackColor = true;
+            this.JimakuCopy_Check.Click += new System.EventHandler(this.JimakuCopy_Check_Click);
             // 
             // HatsuonLabel
             // 
@@ -276,6 +278,7 @@
             this.GeneratePanel.Size = new System.Drawing.Size(191, 450);
             this.GeneratePanel.TabIndex = 0;
             this.GeneratePanel.Click += new System.EventHandler(this.GeneratePanel_Click);
+            this.GeneratePanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.GeneratePanel_DragEnter);
             // 
             // ProfileListContextMenu
             // 

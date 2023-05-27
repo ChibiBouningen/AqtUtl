@@ -40,6 +40,7 @@ namespace AqT_Utl
             sortComboBox.Text = profile.Sort.ToString();
             jimakuCheck.Checked = profile.Jimaku;
             exoBox.Text = profile.Exo;
+            HoseiBox.Text = profile.Hosei.ToString();
 
             if(jimakuCheck.Checked)
             {

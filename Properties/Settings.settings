@@ -5,5 +5,11 @@
     <Setting Name="output_folder" Type="System.String" Scope="Application">
       <Value Profile="(Default)">output</Value>
     </Setting>
+    <Setting Name="jimakuCopy_startup" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="fps_AviUtl" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">60</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

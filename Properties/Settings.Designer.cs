@@ -31,5 +31,23 @@ namespace AqT_Utl.Properties {
                 return ((string)(this["output_folder"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool jimakuCopy_startup {
+            get {
+                return ((bool)(this["jimakuCopy_startup"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public int fps_AviUtl {
+            get {
+                return ((int)(this["fps_AviUtl"]));
+            }
+        }
     }
 }

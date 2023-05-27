@@ -33,6 +33,10 @@ namespace AqT_Utl
             ProfileListBoxReload();
             ProfileListBox.DisplayMember = "ProfileName";
             ProfileListBox.ValueMember = "Id";
+
+            JimakuCopy_Check.Checked = Properties.Settings.Default.jimakuCopy_startup;
+            JimakuCopyCheck_reflect();
+            
         }
 
         private void SettingButton_Click(object sender, EventArgs e)
@@ -74,6 +78,7 @@ namespace AqT_Utl
                 p.Sort = int.Parse(f.sortComboBox.Text);
                 p.Jimaku = f.jimakuCheck.Checked;
                 p.Exo = f.exoBox.Text;
+                p.Hosei = int.Parse(f.HoseiBox.Text);
 
                 Random random = new Random();
                 p.Id = random.Next();
@@ -100,6 +105,7 @@ namespace AqT_Utl
                 p.Sort = int.Parse(f.sortComboBox.Text);
                 p.Jimaku = f.jimakuCheck.Checked;
                 p.Exo = f.exoBox.Text;
+                p.Hosei = int.Parse(f.HoseiBox.Text);
 
                 /*serifProfiles.RemoveAll(profile => profile.Id == selectId);
                 serifProfiles.Add(p);*/
@@ -124,20 +130,15 @@ namespace AqT_Utl
 
             ProfileListBoxReload();
         }
-
-        void ProfileListBoxReload()
-        {
-            serifProfiles.Sort((a, b) => b.Sort - a.Sort);
-            ProfileListBox.DataSource = null;
-            ProfileListBox.DataSource = serifProfiles;
-        }
+    
 
         private void GeneratePanel_Click(object sender, EventArgs e)
         {
+            int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
             GeneratePanel.BackColor = Color.Yellow;
             try
             {
-                playerManager.VoiceGenerate("こんにちは", "こんにちは", serifProfiles[ProfileListBox.SelectedIndex]);
+                playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
             }
             catch
             {
@@ -152,6 +153,44 @@ namespace AqT_Utl
             profileLoader.Save(serifProfiles);
         }
 
-        
+        void ProfileListBoxReload()
+        {
+            serifProfiles.Sort((a, b) => b.Sort - a.Sort);
+            ProfileListBox.DataSource = null;
+            ProfileListBox.DataSource = serifProfiles;
+        }
+
+        private void JimakuBox_TextChanged(object sender, EventArgs e)
+        {
+            if(JimakuCopy_Check.Checked)
+            HatsuonBox.Text = JimakuBox.Text;
+        }
+
+        private void JimakuCopy_Check_Click(object sender, EventArgs e)
+        {
+            JimakuCopyCheck_reflect();
+        }
+
+        void JimakuCopyCheck_reflect()
+        {
+            if (JimakuCopy_Check.Checked)
+            {
+                HatsuonBox.ReadOnly = true;
+            }
+            else
+            {
+                HatsuonBox.ReadOnly = false;
+            }
+            HatsuonBox.Text = JimakuBox.Text;
+        }
+
+        private void GeneratePanel_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            e.Effect = DragDropEffects.Copy;
+        }
     }
 }

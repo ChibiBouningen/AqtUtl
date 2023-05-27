@@ -13,7 +13,9 @@ namespace AqT_Utl
         public string UsePreset { get; set; }
         public string Exo { get; set; }
         public int Sort { get; set; }
+        public int Hosei { get; set; }
         public bool Jimaku { get; set; }
+
         public SerifProfile()
         {
 
