@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using NAudio.Wave;
 
 namespace AqT_Utl
 {
@@ -34,6 +35,7 @@ namespace AqT_Utl
 
         public int VoiceGenerate(string text)
         {
+            int fps = 60;
             string output_folder = "output";
             if (Properties.Settings.Default.output_folder == "output")
             {
@@ -63,16 +65,33 @@ namespace AqT_Utl
 
             string filepath = output_folder + "\\" + filename;
 
-            string 引数 = "/T \"" + text + "\" " + "/F \"" + filepath + "\"";
+            string 引数 = "/T \"" + text + "\" " + "/W \"" + filepath + "\"";
 
 
-            ProcessStartInfo processStartInfo = new ProcessStartInfo();
-            processStartInfo.FileName = PlayerPath;
-            processStartInfo.Arguments = 引数;
+            ProcessStartInfo GenerateProcessStartInfo = new ProcessStartInfo();
+            GenerateProcessStartInfo.FileName = PlayerPath;
+            GenerateProcessStartInfo.Arguments = 引数;
 
-            Process process = Process.Start(processStartInfo);
+            ProcessStartInfo ListenProcessStartInfo = new ProcessStartInfo();
+            ListenProcessStartInfo.FileName = PlayerPath;
+            ListenProcessStartInfo.Arguments = "/T \"" + text + "\"";
 
-            process.WaitForExit();
+            Process voiceGenerate = Process.Start(GenerateProcessStartInfo);
+            Process voiceListen = Process.Start(ListenProcessStartInfo);
+
+            voiceGenerate.WaitForExit();
+
+            
+
+            //フレーム数を求める
+
+            using (var reader = new WaveFileReader(filepath))
+            {
+                double duration = reader.TotalTime.TotalSeconds;
+                int frameCount = (int)(duration * fps);
+                Console.WriteLine("wavファイルの長さ: {0:F2}秒", duration);
+                Console.WriteLine("動画編集ソフトに読み込む際に必要なフレーム数: {0}", frameCount);
+            }
 
             return 0;
         }

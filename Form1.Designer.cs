@@ -284,7 +284,7 @@
             this.プロファイルを編集ToolStripMenuItem,
             this.プロファイルを削除ToolStripMenuItem});
             this.ProfileListContextMenu.Name = "ProfileListContextMenu";
-            this.ProfileListContextMenu.Size = new System.Drawing.Size(184, 70);
+            this.ProfileListContextMenu.Size = new System.Drawing.Size(184, 92);
             // 
             // プロファイルを追加ToolStripMenuItem
             // 
@@ -304,6 +304,7 @@
             this.プロファイルを削除ToolStripMenuItem.Name = "プロファイルを削除ToolStripMenuItem";
             this.プロファイルを削除ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.プロファイルを削除ToolStripMenuItem.Text = "プロファイルを削除";
+            this.プロファイルを削除ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを削除ToolStripMenuItem_Click);
             // 
             // GenerateLabel
             // 
@@ -324,6 +325,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "AqT_Utl";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
