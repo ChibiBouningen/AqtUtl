@@ -62,9 +62,9 @@ namespace AqT_Utl
             }
 
             Random random = new Random();
-            string filename = DateTime.Now.ToString("yyyyMMddHHmmss") + random.Next(1000,9999) + ".wav";
+            string filename = DateTime.Now.ToString("yyyyMMddHHmmss") + random.Next(1000,9999);
 
-            string filepath = output_folder + "\\" + filename;
+            string filepath = output_folder + "\\" + filename + ".wav";
 
             string 引数 = "/T \"" + hatsuon + "\" " + "/W \"" + filepath + "\"";
 
@@ -82,17 +82,20 @@ namespace AqT_Utl
 
             voiceGenerate.WaitForExit();
 
-            
+
 
             //フレーム数を求める
-
+            int frameCount;
             using (var reader = new WaveFileReader(filepath))
             {
                 double duration = reader.TotalTime.TotalSeconds;
-                int frameCount = (int)(duration * fps);
+                frameCount = (int)(duration * fps);
                 Console.WriteLine("wavファイルの長さ: {0:F2}秒", duration);
                 Console.WriteLine("動画編集ソフトに読み込む際に必要なフレーム数: {0}", frameCount);
             }
+
+            ExoGenerate exoGenerate = new ExoGenerate();
+            exoGenerate.make_exo(p, jimaku, filepath, frameCount, output_folder + "\\" + filename + ".exo");
 
             return 0;
         }

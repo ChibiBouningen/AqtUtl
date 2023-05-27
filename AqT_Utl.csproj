@@ -139,6 +139,7 @@
       <DependentUpon>AddSerifProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="AquesTalkPlayerManager.cs" />
+    <Compile Include="ExoGenerate.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
