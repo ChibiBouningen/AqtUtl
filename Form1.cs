@@ -16,6 +16,7 @@ namespace AqT_Utl
         public Form1()
         {
             InitializeComponent();
+            GenerateLabel.Parent = GeneratePanel;
             playerManager = new AquesTalkPlayerManager();
             playerManager.RegistPlayer();
         }

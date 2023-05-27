@@ -47,6 +47,7 @@
             this.プロファイルを追加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを削除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GenerateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,6 +72,7 @@
             this.HatsuonSprit.Panel1.SuspendLayout();
             this.HatsuonSprit.Panel2.SuspendLayout();
             this.HatsuonSprit.SuspendLayout();
+            this.GeneratePanel.SuspendLayout();
             this.ProfileListContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,7 +112,7 @@
             this.ProfileSelectSprit.Panel2.Controls.Add(this.SettingButton);
             this.ProfileSelectSprit.Panel2MinSize = 0;
             this.ProfileSelectSprit.Size = new System.Drawing.Size(218, 450);
-            this.ProfileSelectSprit.SplitterDistance = 423;
+            this.ProfileSelectSprit.SplitterDistance = 424;
             this.ProfileSelectSprit.SplitterWidth = 1;
             this.ProfileSelectSprit.TabIndex = 0;
             // 
@@ -123,7 +125,7 @@
             this.ProfileListBox.Location = new System.Drawing.Point(0, 0);
             this.ProfileListBox.Margin = new System.Windows.Forms.Padding(0);
             this.ProfileListBox.Name = "ProfileListBox";
-            this.ProfileListBox.Size = new System.Drawing.Size(218, 423);
+            this.ProfileListBox.Size = new System.Drawing.Size(218, 424);
             this.ProfileListBox.TabIndex = 0;
             this.ProfileListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseDown);
             // 
@@ -135,7 +137,7 @@
             this.SettingButton.Location = new System.Drawing.Point(0, 0);
             this.SettingButton.Margin = new System.Windows.Forms.Padding(0);
             this.SettingButton.Name = "SettingButton";
-            this.SettingButton.Size = new System.Drawing.Size(218, 26);
+            this.SettingButton.Size = new System.Drawing.Size(218, 25);
             this.SettingButton.TabIndex = 0;
             this.SettingButton.Text = "設定";
             this.SettingButton.UseVisualStyleBackColor = false;
@@ -267,6 +269,7 @@
             // GeneratePanel
             // 
             this.GeneratePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GeneratePanel.Controls.Add(this.GenerateLabel);
             this.GeneratePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GeneratePanel.Location = new System.Drawing.Point(0, 0);
             this.GeneratePanel.Name = "GeneratePanel";
@@ -301,6 +304,17 @@
             this.プロファイルを削除ToolStripMenuItem.Name = "プロファイルを削除ToolStripMenuItem";
             this.プロファイルを削除ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.プロファイルを削除ToolStripMenuItem.Text = "プロファイルを削除";
+            // 
+            // GenerateLabel
+            // 
+            this.GenerateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.GenerateLabel.AutoSize = true;
+            this.GenerateLabel.Location = new System.Drawing.Point(43, 224);
+            this.GenerateLabel.Name = "GenerateLabel";
+            this.GenerateLabel.Size = new System.Drawing.Size(102, 12);
+            this.GenerateLabel.TabIndex = 0;
+            this.GenerateLabel.Text = "クリックで音声を生成";
+            this.GenerateLabel.Click += new System.EventHandler(this.GeneratePanel_Click);
             // 
             // Form1
             // 
@@ -338,6 +352,8 @@
             this.HatsuonSprit.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HatsuonSprit)).EndInit();
             this.HatsuonSprit.ResumeLayout(false);
+            this.GeneratePanel.ResumeLayout(false);
+            this.GeneratePanel.PerformLayout();
             this.ProfileListContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -363,6 +379,7 @@
         private System.Windows.Forms.ToolStripMenuItem プロファイルを追加ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem プロファイルを編集ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem プロファイルを削除ToolStripMenuItem;
+        private System.Windows.Forms.Label GenerateLabel;
     }
 }
 

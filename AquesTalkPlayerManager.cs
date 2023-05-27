@@ -22,12 +22,14 @@ namespace AqT_Utl
             if(File.Exists("aquestalkplayer/AquesTalkPlayer.exe"))
             {
                 PlayerPath = Path.GetFullPath("aquestalkplayer/AquesTalkPlayer.exe");
+                return 0;
             }
             else
             {
                 //MessageBox.Show("なし");
+                return 1;
             }
-            return 0;
+            
         }
 
         public int VoiceGenerate(string text)
