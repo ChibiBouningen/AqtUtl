@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace AqT_Utl
 {
-    internal class SerifProfile
+    public class SerifProfile
     {
         public int Id { get; set; }
         public string ProfileName { get; set; }
-        public string usePriset;
-        public string exo;
-        public int sort;
+        public string UsePreset { get; set; }
+        public string Exo { get; set; }
+        public int Sort { get; set; }
+        public bool Jimaku { get; set; }
         public SerifProfile()
         {
 

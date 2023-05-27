@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
+using System.IO;
 
 namespace AqT_Utl
 {
@@ -12,7 +16,7 @@ namespace AqT_Utl
         {
             serifProfiles = new List<SerifProfile>();
 
-            SerifProfile kariProfile = new SerifProfile();
+            /*SerifProfile kariProfile = new SerifProfile();
             SerifProfile kari2Profile = new SerifProfile();
 
             kariProfile.Id = 255;
@@ -22,12 +26,30 @@ namespace AqT_Utl
             kari2Profile.ProfileName = "KARI2";
 
             serifProfiles.Add(kariProfile);
-            serifProfiles.Add(kari2Profile);
+            serifProfiles.Add(kari2Profile);*/
+            string json;
+            try
+            {
+                json = File.ReadAllText("profile.json");
+            }
+            catch
+            {
+                Save(serifProfiles);
+                json = File.ReadAllText("profile.json");
+            }
+            
+            serifProfiles = JsonSerializer.Deserialize<List<SerifProfile>>(json);
         }
 
-        public void Save()
+        public void Save(List<SerifProfile> serifProfiles)
         {
-
+            JsonSerializerOptions options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+                WriteIndented = true
+            };
+            string json = JsonSerializer.Serialize(serifProfiles, options);
+            File.WriteAllText("profile.json", json);
         }
     }
 }

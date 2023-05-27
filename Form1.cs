@@ -29,7 +29,8 @@ namespace AqT_Utl
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ProfileListBox.DataSource = serifProfiles;
+            //ProfileListBox.DataSource = serifProfiles;
+            ProfileListBoxReload();
             ProfileListBox.DisplayMember = "ProfileName";
             ProfileListBox.ValueMember = "Id";
         }
@@ -62,24 +63,49 @@ namespace AqT_Utl
 
         private void プロファイルを追加ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddSerifProfile f = new AddSerifProfile();
             SerifProfile p = new SerifProfile();
+            AddSerifProfile f = new AddSerifProfile(p, false);
+            
             f.ShowDialog();
-            try
+            if(f.adaptted)
             {
                 p.ProfileName = f.ProfileNameBox.Text;
+                p.UsePreset = f.AquesPresetNameBox.Text;
+                p.Sort = int.Parse(f.sortComboBox.Text);
+                p.Jimaku = f.jimakuCheck.Checked;
+                p.Exo = f.exoBox.Text;
 
                 Random random = new Random();
-                //p.Id = int.Parse(DateTime.Now.ToString("yyyyMMddHHmmss"));
                 p.Id = random.Next();
 
                 serifProfiles.Add(p);
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
 
+            f.Dispose();
+            ProfileListBoxReload();
+        }
+
+        private void プロファイルを編集ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selectId = int.Parse(ProfileListBox.SelectedValue.ToString());
+            int selectIndex = ProfileListBox.SelectedIndex;
+            SerifProfile p = new SerifProfile();
+            p = serifProfiles.Find(x => x.Id == selectId);
+            AddSerifProfile f = new AddSerifProfile(p, true);
+            f.ShowDialog();
+            if (f.adaptted)
+            {
+                p.ProfileName = f.ProfileNameBox.Text;
+                p.UsePreset = f.AquesPresetNameBox.Text;
+                p.Sort = int.Parse(f.sortComboBox.Text);
+                p.Jimaku = f.jimakuCheck.Checked;
+                p.Exo = f.exoBox.Text;
+
+                /*serifProfiles.RemoveAll(profile => profile.Id == selectId);
+                serifProfiles.Add(p);*/
+                serifProfiles[selectIndex] = p;
+
+            }
             f.Dispose();
             ProfileListBoxReload();
         }
@@ -101,13 +127,29 @@ namespace AqT_Utl
 
         void ProfileListBoxReload()
         {
+            serifProfiles.Sort((a, b) => b.Sort - a.Sort);
             ProfileListBox.DataSource = null;
             ProfileListBox.DataSource = serifProfiles;
         }
 
         private void GeneratePanel_Click(object sender, EventArgs e)
         {
-            playerManager.VoiceGenerate("こんにちは");
+            GeneratePanel.BackColor = Color.Yellow;
+            try
+            {
+                playerManager.VoiceGenerate("こんにちは", "こんにちは", serifProfiles[ProfileListBox.SelectedIndex]);
+            }
+            catch
+            {
+
+            }
+            
+            GeneratePanel.BackColor = Color.Gainsboro;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            profileLoader.Save(serifProfiles);
         }
 
         

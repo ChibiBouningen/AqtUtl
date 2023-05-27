@@ -268,7 +268,7 @@
             // 
             // GeneratePanel
             // 
-            this.GeneratePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GeneratePanel.BackColor = System.Drawing.Color.Gainsboro;
             this.GeneratePanel.Controls.Add(this.GenerateLabel);
             this.GeneratePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GeneratePanel.Location = new System.Drawing.Point(0, 0);
@@ -284,7 +284,7 @@
             this.プロファイルを編集ToolStripMenuItem,
             this.プロファイルを削除ToolStripMenuItem});
             this.ProfileListContextMenu.Name = "ProfileListContextMenu";
-            this.ProfileListContextMenu.Size = new System.Drawing.Size(184, 92);
+            this.ProfileListContextMenu.Size = new System.Drawing.Size(184, 70);
             // 
             // プロファイルを追加ToolStripMenuItem
             // 
@@ -298,6 +298,7 @@
             this.プロファイルを編集ToolStripMenuItem.Name = "プロファイルを編集ToolStripMenuItem";
             this.プロファイルを編集ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.プロファイルを編集ToolStripMenuItem.Text = "プロファイルを編集";
+            this.プロファイルを編集ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを編集ToolStripMenuItem_Click);
             // 
             // プロファイルを削除ToolStripMenuItem
             // 
@@ -325,6 +326,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "AqT_Utl";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
