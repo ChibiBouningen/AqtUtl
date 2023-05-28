@@ -76,7 +76,7 @@
             this.MakeProfileButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MakeProfileButton.Name = "MakeProfileButton";
             this.MakeProfileButton.Size = new System.Drawing.Size(489, 23);
-            this.MakeProfileButton.TabIndex = 3;
+            this.MakeProfileButton.TabIndex = 7;
             this.MakeProfileButton.Text = "適用";
             this.MakeProfileButton.UseVisualStyleBackColor = true;
             this.MakeProfileButton.Click += new System.EventHandler(this.MakeProfileButton_Click);
@@ -87,7 +87,7 @@
             this.AquesPresetNameBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AquesPresetNameBox.Name = "AquesPresetNameBox";
             this.AquesPresetNameBox.Size = new System.Drawing.Size(201, 19);
-            this.AquesPresetNameBox.TabIndex = 4;
+            this.AquesPresetNameBox.TabIndex = 2;
             // 
             // exoLabel
             // 
@@ -136,7 +136,7 @@
             this.sortComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.sortComboBox.Name = "sortComboBox";
             this.sortComboBox.Size = new System.Drawing.Size(111, 20);
-            this.sortComboBox.TabIndex = 8;
+            this.sortComboBox.TabIndex = 3;
             this.sortComboBox.Text = "5";
             // 
             // jimakuCheck
@@ -146,7 +146,7 @@
             this.jimakuCheck.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.jimakuCheck.Name = "jimakuCheck";
             this.jimakuCheck.Size = new System.Drawing.Size(84, 16);
-            this.jimakuCheck.TabIndex = 9;
+            this.jimakuCheck.TabIndex = 5;
             this.jimakuCheck.Text = "字幕を付与";
             this.jimakuCheck.UseVisualStyleBackColor = true;
             this.jimakuCheck.CheckedChanged += new System.EventHandler(this.jimakuCheck_CheckedChanged);
@@ -167,7 +167,7 @@
             this.HoseiBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.HoseiBox.Name = "HoseiBox";
             this.HoseiBox.Size = new System.Drawing.Size(111, 19);
-            this.HoseiBox.TabIndex = 11;
+            this.HoseiBox.TabIndex = 4;
             // 
             // AddSerifProfile
             // 

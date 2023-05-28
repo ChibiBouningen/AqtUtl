@@ -78,7 +78,7 @@ namespace AqT_Utl
             }
 
             Random random = new Random();
-            string filename = hatsuon + DateTime.Now.ToString("yyyyMMddHHmmss") + random.Next(1000,9999);
+            string filename = DateTime.Now.ToString("yyyyMMddHHmmss") + random.Next(1000,9999);
 
             string filepath = output_folder + "\\" + filename + ".wav";
 
