@@ -104,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(229, 25);
+            this.label4.Location = new System.Drawing.Point(211, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(186, 12);
             this.label4.TabIndex = 7;
@@ -124,7 +124,7 @@
             "2",
             "1",
             "0"});
-            this.sortComboBox.Location = new System.Drawing.Point(231, 40);
+            this.sortComboBox.Location = new System.Drawing.Point(213, 40);
             this.sortComboBox.Name = "sortComboBox";
             this.sortComboBox.Size = new System.Drawing.Size(84, 20);
             this.sortComboBox.TabIndex = 8;
@@ -144,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 71);
+            this.label3.Location = new System.Drawing.Point(211, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 12);
             this.label3.TabIndex = 10;
@@ -152,7 +152,7 @@
             // 
             // HoseiBox
             // 
-            this.HoseiBox.Location = new System.Drawing.Point(231, 86);
+            this.HoseiBox.Location = new System.Drawing.Point(213, 86);
             this.HoseiBox.Name = "HoseiBox";
             this.HoseiBox.Size = new System.Drawing.Size(84, 19);
             this.HoseiBox.TabIndex = 11;

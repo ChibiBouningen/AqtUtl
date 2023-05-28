@@ -34,6 +34,7 @@
             this.ProfileListBox = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ツールToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aqtUtlについてToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aquesTalkPlayerを起動ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aqtUtlを終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +53,7 @@
             this.プロファイルを追加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを削除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aqtUtlについてToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ListAnnaiLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -86,6 +87,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.ListAnnaiLabel);
             this.splitContainer1.Panel1.Controls.Add(this.ProfileListBox);
             this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
             // 
@@ -129,6 +131,13 @@
             this.ツールToolStripMenuItem.Name = "ツールToolStripMenuItem";
             this.ツールToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.ツールToolStripMenuItem.Text = "ツール";
+            // 
+            // aqtUtlについてToolStripMenuItem
+            // 
+            this.aqtUtlについてToolStripMenuItem.Name = "aqtUtlについてToolStripMenuItem";
+            this.aqtUtlについてToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aqtUtlについてToolStripMenuItem.Text = "AqtUtlについて";
+            this.aqtUtlについてToolStripMenuItem.Click += new System.EventHandler(this.aqtUtlについてToolStripMenuItem_Click);
             // 
             // aquesTalkPlayerを起動ToolStripMenuItem
             // 
@@ -328,12 +337,17 @@
             this.プロファイルを削除ToolStripMenuItem.Text = "プロファイルを削除";
             this.プロファイルを削除ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを削除ToolStripMenuItem_Click);
             // 
-            // aqtUtlについてToolStripMenuItem
+            // ListAnnaiLabel
             // 
-            this.aqtUtlについてToolStripMenuItem.Name = "aqtUtlについてToolStripMenuItem";
-            this.aqtUtlについてToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.aqtUtlについてToolStripMenuItem.Text = "AqtUtlについて";
-            this.aqtUtlについてToolStripMenuItem.Click += new System.EventHandler(this.aqtUtlについてToolStripMenuItem_Click);
+            this.ListAnnaiLabel.AutoSize = true;
+            this.ListAnnaiLabel.BackColor = System.Drawing.Color.White;
+            this.ListAnnaiLabel.Location = new System.Drawing.Point(12, 224);
+            this.ListAnnaiLabel.Name = "ListAnnaiLabel";
+            this.ListAnnaiLabel.Size = new System.Drawing.Size(188, 12);
+            this.ListAnnaiLabel.TabIndex = 1;
+            this.ListAnnaiLabel.Text = "右クリックでキャラクタ プロファイルを作成";
+            this.ListAnnaiLabel.Visible = false;
+            this.ListAnnaiLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseDown);
             // 
             // Form1
             // 
@@ -405,6 +419,7 @@
         private System.Windows.Forms.ToolStripMenuItem aquesTalkPlayerを起動ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aqtUtlを終了ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aqtUtlについてToolStripMenuItem;
+        private System.Windows.Forms.Label ListAnnaiLabel;
     }
 }
 

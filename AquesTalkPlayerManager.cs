@@ -35,7 +35,15 @@ namespace AqT_Utl
 
         public void StartupPlayer()
         {
-            Process.Start(PlayerPath);
+            try
+            {
+                Process.Start(PlayerPath);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("aquestalkplayer/AquesTalkPlayer.exeが見つかりません");
+            }
+            
         }
 
         public string VoiceGenerate(string hatsuon, string jimaku, SerifProfile p, int fps)   //音声を生成

@@ -19,6 +19,7 @@ namespace AqT_Utl
         ProfileLoader profileLoader;
 
         bool generated = false;
+        bool setAquesTalkPlayer = false;
         string last_generated_exo;
 
         public Form1()
@@ -26,7 +27,12 @@ namespace AqT_Utl
             InitializeComponent();
             GenerateLabel.Parent = GeneratePanel;
             playerManager = new AquesTalkPlayerManager();
-            playerManager.RegistPlayer();
+
+            int a;
+            a = playerManager.RegistPlayer();
+            if (a == 0) setAquesTalkPlayer = true;
+            else setAquesTalkPlayer = false;
+            
             profileLoader = new ProfileLoader();
             profileLoader.Load(ref serifProfiles);
         }
@@ -41,6 +47,12 @@ namespace AqT_Utl
             JimakuCopy_Check.Checked = Properties.Settings.Default.jimakuCopy_startup;
             JimakuCopyCheck_reflect();
             resetGenerated();
+
+            if (serifProfiles.Count <= 0)
+            {
+                ListAnnaiLabel.Visible = true;
+            }
+            
 
         }
 
@@ -86,6 +98,7 @@ namespace AqT_Utl
                 p.Id = random.Next();
 
                 serifProfiles.Add(p);
+                ListAnnaiLabel.Visible = false;
             }
 
             f.Dispose();
@@ -183,27 +196,37 @@ namespace AqT_Utl
         {
             if(e.Button == MouseButtons.Left)
             {
-                if(generated)
+                if(setAquesTalkPlayer)
                 {
-                    string dragFilePath = last_generated_exo;
-                    //File.WriteAllText(dragFilePath, "This is a sample text file.");
-                    var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
-                    dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
-                    GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
+                    if (generated)
+                    {
+                        string dragFilePath = last_generated_exo;
+                        //File.WriteAllText(dragFilePath, "This is a sample text file.");
+                        var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
+                        dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
+                        GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
+                    }
+                    else
+                    {
+                        int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
+
+                        if (ProfileListBox.SelectedIndex < 0 && serifProfiles.Count > 0) ProfileListBox.SelectedIndex = 0;
+                        else return;
+
+                        GeneratePanel.BackColor = Color.Yellow;
+                        last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
+                        generated = true;
+                        GenerateLabel.Text = "ここをD&Dしてください";
+
+
+                        GeneratePanel.BackColor = Color.Gainsboro;
+                    }
                 }
                 else
                 {
-                    int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
-                    GeneratePanel.BackColor = Color.Yellow;
-                    if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
-
-                    last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
-                    generated = true;
-                    GenerateLabel.Text = "ここをD&Dしてください";
-
-
-                    GeneratePanel.BackColor = Color.Gainsboro;
+                    MessageBox.Show("aquestalkplayer/AquesTalkPlayer.exeを配置し\nアプリケーションを再起動してください");
                 }
+                
                 
             }
         }
