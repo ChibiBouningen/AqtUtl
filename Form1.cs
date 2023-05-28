@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,9 @@ namespace AqT_Utl
         List<SerifProfile> serifProfiles;
         AquesTalkPlayerManager playerManager;
         ProfileLoader profileLoader;
+
+        bool generated = false;
+        string last_generated_exo;
 
         public Form1()
         {
@@ -36,13 +40,10 @@ namespace AqT_Utl
 
             JimakuCopy_Check.Checked = Properties.Settings.Default.jimakuCopy_startup;
             JimakuCopyCheck_reflect();
-            
+            resetGenerated();
+
         }
 
-        private void SettingButton_Click(object sender, EventArgs e)
-        {
-            //ProfileListBox.Items.Add(DateTime.Now.ToString());
-        }
 
         private void ProfileListBox_MouseDown(object sender, MouseEventArgs e)
         {
@@ -63,6 +64,7 @@ namespace AqT_Utl
                     ProfileListContextMenu.Show(ProfileListBox, e.Location);
                 }
             }
+            resetGenerated();
         }
 
         private void プロファイルを追加ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,6 +90,7 @@ namespace AqT_Utl
 
             f.Dispose();
             ProfileListBoxReload();
+            resetGenerated();
         }
 
         private void プロファイルを編集ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,6 +117,7 @@ namespace AqT_Utl
             }
             f.Dispose();
             ProfileListBoxReload();
+            resetGenerated();
         }
 
         private void プロファイルを削除ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -129,24 +133,9 @@ namespace AqT_Utl
             }
 
             ProfileListBoxReload();
+            resetGenerated();
         }
     
-
-        private void GeneratePanel_Click(object sender, EventArgs e)
-        {
-            int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
-            GeneratePanel.BackColor = Color.Yellow;
-            try
-            {
-                playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
-            }
-            catch
-            {
-
-            }
-            
-            GeneratePanel.BackColor = Color.Gainsboro;
-        }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -163,12 +152,17 @@ namespace AqT_Utl
         private void JimakuBox_TextChanged(object sender, EventArgs e)
         {
             if(JimakuCopy_Check.Checked)
-            HatsuonBox.Text = JimakuBox.Text;
+            {
+                HatsuonBox.Text = JimakuBox.Text;
+                resetGenerated();
+            }
+            
         }
 
         private void JimakuCopy_Check_Click(object sender, EventArgs e)
         {
             JimakuCopyCheck_reflect();
+            resetGenerated();
         }
 
         void JimakuCopyCheck_reflect()
@@ -184,13 +178,44 @@ namespace AqT_Utl
             HatsuonBox.Text = JimakuBox.Text;
         }
 
-        private void GeneratePanel_DragEnter(object sender, DragEventArgs e)
+        private void 設定ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+
+        }
+
+        private void GeneratePanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
             {
-                e.Effect = DragDropEffects.Copy;
+                if(generated)
+                {
+                    string dragFilePath = last_generated_exo;
+                    //File.WriteAllText(dragFilePath, "This is a sample text file.");
+                    var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
+                    dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
+                    GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
+                }
+                else
+                {
+                    int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
+                    GeneratePanel.BackColor = Color.Yellow;
+                    if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
+
+                    last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
+                    generated = true;
+                    GenerateLabel.Text = "ここをD&Dしてください";
+
+
+                    GeneratePanel.BackColor = Color.Gainsboro;
+                }
+                
             }
-            e.Effect = DragDropEffects.Copy;
+        }
+
+        void resetGenerated()
+        {
+            generated = false;
+            GenerateLabel.Text = "クリックで音声を生成";
         }
     }
 }

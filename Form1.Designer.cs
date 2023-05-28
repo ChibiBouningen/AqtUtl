@@ -30,9 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.ProfileSelectSprit = new System.Windows.Forms.SplitContainer();
             this.ProfileListBox = new System.Windows.Forms.ListBox();
-            this.SettingButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ツールToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aquesTalkPlayerを起動ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aqtUtlを終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.TextBoxSprit = new System.Windows.Forms.SplitContainer();
             this.JimakuSprit = new System.Windows.Forms.SplitContainer();
@@ -43,19 +46,16 @@
             this.HatsuonLabel = new System.Windows.Forms.Label();
             this.HatsuonBox = new System.Windows.Forms.TextBox();
             this.GeneratePanel = new System.Windows.Forms.Panel();
+            this.GenerateLabel = new System.Windows.Forms.Label();
             this.ProfileListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.プロファイルを追加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを削除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.GenerateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProfileSelectSprit)).BeginInit();
-            this.ProfileSelectSprit.Panel1.SuspendLayout();
-            this.ProfileSelectSprit.Panel2.SuspendLayout();
-            this.ProfileSelectSprit.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -84,7 +84,8 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.ProfileSelectSprit);
+            this.splitContainer1.Panel1.Controls.Add(this.ProfileListBox);
+            this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
             // 
             // splitContainer1.Panel2
             // 
@@ -93,55 +94,57 @@
             this.splitContainer1.SplitterDistance = 218;
             this.splitContainer1.TabIndex = 0;
             // 
-            // ProfileSelectSprit
-            // 
-            this.ProfileSelectSprit.BackColor = System.Drawing.Color.White;
-            this.ProfileSelectSprit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProfileSelectSprit.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.ProfileSelectSprit.IsSplitterFixed = true;
-            this.ProfileSelectSprit.Location = new System.Drawing.Point(0, 0);
-            this.ProfileSelectSprit.Name = "ProfileSelectSprit";
-            this.ProfileSelectSprit.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // ProfileSelectSprit.Panel1
-            // 
-            this.ProfileSelectSprit.Panel1.Controls.Add(this.ProfileListBox);
-            // 
-            // ProfileSelectSprit.Panel2
-            // 
-            this.ProfileSelectSprit.Panel2.Controls.Add(this.SettingButton);
-            this.ProfileSelectSprit.Panel2MinSize = 0;
-            this.ProfileSelectSprit.Size = new System.Drawing.Size(218, 450);
-            this.ProfileSelectSprit.SplitterDistance = 424;
-            this.ProfileSelectSprit.SplitterWidth = 1;
-            this.ProfileSelectSprit.TabIndex = 0;
-            // 
             // ProfileListBox
             // 
             this.ProfileListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProfileListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProfileListBox.FormattingEnabled = true;
             this.ProfileListBox.ItemHeight = 12;
-            this.ProfileListBox.Location = new System.Drawing.Point(0, 0);
+            this.ProfileListBox.Location = new System.Drawing.Point(0, 24);
             this.ProfileListBox.Margin = new System.Windows.Forms.Padding(0);
             this.ProfileListBox.Name = "ProfileListBox";
-            this.ProfileListBox.Size = new System.Drawing.Size(218, 424);
+            this.ProfileListBox.Size = new System.Drawing.Size(218, 426);
             this.ProfileListBox.TabIndex = 0;
             this.ProfileListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseDown);
             // 
-            // SettingButton
+            // menuStrip1
             // 
-            this.SettingButton.BackColor = System.Drawing.Color.Transparent;
-            this.SettingButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SettingButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.SettingButton.Location = new System.Drawing.Point(0, 0);
-            this.SettingButton.Margin = new System.Windows.Forms.Padding(0);
-            this.SettingButton.Name = "SettingButton";
-            this.SettingButton.Size = new System.Drawing.Size(218, 25);
-            this.SettingButton.TabIndex = 0;
-            this.SettingButton.Text = "設定";
-            this.SettingButton.UseVisualStyleBackColor = false;
-            this.SettingButton.Click += new System.EventHandler(this.SettingButton_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ツールToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(218, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ツールToolStripMenuItem
+            // 
+            this.ツールToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aquesTalkPlayerを起動ToolStripMenuItem,
+            this.設定ToolStripMenuItem,
+            this.aqtUtlを終了ToolStripMenuItem});
+            this.ツールToolStripMenuItem.Name = "ツールToolStripMenuItem";
+            this.ツールToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.ツールToolStripMenuItem.Text = "ツール";
+            // 
+            // aquesTalkPlayerを起動ToolStripMenuItem
+            // 
+            this.aquesTalkPlayerを起動ToolStripMenuItem.Name = "aquesTalkPlayerを起動ToolStripMenuItem";
+            this.aquesTalkPlayerを起動ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aquesTalkPlayerを起動ToolStripMenuItem.Text = "AquesTalkPlayerを起動";
+            // 
+            // 設定ToolStripMenuItem
+            // 
+            this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
+            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.設定ToolStripMenuItem.Text = "設定";
+            this.設定ToolStripMenuItem.Click += new System.EventHandler(this.設定ToolStripMenuItem_Click);
+            // 
+            // aqtUtlを終了ToolStripMenuItem
+            // 
+            this.aqtUtlを終了ToolStripMenuItem.Name = "aqtUtlを終了ToolStripMenuItem";
+            this.aqtUtlを終了ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aqtUtlを終了ToolStripMenuItem.Text = "AqtUtlを終了";
             // 
             // splitContainer2
             // 
@@ -277,8 +280,18 @@
             this.GeneratePanel.Name = "GeneratePanel";
             this.GeneratePanel.Size = new System.Drawing.Size(191, 450);
             this.GeneratePanel.TabIndex = 0;
-            this.GeneratePanel.Click += new System.EventHandler(this.GeneratePanel_Click);
-            this.GeneratePanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.GeneratePanel_DragEnter);
+            this.GeneratePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GeneratePanel_MouseDown);
+            // 
+            // GenerateLabel
+            // 
+            this.GenerateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.GenerateLabel.AutoSize = true;
+            this.GenerateLabel.Location = new System.Drawing.Point(43, 224);
+            this.GenerateLabel.Name = "GenerateLabel";
+            this.GenerateLabel.Size = new System.Drawing.Size(102, 12);
+            this.GenerateLabel.TabIndex = 0;
+            this.GenerateLabel.Text = "クリックで音声を生成";
+            this.GenerateLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GeneratePanel_MouseDown);
             // 
             // ProfileListContextMenu
             // 
@@ -310,17 +323,6 @@
             this.プロファイルを削除ToolStripMenuItem.Text = "プロファイルを削除";
             this.プロファイルを削除ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを削除ToolStripMenuItem_Click);
             // 
-            // GenerateLabel
-            // 
-            this.GenerateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.GenerateLabel.AutoSize = true;
-            this.GenerateLabel.Location = new System.Drawing.Point(43, 224);
-            this.GenerateLabel.Name = "GenerateLabel";
-            this.GenerateLabel.Size = new System.Drawing.Size(102, 12);
-            this.GenerateLabel.TabIndex = 0;
-            this.GenerateLabel.Text = "クリックで音声を生成";
-            this.GenerateLabel.Click += new System.EventHandler(this.GeneratePanel_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -332,13 +334,12 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.ProfileSelectSprit.Panel1.ResumeLayout(false);
-            this.ProfileSelectSprit.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ProfileSelectSprit)).EndInit();
-            this.ProfileSelectSprit.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -370,9 +371,7 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.SplitContainer ProfileSelectSprit;
         private System.Windows.Forms.ListBox ProfileListBox;
-        private System.Windows.Forms.Button SettingButton;
         private System.Windows.Forms.Panel GeneratePanel;
         private System.Windows.Forms.SplitContainer TextBoxSprit;
         private System.Windows.Forms.Label JimakuLabel;
@@ -387,6 +386,11 @@
         private System.Windows.Forms.ToolStripMenuItem プロファイルを編集ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem プロファイルを削除ToolStripMenuItem;
         private System.Windows.Forms.Label GenerateLabel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ツールToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aquesTalkPlayerを起動ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aqtUtlを終了ToolStripMenuItem;
     }
 }
 

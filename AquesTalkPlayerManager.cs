@@ -33,11 +33,14 @@ namespace AqT_Utl
             
         }
 
-        public int VoiceGenerate(string hatsuon, string jimaku, SerifProfile p, int fps)   //音声を生成
+        public string VoiceGenerate(string hatsuon, string jimaku, SerifProfile p, int fps)   //音声を生成
         {
             
             fps = 60;
             string output_folder = "output";
+
+            if (hatsuon == "") hatsuon = "_"; //発音なしの場合発音しない適当な文字に置換
+
             if (Properties.Settings.Default.output_folder == "output")
             {
                 if(Directory.Exists("output") == false)
@@ -57,12 +60,12 @@ namespace AqT_Utl
                 else
                 {
                     MessageBox.Show("ボイス生成フォルダの設定が正しくありません。");
-                    return 1;
+                    return "err";
                 }
             }
 
             Random random = new Random();
-            string filename = DateTime.Now.ToString("yyyyMMddHHmmss") + random.Next(1000,9999);
+            string filename = hatsuon + DateTime.Now.ToString("yyyyMMddHHmmss") + random.Next(1000,9999);
 
             string filepath = output_folder + "\\" + filename + ".wav";
 
@@ -97,7 +100,7 @@ namespace AqT_Utl
             ExoGenerate exoGenerate = new ExoGenerate();
             exoGenerate.make_exo(p, jimaku, filepath, frameCount, output_folder + "\\" + filename + ".exo");
 
-            return 0;
+            return output_folder + "\\" + filename + ".exo";
         }
     }
 }
