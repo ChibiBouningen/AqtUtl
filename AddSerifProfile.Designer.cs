@@ -190,7 +190,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "AddSerifProfile";
-            this.Text = "セリフ プロパティの編集";
+            this.Text = "セリフ プロファイルの編集";
             this.Load += new System.EventHandler(this.AddSerifProfile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

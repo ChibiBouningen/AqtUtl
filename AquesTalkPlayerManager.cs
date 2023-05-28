@@ -110,6 +110,8 @@ namespace AqT_Utl
                 Console.WriteLine("動画編集ソフトに読み込む際に必要なフレーム数: {0}", frameCount);
             }
 
+            frameCount += p.Hosei;
+
             ExoGenerate exoGenerate = new ExoGenerate();
             exoGenerate.make_exo(p, jimaku, filepath, frameCount, output_folder + "\\" + filename + ".exo");
 

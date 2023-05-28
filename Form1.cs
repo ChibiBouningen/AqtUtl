@@ -210,13 +210,17 @@ namespace AqT_Utl
                     {
                         int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
 
-                        if (ProfileListBox.SelectedIndex < 0 && serifProfiles.Count > 0) ProfileListBox.SelectedIndex = 0;
-                        else return;
+                        if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
+                        if (serifProfiles.Count == 0)
+                        {
+                            MessageBox.Show("キャラクタ プロファイルを作成してください");
+                            return;
+                        }
 
-                        GeneratePanel.BackColor = Color.Yellow;
+                            GeneratePanel.BackColor = Color.Yellow;
                         last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
                         generated = true;
-                        GenerateLabel.Text = "ここをD&Dしてください";
+                        GenerateLabel.Text = "ここをD&&Dしてください";
 
 
                         GeneratePanel.BackColor = Color.Gainsboro;
