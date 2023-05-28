@@ -40,7 +40,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Location = new System.Drawing.Point(16, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 12);
             this.label1.TabIndex = 0;
@@ -48,9 +49,10 @@
             // 
             // DefaultButton
             // 
-            this.DefaultButton.Location = new System.Drawing.Point(208, 12);
+            this.DefaultButton.Location = new System.Drawing.Point(277, 12);
+            this.DefaultButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DefaultButton.Name = "DefaultButton";
-            this.DefaultButton.Size = new System.Drawing.Size(94, 23);
+            this.DefaultButton.Size = new System.Drawing.Size(125, 23);
             this.DefaultButton.TabIndex = 1;
             this.DefaultButton.Text = "初期値に戻す";
             this.DefaultButton.UseVisualStyleBackColor = true;
@@ -58,17 +60,19 @@
             // 
             // output_folderBox
             // 
-            this.output_folderBox.Location = new System.Drawing.Point(14, 50);
+            this.output_folderBox.Location = new System.Drawing.Point(19, 50);
+            this.output_folderBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.output_folderBox.Name = "output_folderBox";
-            this.output_folderBox.Size = new System.Drawing.Size(288, 19);
+            this.output_folderBox.Size = new System.Drawing.Size(383, 19);
             this.output_folderBox.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 82);
+            this.label2.Location = new System.Drawing.Point(16, 82);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 12);
+            this.label2.Size = new System.Drawing.Size(83, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "AviUtlのFPS";
             // 
@@ -79,33 +83,37 @@
             "60",
             "30",
             "24"});
-            this.FPScomboBox.Location = new System.Drawing.Point(12, 97);
+            this.FPScomboBox.Location = new System.Drawing.Point(16, 97);
+            this.FPScomboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.FPScomboBox.Name = "FPScomboBox";
-            this.FPScomboBox.Size = new System.Drawing.Size(102, 20);
+            this.FPScomboBox.Size = new System.Drawing.Size(135, 20);
             this.FPScomboBox.TabIndex = 5;
             // 
             // JimakuCheck
             // 
             this.JimakuCheck.AutoSize = true;
-            this.JimakuCheck.Location = new System.Drawing.Point(129, 99);
+            this.JimakuCheck.Location = new System.Drawing.Point(172, 99);
+            this.JimakuCheck.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.JimakuCheck.Name = "JimakuCheck";
-            this.JimakuCheck.Size = new System.Drawing.Size(172, 16);
+            this.JimakuCheck.Size = new System.Drawing.Size(196, 16);
             this.JimakuCheck.TabIndex = 7;
             this.JimakuCheck.Text = "起動時「字幕をコピー」にチェック";
             this.JimakuCheck.UseVisualStyleBackColor = true;
             // 
             // Setting
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 145);
+            this.ClientSize = new System.Drawing.Size(417, 145);
             this.Controls.Add(this.JimakuCheck);
             this.Controls.Add(this.FPScomboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.output_folderBox);
             this.Controls.Add(this.DefaultButton);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Setting";
             this.Text = "設定";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Setting_FormClosing);

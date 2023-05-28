@@ -45,33 +45,37 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 25);
+            this.label1.Location = new System.Drawing.Point(37, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 12);
+            this.label1.Size = new System.Drawing.Size(140, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "キャラクタ プロファイル名";
             // 
             // ProfileNameBox
             // 
-            this.ProfileNameBox.Location = new System.Drawing.Point(30, 40);
+            this.ProfileNameBox.Location = new System.Drawing.Point(40, 40);
+            this.ProfileNameBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ProfileNameBox.Name = "ProfileNameBox";
-            this.ProfileNameBox.Size = new System.Drawing.Size(152, 19);
+            this.ProfileNameBox.Size = new System.Drawing.Size(201, 19);
             this.ProfileNameBox.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 71);
+            this.label2.Location = new System.Drawing.Point(37, 71);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 12);
+            this.label2.Size = new System.Drawing.Size(191, 12);
             this.label2.TabIndex = 2;
             this.label2.Text = "AquesTalkPlayerのプリセット名";
             // 
             // MakeProfileButton
             // 
-            this.MakeProfileButton.Location = new System.Drawing.Point(30, 288);
+            this.MakeProfileButton.Location = new System.Drawing.Point(40, 288);
+            this.MakeProfileButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MakeProfileButton.Name = "MakeProfileButton";
-            this.MakeProfileButton.Size = new System.Drawing.Size(367, 23);
+            this.MakeProfileButton.Size = new System.Drawing.Size(489, 23);
             this.MakeProfileButton.TabIndex = 3;
             this.MakeProfileButton.Text = "適用";
             this.MakeProfileButton.UseVisualStyleBackColor = true;
@@ -79,34 +83,38 @@
             // 
             // AquesPresetNameBox
             // 
-            this.AquesPresetNameBox.Location = new System.Drawing.Point(30, 86);
+            this.AquesPresetNameBox.Location = new System.Drawing.Point(40, 86);
+            this.AquesPresetNameBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AquesPresetNameBox.Name = "AquesPresetNameBox";
-            this.AquesPresetNameBox.Size = new System.Drawing.Size(152, 19);
+            this.AquesPresetNameBox.Size = new System.Drawing.Size(201, 19);
             this.AquesPresetNameBox.TabIndex = 4;
             // 
             // exoLabel
             // 
             this.exoLabel.AutoSize = true;
-            this.exoLabel.Location = new System.Drawing.Point(117, 119);
+            this.exoLabel.Location = new System.Drawing.Point(156, 119);
+            this.exoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.exoLabel.Name = "exoLabel";
-            this.exoLabel.Size = new System.Drawing.Size(23, 12);
+            this.exoLabel.Size = new System.Drawing.Size(28, 12);
             this.exoLabel.TabIndex = 5;
             this.exoLabel.Text = "exo";
             // 
             // exoBox
             // 
-            this.exoBox.Location = new System.Drawing.Point(30, 134);
+            this.exoBox.Location = new System.Drawing.Point(40, 134);
+            this.exoBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.exoBox.Multiline = true;
             this.exoBox.Name = "exoBox";
-            this.exoBox.Size = new System.Drawing.Size(367, 148);
+            this.exoBox.Size = new System.Drawing.Size(488, 148);
             this.exoBox.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(211, 25);
+            this.label4.Location = new System.Drawing.Point(281, 25);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(186, 12);
+            this.label4.Size = new System.Drawing.Size(208, 12);
             this.label4.TabIndex = 7;
             this.label4.Text = "並べ替えの優先順位(大きいほど高い)";
             // 
@@ -124,18 +132,20 @@
             "2",
             "1",
             "0"});
-            this.sortComboBox.Location = new System.Drawing.Point(213, 40);
+            this.sortComboBox.Location = new System.Drawing.Point(284, 40);
+            this.sortComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.sortComboBox.Name = "sortComboBox";
-            this.sortComboBox.Size = new System.Drawing.Size(84, 20);
+            this.sortComboBox.Size = new System.Drawing.Size(111, 20);
             this.sortComboBox.TabIndex = 8;
             this.sortComboBox.Text = "5";
             // 
             // jimakuCheck
             // 
             this.jimakuCheck.AutoSize = true;
-            this.jimakuCheck.Location = new System.Drawing.Point(30, 118);
+            this.jimakuCheck.Location = new System.Drawing.Point(40, 118);
+            this.jimakuCheck.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.jimakuCheck.Name = "jimakuCheck";
-            this.jimakuCheck.Size = new System.Drawing.Size(81, 16);
+            this.jimakuCheck.Size = new System.Drawing.Size(84, 16);
             this.jimakuCheck.TabIndex = 9;
             this.jimakuCheck.Text = "字幕を付与";
             this.jimakuCheck.UseVisualStyleBackColor = true;
@@ -144,24 +154,26 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(211, 71);
+            this.label3.Location = new System.Drawing.Point(281, 71);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 12);
+            this.label3.Size = new System.Drawing.Size(89, 12);
             this.label3.TabIndex = 10;
             this.label3.Text = "音声の長さ補正";
             // 
             // HoseiBox
             // 
-            this.HoseiBox.Location = new System.Drawing.Point(213, 86);
+            this.HoseiBox.Location = new System.Drawing.Point(284, 86);
+            this.HoseiBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.HoseiBox.Name = "HoseiBox";
-            this.HoseiBox.Size = new System.Drawing.Size(84, 19);
+            this.HoseiBox.Size = new System.Drawing.Size(111, 19);
             this.HoseiBox.TabIndex = 11;
             // 
             // AddSerifProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 323);
+            this.ClientSize = new System.Drawing.Size(569, 323);
             this.Controls.Add(this.HoseiBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.jimakuCheck);
@@ -174,7 +186,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ProfileNameBox);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "AddSerifProfile";
             this.Text = "セリフ プロパティの編集";
             this.Load += new System.EventHandler(this.AddSerifProfile_Load);
