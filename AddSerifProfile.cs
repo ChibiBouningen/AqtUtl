@@ -21,7 +21,7 @@ namespace AqT_Utl
             editmode = edit;
             profile = p;
 
-            Size size = new Size(585, 362);
+            Size size = new Size(514, 443);
 
             this.MaximumSize = size;
             this.MinimumSize = size;
