@@ -2,3 +2,6 @@
 - NAudio  
 	https://github.com/naudio/NAudio  
 	MIT license  
+- Fody Costura  
+	https://github.com/Fody/Costura  
+	MIT license  
