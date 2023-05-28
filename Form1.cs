@@ -210,12 +210,13 @@ namespace AqT_Utl
                     {
                         int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
 
-                        if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
                         if (serifProfiles.Count == 0)
                         {
                             MessageBox.Show("キャラクタ プロファイルを作成してください");
                             return;
                         }
+                        if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
+                        
 
                             GeneratePanel.BackColor = Color.Yellow;
                         last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
