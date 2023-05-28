@@ -178,11 +178,7 @@ namespace AqT_Utl
             HatsuonBox.Text = JimakuBox.Text;
         }
 
-        private void 設定ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void GeneratePanel_MouseDown(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Left)
@@ -216,6 +212,31 @@ namespace AqT_Utl
         {
             generated = false;
             GenerateLabel.Text = "クリックで音声を生成";
+        }
+
+        private void aquesTalkPlayerを起動ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            playerManager.StartupPlayer();
+        }
+
+        private void 設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Setting f = new Setting();
+            f.ShowDialog();
+
+            f.Dispose();
+        }
+
+
+        private void aqtUtlを終了ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void aqtUtlについてToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Overview f = new Overview();
+            f.Show();
         }
     }
 }

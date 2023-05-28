@@ -20,7 +20,10 @@ namespace AqT_Utl
         {
             editmode = edit;
             profile = p;
-            
+
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+
             InitializeComponent();
         }
 

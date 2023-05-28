@@ -2,13 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AqT_Utl.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="output_folder" Type="System.String" Scope="Application">
+    <Setting Name="output_folder" Type="System.String" Scope="User">
       <Value Profile="(Default)">output</Value>
     </Setting>
-    <Setting Name="jimakuCopy_startup" Type="System.Boolean" Scope="Application">
+    <Setting Name="jimakuCopy_startup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="fps_AviUtl" Type="System.Int32" Scope="Application">
+    <Setting Name="fps_AviUtl" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">60</Value>
     </Setting>
   </Settings>

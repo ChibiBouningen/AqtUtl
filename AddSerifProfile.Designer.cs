@@ -174,8 +174,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ProfileNameBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddSerifProfile";
-            this.Text = "AddSerifProfile";
+            this.Text = "セリフ プロパティの編集";
             this.Load += new System.EventHandler(this.AddSerifProfile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

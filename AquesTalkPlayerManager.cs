@@ -33,10 +33,15 @@ namespace AqT_Utl
             
         }
 
+        public void StartupPlayer()
+        {
+            Process.Start(PlayerPath);
+        }
+
         public string VoiceGenerate(string hatsuon, string jimaku, SerifProfile p, int fps)   //音声を生成
         {
-            
-            fps = 60;
+
+            fps = Properties.Settings.Default.fps_AviUtl;
             string output_folder = "output";
 
             if (hatsuon == "") hatsuon = "_"; //発音なしの場合発音しない適当な文字に置換
