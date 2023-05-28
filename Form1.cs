@@ -220,7 +220,7 @@ namespace AqT_Utl
 
                             GeneratePanel.BackColor = Color.Yellow;
                         last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
-                        generated = true;
+                        if(last_generated_exo != "err") generated = true;
                         GenerateLabel.Text = "ここをD&&Dしてください";
 
 

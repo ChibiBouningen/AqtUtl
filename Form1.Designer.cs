@@ -83,7 +83,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -97,7 +97,6 @@
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 218;
-            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // ListAnnaiLabel
@@ -105,10 +104,10 @@
             this.ListAnnaiLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ListAnnaiLabel.AutoSize = true;
             this.ListAnnaiLabel.BackColor = System.Drawing.Color.White;
-            this.ListAnnaiLabel.Location = new System.Drawing.Point(28, 222);
+            this.ListAnnaiLabel.Location = new System.Drawing.Point(41, 221);
             this.ListAnnaiLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListAnnaiLabel.Name = "ListAnnaiLabel";
-            this.ListAnnaiLabel.Size = new System.Drawing.Size(160, 24);
+            this.ListAnnaiLabel.Size = new System.Drawing.Size(134, 30);
             this.ListAnnaiLabel.TabIndex = 1;
             this.ListAnnaiLabel.Text = "右クリックで\r\nキャラクタプロファイルを作成";
             this.ListAnnaiLabel.Visible = false;
@@ -119,7 +118,7 @@
             this.ProfileListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProfileListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProfileListBox.FormattingEnabled = true;
-            this.ProfileListBox.ItemHeight = 12;
+            this.ProfileListBox.ItemHeight = 15;
             this.ProfileListBox.Location = new System.Drawing.Point(0, 24);
             this.ProfileListBox.Margin = new System.Windows.Forms.Padding(0);
             this.ProfileListBox.Name = "ProfileListBox";
@@ -133,7 +132,7 @@
             this.ツールToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(218, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -181,7 +180,7 @@
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -191,16 +190,15 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.GeneratePanel);
-            this.splitContainer2.Size = new System.Drawing.Size(577, 450);
-            this.splitContainer2.SplitterDistance = 381;
-            this.splitContainer2.SplitterWidth = 5;
+            this.splitContainer2.Size = new System.Drawing.Size(578, 450);
+            this.splitContainer2.SplitterDistance = 380;
             this.splitContainer2.TabIndex = 0;
             // 
             // TextBoxSprit
             // 
             this.TextBoxSprit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBoxSprit.Location = new System.Drawing.Point(0, 0);
-            this.TextBoxSprit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TextBoxSprit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TextBoxSprit.Name = "TextBoxSprit";
             this.TextBoxSprit.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -211,8 +209,9 @@
             // TextBoxSprit.Panel2
             // 
             this.TextBoxSprit.Panel2.Controls.Add(this.HatsuonSprit);
-            this.TextBoxSprit.Size = new System.Drawing.Size(381, 450);
+            this.TextBoxSprit.Size = new System.Drawing.Size(380, 450);
             this.TextBoxSprit.SplitterDistance = 220;
+            this.TextBoxSprit.SplitterWidth = 5;
             this.TextBoxSprit.TabIndex = 0;
             // 
             // JimakuSprit
@@ -221,7 +220,7 @@
             this.JimakuSprit.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.JimakuSprit.IsSplitterFixed = true;
             this.JimakuSprit.Location = new System.Drawing.Point(0, 0);
-            this.JimakuSprit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.JimakuSprit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.JimakuSprit.Name = "JimakuSprit";
             this.JimakuSprit.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -232,7 +231,7 @@
             // JimakuSprit.Panel2
             // 
             this.JimakuSprit.Panel2.Controls.Add(this.JimakuBox);
-            this.JimakuSprit.Size = new System.Drawing.Size(381, 220);
+            this.JimakuSprit.Size = new System.Drawing.Size(380, 220);
             this.JimakuSprit.SplitterDistance = 28;
             this.JimakuSprit.SplitterWidth = 1;
             this.JimakuSprit.TabIndex = 1;
@@ -240,10 +239,10 @@
             // JimakuLabel
             // 
             this.JimakuLabel.AutoSize = true;
-            this.JimakuLabel.Location = new System.Drawing.Point(4, 9);
+            this.JimakuLabel.Location = new System.Drawing.Point(4, 11);
             this.JimakuLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.JimakuLabel.Name = "JimakuLabel";
-            this.JimakuLabel.Size = new System.Drawing.Size(29, 12);
+            this.JimakuLabel.Size = new System.Drawing.Size(31, 15);
             this.JimakuLabel.TabIndex = 0;
             this.JimakuLabel.Text = "字幕";
             // 
@@ -251,10 +250,10 @@
             // 
             this.JimakuBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.JimakuBox.Location = new System.Drawing.Point(0, 0);
-            this.JimakuBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.JimakuBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.JimakuBox.Multiline = true;
             this.JimakuBox.Name = "JimakuBox";
-            this.JimakuBox.Size = new System.Drawing.Size(381, 191);
+            this.JimakuBox.Size = new System.Drawing.Size(380, 191);
             this.JimakuBox.TabIndex = 0;
             this.JimakuBox.TextChanged += new System.EventHandler(this.JimakuBox_TextChanged);
             // 
@@ -263,7 +262,7 @@
             this.HatsuonSprit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HatsuonSprit.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.HatsuonSprit.Location = new System.Drawing.Point(0, 0);
-            this.HatsuonSprit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.HatsuonSprit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.HatsuonSprit.Name = "HatsuonSprit";
             this.HatsuonSprit.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -275,18 +274,19 @@
             // HatsuonSprit.Panel2
             // 
             this.HatsuonSprit.Panel2.Controls.Add(this.HatsuonBox);
-            this.HatsuonSprit.Size = new System.Drawing.Size(381, 226);
+            this.HatsuonSprit.Size = new System.Drawing.Size(380, 225);
             this.HatsuonSprit.SplitterDistance = 25;
+            this.HatsuonSprit.SplitterWidth = 5;
             this.HatsuonSprit.TabIndex = 0;
             // 
             // JimakuCopy_Check
             // 
             this.JimakuCopy_Check.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.JimakuCopy_Check.AutoSize = true;
-            this.JimakuCopy_Check.Location = new System.Drawing.Point(283, 6);
-            this.JimakuCopy_Check.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.JimakuCopy_Check.Location = new System.Drawing.Point(290, 7);
+            this.JimakuCopy_Check.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.JimakuCopy_Check.Name = "JimakuCopy_Check";
-            this.JimakuCopy_Check.Size = new System.Drawing.Size(95, 16);
+            this.JimakuCopy_Check.Size = new System.Drawing.Size(86, 19);
             this.JimakuCopy_Check.TabIndex = 1;
             this.JimakuCopy_Check.Text = "字幕をコピー";
             this.JimakuCopy_Check.UseVisualStyleBackColor = true;
@@ -295,10 +295,10 @@
             // HatsuonLabel
             // 
             this.HatsuonLabel.AutoSize = true;
-            this.HatsuonLabel.Location = new System.Drawing.Point(4, 6);
+            this.HatsuonLabel.Location = new System.Drawing.Point(4, 8);
             this.HatsuonLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.HatsuonLabel.Name = "HatsuonLabel";
-            this.HatsuonLabel.Size = new System.Drawing.Size(53, 12);
+            this.HatsuonLabel.Size = new System.Drawing.Size(55, 15);
             this.HatsuonLabel.TabIndex = 0;
             this.HatsuonLabel.Text = "発音記号";
             // 
@@ -306,10 +306,10 @@
             // 
             this.HatsuonBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HatsuonBox.Location = new System.Drawing.Point(0, 0);
-            this.HatsuonBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.HatsuonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.HatsuonBox.Multiline = true;
             this.HatsuonBox.Name = "HatsuonBox";
-            this.HatsuonBox.Size = new System.Drawing.Size(381, 197);
+            this.HatsuonBox.Size = new System.Drawing.Size(380, 195);
             this.HatsuonBox.TabIndex = 0;
             // 
             // GeneratePanel
@@ -318,9 +318,9 @@
             this.GeneratePanel.Controls.Add(this.GenerateLabel);
             this.GeneratePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GeneratePanel.Location = new System.Drawing.Point(0, 0);
-            this.GeneratePanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.GeneratePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GeneratePanel.Name = "GeneratePanel";
-            this.GeneratePanel.Size = new System.Drawing.Size(191, 450);
+            this.GeneratePanel.Size = new System.Drawing.Size(194, 450);
             this.GeneratePanel.TabIndex = 0;
             this.GeneratePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GeneratePanel_MouseDown);
             // 
@@ -328,10 +328,10 @@
             // 
             this.GenerateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GenerateLabel.AutoSize = true;
-            this.GenerateLabel.Location = new System.Drawing.Point(37, 224);
+            this.GenerateLabel.Location = new System.Drawing.Point(45, 224);
             this.GenerateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GenerateLabel.Name = "GenerateLabel";
-            this.GenerateLabel.Size = new System.Drawing.Size(117, 12);
+            this.GenerateLabel.Size = new System.Drawing.Size(104, 15);
             this.GenerateLabel.TabIndex = 0;
             this.GenerateLabel.Text = "クリックで音声を生成";
             this.GenerateLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GeneratePanel_MouseDown);
@@ -368,13 +368,13 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "AqtUtl";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

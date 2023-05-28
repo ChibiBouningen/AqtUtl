@@ -101,14 +101,23 @@ namespace AqT_Utl
 
 
             //フレーム数を求める
-            int frameCount;
-            using (var reader = new WaveFileReader(filepath))
+            int frameCount = 0;
+            try
             {
-                double duration = reader.TotalTime.TotalSeconds;
-                frameCount = (int)(duration * fps);
-                Console.WriteLine("wavファイルの長さ: {0:F2}秒", duration);
-                Console.WriteLine("動画編集ソフトに読み込む際に必要なフレーム数: {0}", frameCount);
+                using (var reader = new WaveFileReader(filepath))
+                {
+                    double duration = reader.TotalTime.TotalSeconds;
+                    frameCount = (int)(duration * fps);
+                    Console.WriteLine("wavファイルの長さ: {0:F2}秒", duration);
+                    Console.WriteLine("動画編集ソフトに読み込む際に必要なフレーム数: {0}", frameCount);
+                }
             }
+            catch
+            {
+                MessageBox.Show("音声ファイルの生成に失敗しました。");
+                return "err";
+            }
+            
 
             frameCount += p.Hosei;
 
