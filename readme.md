@@ -8,7 +8,7 @@ AquesTalkPlayerの音声とAviUtlの字幕を同時に生成し、動画作成�
 1. ダウンロードいたAqtUtlとAquesTalkPlayerを解凍し、AqtUtl.exeの入ったフォルダにAquesTalkPlayerのフォルダ「aquestalkplayer」をコピーする  
 1. AqtUtl.exeを起動する  
 1. ツール→設定から、AviUtlのプロジェクトのFPS(フレームレート)を設定する  
-導入に成功していれば、AqtUtlのツール→AquesTalkPlaerを起動 よりAquesTalkPlayerが起動できます。  
+導入に成功していれば、AqtUtlのツール→AquesTalkPlayerを起動 よりAquesTalkPlayerが起動できます。  
 
 ## 使い方  
 キャラクタ プロファイルを指定し字幕に文字を入力、グレーになっている右側をクリックすると発音が確認できます。  
