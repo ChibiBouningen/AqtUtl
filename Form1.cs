@@ -160,6 +160,7 @@ namespace AqT_Utl
             serifProfiles.Sort((a, b) => b.Sort - a.Sort);
             ProfileListBox.DataSource = null;
             ProfileListBox.DataSource = serifProfiles;
+            profileLoader.Save(serifProfiles);
         }
 
         private void JimakuBox_TextChanged(object sender, EventArgs e)
