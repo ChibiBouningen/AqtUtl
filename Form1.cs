@@ -19,6 +19,7 @@ namespace AqT_Utl
         ProfileLoader profileLoader;
 
         bool generated = false;
+        
         bool setAquesTalkPlayer = false;
         string last_generated_exo;
 
@@ -221,8 +222,12 @@ namespace AqT_Utl
 
                             GeneratePanel.BackColor = Color.Yellow;
                         last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
-                        if(last_generated_exo != "err") generated = true;
-                        GenerateLabel.Text = "ここをD&&Dしてください";
+                        if (last_generated_exo != "err")
+                        {
+                            generated = true;
+                            GenerateLabel.Text = "ここをD&&Dしてください";
+                        }
+                        
 
 
                         GeneratePanel.BackColor = Color.Gainsboro;
