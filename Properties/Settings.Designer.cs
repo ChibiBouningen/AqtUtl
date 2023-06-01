@@ -58,5 +58,17 @@ namespace AqT_Utl.Properties {
                 this["fps_AviUtl"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool alignment_GCMZ {
+            get {
+                return ((bool)(this["alignment_GCMZ"]));
+            }
+            set {
+                this["alignment_GCMZ"] = value;
+            }
+        }
     }
 }

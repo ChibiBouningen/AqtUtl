@@ -16,6 +16,7 @@ namespace AqT_Utl
     {
         List<SerifProfile> serifProfiles;
         AquesTalkPlayerManager playerManager;
+        GCMZdropsManager gcmZdropsManager;
         ProfileLoader profileLoader;
 
         bool generated = false;
@@ -28,6 +29,7 @@ namespace AqT_Utl
             InitializeComponent();
             GenerateLabel.Parent = GeneratePanel;
             playerManager = new AquesTalkPlayerManager();
+            gcmZdropsManager = new GCMZdropsManager();
 
             int a;
             a = playerManager.RegistPlayer();
@@ -154,6 +156,7 @@ namespace AqT_Utl
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             profileLoader.Save(serifProfiles);
+            gcmZdropsManager.CloseHandle();
         }
 
         void ProfileListBoxReload()
@@ -200,38 +203,66 @@ namespace AqT_Utl
             {
                 if(setAquesTalkPlayer)
                 {
-                    if (generated)
+                    if(Properties.Settings.Default.alignment_GCMZ)
                     {
-                        string dragFilePath = last_generated_exo;
-                        //File.WriteAllText(dragFilePath, "This is a sample text file.");
-                        var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
-                        dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
-                        GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
-                    }
-                    else
-                    {
-                        int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
-
-                        if (serifProfiles.Count == 0)
+                        if(generated == false)
                         {
-                            MessageBox.Show("キャラクタ プロファイルを作成してください");
-                            return;
-                        }
-                        if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
-                        
+                            int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
+
+                            if (serifProfiles.Count == 0)
+                            {
+                                MessageBox.Show("キャラクタ プロファイルを作成してください");
+                                return;
+                            }
+                            if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
+
 
                             GeneratePanel.BackColor = Color.Yellow;
-                        last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
+                            last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS, false);
+                            GeneratePanel.BackColor = Color.Gainsboro;
+                        }
                         if (last_generated_exo != "err")
                         {
                             generated = true;
-                            GenerateLabel.Text = "ここをD&&Dしてください";
+                            GenerateLabel.Text = "セリフを挿入しました";
                         }
-                        
-
-
-                        GeneratePanel.BackColor = Color.Gainsboro;
                     }
+                    else
+                    {
+                        if (generated)
+                        {
+                            string dragFilePath = last_generated_exo;
+                            //File.WriteAllText(dragFilePath, "This is a sample text file.");
+                            var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
+                            dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
+                            GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
+                        }
+                        else
+                        {
+                            int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
+
+                            if (serifProfiles.Count == 0)
+                            {
+                                MessageBox.Show("キャラクタ プロファイルを作成してください");
+                                return;
+                            }
+                            if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
+
+
+                            GeneratePanel.BackColor = Color.Yellow;
+                            last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS, true);
+                            if (last_generated_exo != "err")
+                            {
+                                generated = true;
+                                GenerateLabel.Text = "ここをD&&Dしてください";
+                            }
+
+
+
+                            GeneratePanel.BackColor = Color.Gainsboro;
+                        }
+                    }
+                    
                 }
                 else
                 {
