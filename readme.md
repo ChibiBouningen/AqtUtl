@@ -1,5 +1,5 @@
 ﻿# AqtUtl  -AquesTalkPlayerとAviUtlを連携で使いやすく！-  
-<img width="50%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/4aa5aa74-50ae-4888-b7ff-84d351e3bdcf"><br>  
+<img width="100%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/4aa5aa74-50ae-4888-b7ff-84d351e3bdcf"><br>  
 AquesTalkPlayerの音声とAviUtlの字幕を同時に生成し、動画作成を支援するツールです。  
 [mikado394m様のYukkuriUtil](https://github.com/mikado394m/yukkuriutil1)に近い機能を持ちます。YukkuriUtilの依存ソフトであるSoftalkがAquesTalkのサポートを終了したためAqtUtlを作成しました。  
 
