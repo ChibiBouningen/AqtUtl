@@ -16,7 +16,7 @@ namespace AqT_Utl
     {
         List<SerifProfile> serifProfiles;
         AquesTalkPlayerManager playerManager;
-        GCMZdropsManager gcmZdropsManager;
+        
         ProfileLoader profileLoader;
 
         bool generated = false;
@@ -29,7 +29,7 @@ namespace AqT_Utl
             InitializeComponent();
             GenerateLabel.Parent = GeneratePanel;
             playerManager = new AquesTalkPlayerManager();
-            gcmZdropsManager = new GCMZdropsManager();
+            
 
             int a;
             a = playerManager.RegistPlayer();
@@ -156,7 +156,7 @@ namespace AqT_Utl
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             profileLoader.Save(serifProfiles);
-            gcmZdropsManager.CloseHandle();
+            
         }
 
         void ProfileListBoxReload()
@@ -205,6 +205,12 @@ namespace AqT_Utl
                 {
                     if(Properties.Settings.Default.alignment_GCMZ)
                     {
+                        GCMZdropsManager gCMZdropsManager = new GCMZdropsManager();
+
+
+                        string a = gCMZdropsManager.linkGCMZ();
+
+                        MessageBox.Show(a);
                         if(generated == false)
                         {
                             int AviutlFPS = Properties.Settings.Default.fps_AviUtl;

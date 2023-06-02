@@ -61,7 +61,7 @@ namespace AqT_Utl.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool alignment_GCMZ {
             get {
                 return ((bool)(this["alignment_GCMZ"]));
