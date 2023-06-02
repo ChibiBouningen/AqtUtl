@@ -270,7 +270,7 @@ namespace AqT_Utl
         private void aqtUtlについてToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Overview f = new Overview();
-            f.Show();
+            f.ShowDialog();
         }
     }
 }

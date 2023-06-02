@@ -83,7 +83,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -180,7 +180,7 @@
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -198,7 +198,7 @@
             // 
             this.TextBoxSprit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBoxSprit.Location = new System.Drawing.Point(0, 0);
-            this.TextBoxSprit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxSprit.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxSprit.Name = "TextBoxSprit";
             this.TextBoxSprit.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -220,7 +220,7 @@
             this.JimakuSprit.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.JimakuSprit.IsSplitterFixed = true;
             this.JimakuSprit.Location = new System.Drawing.Point(0, 0);
-            this.JimakuSprit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.JimakuSprit.Margin = new System.Windows.Forms.Padding(4);
             this.JimakuSprit.Name = "JimakuSprit";
             this.JimakuSprit.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -250,7 +250,7 @@
             // 
             this.JimakuBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.JimakuBox.Location = new System.Drawing.Point(0, 0);
-            this.JimakuBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.JimakuBox.Margin = new System.Windows.Forms.Padding(4);
             this.JimakuBox.Multiline = true;
             this.JimakuBox.Name = "JimakuBox";
             this.JimakuBox.Size = new System.Drawing.Size(380, 191);
@@ -262,7 +262,7 @@
             this.HatsuonSprit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HatsuonSprit.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.HatsuonSprit.Location = new System.Drawing.Point(0, 0);
-            this.HatsuonSprit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HatsuonSprit.Margin = new System.Windows.Forms.Padding(4);
             this.HatsuonSprit.Name = "HatsuonSprit";
             this.HatsuonSprit.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -284,7 +284,7 @@
             this.JimakuCopy_Check.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.JimakuCopy_Check.AutoSize = true;
             this.JimakuCopy_Check.Location = new System.Drawing.Point(290, 7);
-            this.JimakuCopy_Check.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.JimakuCopy_Check.Margin = new System.Windows.Forms.Padding(4);
             this.JimakuCopy_Check.Name = "JimakuCopy_Check";
             this.JimakuCopy_Check.Size = new System.Drawing.Size(86, 19);
             this.JimakuCopy_Check.TabIndex = 1;
@@ -306,7 +306,7 @@
             // 
             this.HatsuonBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HatsuonBox.Location = new System.Drawing.Point(0, 0);
-            this.HatsuonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HatsuonBox.Margin = new System.Windows.Forms.Padding(4);
             this.HatsuonBox.Multiline = true;
             this.HatsuonBox.Name = "HatsuonBox";
             this.HatsuonBox.Size = new System.Drawing.Size(380, 195);
@@ -318,7 +318,7 @@
             this.GeneratePanel.Controls.Add(this.GenerateLabel);
             this.GeneratePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GeneratePanel.Location = new System.Drawing.Point(0, 0);
-            this.GeneratePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GeneratePanel.Margin = new System.Windows.Forms.Padding(4);
             this.GeneratePanel.Name = "GeneratePanel";
             this.GeneratePanel.Size = new System.Drawing.Size(194, 450);
             this.GeneratePanel.TabIndex = 0;
@@ -374,7 +374,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "AqtUtl";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

@@ -1,13 +1,25 @@
 ﻿# AqtUtl  -AquesTalkPlayerとAviUtlを連携で使いやすく！-  
+<img width="50%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/4aa5aa74-50ae-4888-b7ff-84d351e3bdcf"><br>  
 AquesTalkPlayerの音声とAviUtlの字幕を同時に生成し、動画作成を支援するツールです。  
-[mikado394m様のYukkuriUtil](https://github.com/mikado394m/yukkuriutil1)に近い機能を持ちます。YukkuriUtilの依存ソフトであるSoftalkがAquesTalkのサポートを終了したためAqtUtlを作成しました。
+[mikado394m様のYukkuriUtil](https://github.com/mikado394m/yukkuriutil1)に近い機能を持ちます。YukkuriUtilの依存ソフトであるSoftalkがAquesTalkのサポートを終了したためAqtUtlを作成しました。  
+
+## 目次  
+- [事前準備](#事前準備)  
+- [導入方法](#導入方法)  
+  - [字幕の設定方法](#字幕の設定方法)  
+- [動作要件](#動作要件)  
+- [質問・バグ報告](#質問・バグ報告)  
+- [使用させて頂いた物](#使用させて頂いた物)  
+
+## 事前準備  
+もしAviUtlに[patch.aul](https://github.com/ePi5131/patch.aul)を導入していなければ導入してください。  
 
 ## 導入方法  
 1. [Release](https://github.com/ChibiBouningen/AqtUtl/releases)から最新版をダウンロード  
 1. AquesTalkPlayerの最新版をダウンロード  
-1. ダウンロードいたAqtUtlとAquesTalkPlayerを解凍し、AqtUtl.exeの入ったフォルダにAquesTalkPlayerのフォルダ「aquestalkplayer」をコピーする  
+1. ダウンロードいたAqtUtlとAquesTalkPlayerを解凍し、AqtUtl.exeの入ったフォルダにAquesTalkPlayerの入ったフォルダ「aquestalkplayer」をコピーする  
 1. AqtUtl.exeを起動する  
-1. ツール→設定から、AviUtlのプロジェクトのFPS(フレームレート)を設定する  
+1. ツール→設定から、AviUtlのプロジェクトに合わせてFPS(フレームレート)を設定する  
 導入に成功していれば、AqtUtlのツール→AquesTalkPlayerを起動 よりAquesTalkPlayerが起動できます。  
 
 ## 使い方  
@@ -46,7 +58,7 @@ AquesTalkPlayerの音声とAviUtlの字幕を同時に生成し、動画作成�
 - OS Windows10 64bit 1909以降  
 - AviUtl 1.10  
 - 拡張編集プラグイン 0.92  
-- [Patch.aul](https://github.com/ePi5131/patch.aul) r42以降  
+- [patch.aul](https://github.com/ePi5131/patch.aul) r42以降  
 - AquesTalkPlayer Ver.0.9.3.1以降  
 
 ## 質問・バグ報告  
