@@ -48,14 +48,14 @@
             this.label1.Location = new System.Drawing.Point(32, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 15);
+            this.label1.Size = new System.Drawing.Size(113, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "キャラクタ プロファイル名";
+            this.label1.Text = "キャラクタプロファイル名";
             // 
             // ProfileNameBox
             // 
             this.ProfileNameBox.Location = new System.Drawing.Point(35, 50);
-            this.ProfileNameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProfileNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.ProfileNameBox.Name = "ProfileNameBox";
             this.ProfileNameBox.Size = new System.Drawing.Size(176, 23);
             this.ProfileNameBox.TabIndex = 1;
@@ -73,7 +73,7 @@
             // MakeProfileButton
             // 
             this.MakeProfileButton.Location = new System.Drawing.Point(35, 360);
-            this.MakeProfileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MakeProfileButton.Margin = new System.Windows.Forms.Padding(4);
             this.MakeProfileButton.Name = "MakeProfileButton";
             this.MakeProfileButton.Size = new System.Drawing.Size(428, 29);
             this.MakeProfileButton.TabIndex = 7;
@@ -84,7 +84,7 @@
             // AquesPresetNameBox
             // 
             this.AquesPresetNameBox.Location = new System.Drawing.Point(35, 108);
-            this.AquesPresetNameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AquesPresetNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.AquesPresetNameBox.Name = "AquesPresetNameBox";
             this.AquesPresetNameBox.Size = new System.Drawing.Size(176, 23);
             this.AquesPresetNameBox.TabIndex = 2;
@@ -102,7 +102,7 @@
             // exoBox
             // 
             this.exoBox.Location = new System.Drawing.Point(35, 168);
-            this.exoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exoBox.Margin = new System.Windows.Forms.Padding(4);
             this.exoBox.Multiline = true;
             this.exoBox.Name = "exoBox";
             this.exoBox.Size = new System.Drawing.Size(428, 184);
@@ -133,7 +133,7 @@
             "1",
             "0"});
             this.sortComboBox.Location = new System.Drawing.Point(248, 50);
-            this.sortComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sortComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.sortComboBox.Name = "sortComboBox";
             this.sortComboBox.Size = new System.Drawing.Size(98, 23);
             this.sortComboBox.TabIndex = 3;
@@ -143,7 +143,7 @@
             // 
             this.jimakuCheck.AutoSize = true;
             this.jimakuCheck.Location = new System.Drawing.Point(35, 148);
-            this.jimakuCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.jimakuCheck.Margin = new System.Windows.Forms.Padding(4);
             this.jimakuCheck.Name = "jimakuCheck";
             this.jimakuCheck.Size = new System.Drawing.Size(83, 19);
             this.jimakuCheck.TabIndex = 5;
@@ -164,7 +164,7 @@
             // HoseiBox
             // 
             this.HoseiBox.Location = new System.Drawing.Point(248, 108);
-            this.HoseiBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HoseiBox.Margin = new System.Windows.Forms.Padding(4);
             this.HoseiBox.Name = "HoseiBox";
             this.HoseiBox.Size = new System.Drawing.Size(98, 23);
             this.HoseiBox.TabIndex = 4;
@@ -188,9 +188,9 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddSerifProfile";
-            this.Text = "セリフ プロファイルの編集";
+            this.Text = "キャラクタプロファイルの編集";
             this.Load += new System.EventHandler(this.AddSerifProfile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
