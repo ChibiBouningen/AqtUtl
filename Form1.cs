@@ -142,7 +142,7 @@ namespace AqT_Utl
             string 項目名 = ProfileListBox.Text;
             int selectId = int.Parse(ProfileListBox.SelectedValue.ToString());
             //MessageBox.Show(selectId.ToString());
-            DialogResult result = MessageBox.Show("キャラクタ プロファイル「" + 項目名 + "」を削除しようとしています。\n削除しますか？","キャラクタ プロファイルの削除", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("キャラクタプロファイル「" + 項目名 + "」を削除しようとしています。\n削除しますか？","キャラクタプロファイルの削除", MessageBoxButtons.YesNo);
             if(result == DialogResult.Yes)
             {
                 serifProfiles.RemoveAll(profile => profile.Id == selectId);
@@ -217,11 +217,16 @@ namespace AqT_Utl
 
                             if (serifProfiles.Count == 0)
                             {
-                                MessageBox.Show("キャラクタ プロファイルを作成してください");
+                                MessageBox.Show("キャラクタプロファイルを作成してください");
                                 return;
                             }
                             if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
 
+                            MessageBox.Show("キャラクタプロファイルを作成してください");
+                            return;
+                        }
+                        if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
+                        
 
                             GeneratePanel.BackColor = Color.Yellow;
                             last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS, false);
@@ -249,7 +254,7 @@ namespace AqT_Utl
 
                             if (serifProfiles.Count == 0)
                             {
-                                MessageBox.Show("キャラクタ プロファイルを作成してください");
+                                MessageBox.Show("キャラクタプロファイルを作成してください");
                                 return;
                             }
                             if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
@@ -287,6 +292,7 @@ namespace AqT_Utl
 
         private void aquesTalkPlayerを起動ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            resetGenerated();
             playerManager.StartupPlayer();
         }
 
@@ -307,7 +313,12 @@ namespace AqT_Utl
         private void aqtUtlについてToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Overview f = new Overview();
-            f.Show();
+            f.ShowDialog();
+        }
+
+        private void HatsuonBox_TextChanged(object sender, EventArgs e)
+        {
+            resetGenerated();
         }
     }
 }

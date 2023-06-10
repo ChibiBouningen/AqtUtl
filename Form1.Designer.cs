@@ -311,6 +311,7 @@
             this.HatsuonBox.Name = "HatsuonBox";
             this.HatsuonBox.Size = new System.Drawing.Size(380, 195);
             this.HatsuonBox.TabIndex = 0;
+            this.HatsuonBox.TextChanged += new System.EventHandler(this.HatsuonBox_TextChanged);
             // 
             // GeneratePanel
             // 
