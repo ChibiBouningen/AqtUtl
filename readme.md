@@ -21,6 +21,7 @@
 
 ## インストール  
 1. [Release](https://github.com/ChibiBouningen/AqtUtl/releases)からAqtUtlの最新版をダウンロード  
+<b>セキュリティソフトにより、ダウンロードしたAqtUtlのファイルが削除されてしまう場合があります。例外設定を行った後に再度ダウンロードしてください。</b>
 1. AquesTalkPlayerの最新版を[公式サイト](https://www.a-quest.com/products/aquestalkplayer.html)からダウンロード  
 1. ダウンロードいたAqtUtlとAquesTalkPlayerを解凍し、AqtUtl.exeの入ったフォルダにAquesTalkPlayerの入ったフォルダ「aquestalkplayer」をコピーする  
 1. AqtUtl.exeを起動する  
