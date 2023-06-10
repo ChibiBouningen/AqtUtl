@@ -20,11 +20,11 @@
 もしAviUtlにpatch.aul(https://github.com/ePi5131/patch.aul)を導入していなければ導入してください。  
 
 ## インストール  
-1. [Release](https://github.com/ChibiBouningen/AqtUtl/releases)から最新版をダウンロード  
-1. AquesTalkPlayerの最新版をダウンロード  
+1. [Release](https://github.com/ChibiBouningen/AqtUtl/releases)からAqtUtlの最新版をダウンロード  
+1. AquesTalkPlayerの最新版を[公式サイト](https://www.a-quest.com/products/aquestalkplayer.html)からダウンロード  
 1. ダウンロードいたAqtUtlとAquesTalkPlayerを解凍し、AqtUtl.exeの入ったフォルダにAquesTalkPlayerの入ったフォルダ「aquestalkplayer」をコピーする  
 1. AqtUtl.exeを起動する  
-1. ツール→設定から、AviUtlのプロジェクトに合わせてFPS(フレームレート)を設定する  
+1. 「ツール」→「設定」から、AviUtlのプロジェクトに合わせてFPS(フレームレート)を設定する  
 導入に成功していれば、AqtUtlのツール→AquesTalkPlayerを起動 よりAquesTalkPlayerが起動できます。  
 <br>
 
@@ -35,7 +35,8 @@ AqtUtl.exeを新しいバージョンに置き換えてください。
 キャラクタプロファイルを指定し、"字幕"の入力欄に文字を入力、「クリックで音声を生成」という部分をクリックすると音声の再生・生成が始まります。  
 すぐに「ここをD&Dしてください」という表示に切り替わるので、グレーになっている部分をそのままAviUtlの拡張編集にドラッグアンドドロップすると音声(及び設定していれば字幕)が現れます。  
 字幕と読みを別々にしたい場合、「字幕をコピー」にチェックを入れると"発音記号"の入力欄に発音を別で入力することができます。  
-<br>  
+
+AqtUtlでは、AquesTalkPlayerを用いて音声を生成しています。そのため、辞書登録や音声プリセットの作成はAquesTalkPlayer側にて行う必要があります。  
 
 ## キャラクタプロファイルの設定  
 事前にAquesTalkPlayerにてオンラインマニュアル(https://www.a-quest.com/products/aquestalkplayer_man.html)  
