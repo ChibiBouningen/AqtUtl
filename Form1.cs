@@ -273,5 +273,10 @@ namespace AqT_Utl
             Overview f = new Overview();
             f.ShowDialog();
         }
+
+        private void HatsuonBox_TextChanged(object sender, EventArgs e)
+        {
+            resetGenerated();
+        }
     }
 }
