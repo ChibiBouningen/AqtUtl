@@ -168,7 +168,9 @@ namespace AqT_Utl
         {
             if(JimakuCopy_Check.Checked)
             {
+                
                 HatsuonBox.Text = JimakuBox.Text;
+
             }
             
         }

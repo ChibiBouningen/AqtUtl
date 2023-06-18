@@ -308,6 +308,7 @@
     <Compile Include="Setting.Designer.cs">
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextConvert.cs" />
     <EmbeddedResource Include="AddSerifProfile.resx">
       <DependentUpon>AddSerifProfile.cs</DependentUpon>
     </EmbeddedResource>
