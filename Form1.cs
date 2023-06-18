@@ -169,10 +169,14 @@ namespace AqT_Utl
             if(JimakuCopy_Check.Checked)
             {
                 HatsuonBox.Text = JimakuBox.Text;
-                resetGenerated();
             }
             
         }
+        private void HatsuonBox_TextChanged(object sender, EventArgs e)
+        {
+            resetGenerated();
+        }
+
 
         private void JimakuCopy_Check_Click(object sender, EventArgs e)
         {
@@ -274,9 +278,6 @@ namespace AqT_Utl
             f.ShowDialog();
         }
 
-        private void HatsuonBox_TextChanged(object sender, EventArgs e)
-        {
-            resetGenerated();
-        }
+        
     }
 }
