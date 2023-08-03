@@ -115,6 +115,7 @@
             // 
             // ProfileListBox
             // 
+            this.ProfileListBox.AllowDrop = true;
             this.ProfileListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProfileListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProfileListBox.FormattingEnabled = true;
@@ -125,6 +126,8 @@
             this.ProfileListBox.Size = new System.Drawing.Size(218, 426);
             this.ProfileListBox.TabIndex = 0;
             this.ProfileListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseDown);
+            this.ProfileListBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseMove);
+            this.ProfileListBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseUp);
             // 
             // menuStrip1
             // 

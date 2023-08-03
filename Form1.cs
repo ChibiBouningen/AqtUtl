@@ -19,8 +19,9 @@ namespace AqT_Utl
         ProfileLoader profileLoader;
 
         bool generated = false;
-        
         bool setAquesTalkPlayer = false;
+        int targetProfileIndex = -1;
+
         string last_generated_exo;
 
         public Form1()
@@ -77,8 +78,33 @@ namespace AqT_Utl
                     ProfileListContextMenu.Show(ProfileListBox, e.Location);
                 }
             }
+
+            targetProfileIndex = ProfileListBox.SelectedIndex;
             resetGenerated();
         }
+
+        private void ProfileListBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) { return; }
+
+            Point dragCurrentPoint = new Point(e.X, e.Y);
+            int irekaesakiIndex = ProfileListBox.IndexFromPoint(dragCurrentPoint);
+
+            if (targetProfileIndex >= 0 && targetProfileIndex < ProfileListBox.Items.Count && ProfileListBox.SelectedIndex != targetProfileIndex)
+            {
+                SerifProfile kari = serifProfiles[targetProfileIndex];
+                serifProfiles[targetProfileIndex] = serifProfiles[irekaesakiIndex];
+                serifProfiles[irekaesakiIndex] = kari;
+                targetProfileIndex = ProfileListBox.IndexFromPoint(dragCurrentPoint);
+            }
+            
+        }
+        private void ProfileListBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            ProfileListBoxReload();
+        }
+
+
 
         private void プロファイルを追加ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -158,7 +184,13 @@ namespace AqT_Utl
 
         void ProfileListBoxReload()
         {
-            serifProfiles.Sort((a, b) => b.Sort - a.Sort);
+            //serifProfiles.Sort((a, b) => b.Sort - a.Sort);
+            int i = 0;
+            while(i < serifProfiles.Count)
+            {
+                serifProfiles[i].Sort = i;
+                i++;
+            }
             ProfileListBox.DataSource = null;
             ProfileListBox.DataSource = serifProfiles;
             profileLoader.Save(serifProfiles);
@@ -278,5 +310,7 @@ namespace AqT_Utl
         {
             resetGenerated();
         }
+
+        
     }
 }
