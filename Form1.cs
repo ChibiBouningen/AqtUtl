@@ -85,7 +85,7 @@ namespace AqT_Utl
 
         private void ProfileListBox_MouseMove(object sender, MouseEventArgs e)
         {
-            /*if (e.Button != MouseButtons.Left) { return; }
+            if (e.Button != MouseButtons.Left) { return; }
 
             
 
@@ -99,7 +99,7 @@ namespace AqT_Utl
                 serifProfiles[irekaesakiIndex] = kari;
                 targetProfileIndex = ProfileListBox.IndexFromPoint(dragCurrentPoint);
                 ProfileListBoxReload();
-            }*/
+            }
             
         }
         private void ProfileListBox_MouseUp(object sender, MouseEventArgs e)

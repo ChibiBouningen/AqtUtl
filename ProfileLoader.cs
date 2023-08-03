@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using System.IO;
+using System.Windows.Forms;
 
 namespace AqT_Utl
 {
@@ -39,6 +40,10 @@ namespace AqT_Utl
             }
             
             serifProfiles = JsonSerializer.Deserialize<List<SerifProfile>>(json);
+            if (serifProfiles.Count == 0)
+            {
+                //不具合対策のため今後ここにプロファイルが一個もない場合に仮プロファイルを生成するようにする
+            }
         }
 
         public void Save(List<SerifProfile> serifProfiles)
