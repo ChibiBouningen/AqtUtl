@@ -115,7 +115,6 @@
             // 
             // ProfileListBox
             // 
-            this.ProfileListBox.AllowDrop = true;
             this.ProfileListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProfileListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProfileListBox.FormattingEnabled = true;

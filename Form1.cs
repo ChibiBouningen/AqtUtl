@@ -85,7 +85,9 @@ namespace AqT_Utl
 
         private void ProfileListBox_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Left) { return; }
+            /*if (e.Button != MouseButtons.Left) { return; }
+
+            
 
             Point dragCurrentPoint = new Point(e.X, e.Y);
             int irekaesakiIndex = ProfileListBox.IndexFromPoint(dragCurrentPoint);
@@ -96,14 +98,29 @@ namespace AqT_Utl
                 serifProfiles[targetProfileIndex] = serifProfiles[irekaesakiIndex];
                 serifProfiles[irekaesakiIndex] = kari;
                 targetProfileIndex = ProfileListBox.IndexFromPoint(dragCurrentPoint);
-            }
+                ProfileListBoxReload();
+            }*/
             
         }
         private void ProfileListBox_MouseUp(object sender, MouseEventArgs e)
         {
-            ProfileListBoxReload();
+            
+            
         }
 
+        void ProfileListBoxReload()
+        {
+            //serifProfiles.Sort((a, b) => b.Sort - a.Sort);
+            int i = 0;
+            while (i < serifProfiles.Count)
+            {
+                serifProfiles[i].Sort = i;
+                i++;
+            }
+            ProfileListBox.DataSource = null;
+            ProfileListBox.DataSource = serifProfiles;
+            profileLoader.Save(serifProfiles);
+        }
 
 
         private void プロファイルを追加ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -182,19 +199,7 @@ namespace AqT_Utl
             profileLoader.Save(serifProfiles);
         }
 
-        void ProfileListBoxReload()
-        {
-            //serifProfiles.Sort((a, b) => b.Sort - a.Sort);
-            int i = 0;
-            while(i < serifProfiles.Count)
-            {
-                serifProfiles[i].Sort = i;
-                i++;
-            }
-            ProfileListBox.DataSource = null;
-            ProfileListBox.DataSource = serifProfiles;
-            profileLoader.Save(serifProfiles);
-        }
+        
 
         private void JimakuBox_TextChanged(object sender, EventArgs e)
         {
