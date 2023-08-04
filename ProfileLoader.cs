@@ -42,7 +42,16 @@ namespace AqT_Utl
             serifProfiles = JsonSerializer.Deserialize<List<SerifProfile>>(json);
             if (serifProfiles.Count == 0)
             {
-                //不具合対策のため今後ここにプロファイルが一個もない場合に仮プロファイルを生成するようにする
+                //不具合対策のため、プロファイルが一個もない場合に仮プロファイルを生成するようにする
+                SerifProfile p = new SerifProfile();
+                p.Id = 1;
+                p.ProfileName = "ゆっくりれいむ";
+                p.UsePreset = "れいむ";
+                p.Exo = "";
+                p.Sort = 0;
+                p.Hosei=0;
+                p.Jimaku = false;
+                serifProfiles.Add(p);
             }
         }
 
