@@ -126,7 +126,6 @@
             this.ProfileListBox.TabIndex = 0;
             this.ProfileListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseDown);
             this.ProfileListBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseMove);
-            this.ProfileListBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseUp);
             // 
             // menuStrip1
             // 

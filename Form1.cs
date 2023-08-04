@@ -41,7 +41,6 @@ namespace AqT_Utl
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //ProfileListBox.DataSource = serifProfiles;
             ProfileListBoxReload();
             ProfileListBox.DisplayMember = "ProfileName";
             ProfileListBox.ValueMember = "Id";
@@ -54,7 +53,6 @@ namespace AqT_Utl
             {
                 ListAnnaiLabel.Visible = true;
             }
-            
 
         }
 
@@ -87,8 +85,6 @@ namespace AqT_Utl
         {
             if (e.Button != MouseButtons.Left) { return; }
 
-            
-
             Point dragCurrentPoint = new Point(e.X, e.Y);
             int irekaesakiIndex = ProfileListBox.IndexFromPoint(dragCurrentPoint);
 
@@ -102,17 +98,12 @@ namespace AqT_Utl
             }
             
         }
-        private void ProfileListBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            
-            
-        }
 
         void ProfileListBoxReload()
         {
             //serifProfiles.Sort((a, b) => b.Sort - a.Sort);
             int i = 0;
-            while (i < serifProfiles.Count)
+            while (i < serifProfiles.Count) //項目のSortをListの並べ順に書き換える
             {
                 serifProfiles[i].Sort = i;
                 i++;
@@ -167,8 +158,6 @@ namespace AqT_Utl
                 p.Exo = f.exoBox.Text;
                 p.Hosei = int.Parse(f.HoseiBox.Text);
 
-                /*serifProfiles.RemoveAll(profile => profile.Id == selectId);
-                serifProfiles.Add(p);*/
                 serifProfiles[selectIndex] = p;
 
             }
@@ -179,10 +168,8 @@ namespace AqT_Utl
 
         private void プロファイルを削除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(ProfileListBox.SelectedValue.ToString());
             string 項目名 = ProfileListBox.Text;
             int selectId = int.Parse(ProfileListBox.SelectedValue.ToString());
-            //MessageBox.Show(selectId.ToString());
             DialogResult result = MessageBox.Show("キャラクタプロファイル「" + 項目名 + "」を削除しようとしています。\n削除しますか？","キャラクタプロファイルの削除", MessageBoxButtons.YesNo);
             if(result == DialogResult.Yes)
             {
@@ -206,15 +193,17 @@ namespace AqT_Utl
             if(JimakuCopy_Check.Checked)
             {
                 HatsuonBox.Text = JimakuBox.Text;
-                resetGenerated();
             }
-            
+        }
+
+        private void HatsuonBox_TextChanged(object sender, EventArgs e)
+        {
+            resetGenerated();
         }
 
         private void JimakuCopy_Check_Click(object sender, EventArgs e)
         {
             JimakuCopyCheck_reflect();
-            resetGenerated();
         }
 
         void JimakuCopyCheck_reflect()
@@ -240,7 +229,6 @@ namespace AqT_Utl
                     if (generated)
                     {
                         string dragFilePath = last_generated_exo;
-                        //File.WriteAllText(dragFilePath, "This is a sample text file.");
                         var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
                         dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
                         GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
@@ -265,8 +253,6 @@ namespace AqT_Utl
                             GenerateLabel.Text = "ここをD&&Dしてください";
                         }
                         
-
-
                         GeneratePanel.BackColor = Color.Gainsboro;
                     }
                 }
@@ -274,8 +260,6 @@ namespace AqT_Utl
                 {
                     MessageBox.Show("aquestalkplayer/AquesTalkPlayer.exeを配置し\nアプリケーションを再起動してください");
                 }
-                
-                
             }
         }
 
@@ -295,7 +279,6 @@ namespace AqT_Utl
         {
             Setting f = new Setting();
             f.ShowDialog();
-
             f.Dispose();
         }
 
@@ -310,12 +293,6 @@ namespace AqT_Utl
             Overview f = new Overview();
             f.ShowDialog();
         }
-
-        private void HatsuonBox_TextChanged(object sender, EventArgs e)
-        {
-            resetGenerated();
-        }
-
         
     }
 }
