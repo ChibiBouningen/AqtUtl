@@ -46,7 +46,7 @@ namespace AqT_Utl
             
         }
 
-        public string VoiceGenerate(string hatsuon, string jimaku, SerifProfile p, int fps)   //音声を生成
+        public string VoiceGenerate(string hatsuon, string jimaku, SerifProfile p, int fps, bool interim)   //音声を生成
         {
 
             fps = Properties.Settings.Default.fps_AviUtl;
@@ -117,7 +117,14 @@ namespace AqT_Utl
                 MessageBox.Show("音声ファイルの生成に失敗しました。");
                 return "err";
             }
-            
+
+
+            if (interim)
+            {
+                string wavfilepath = output_folder + "\\" + filename + ".wav";
+                File.Delete(wavfilepath);
+                return "delete_success";
+            }
 
             frameCount += p.Hosei;
 
@@ -126,5 +133,6 @@ namespace AqT_Utl
 
             return output_folder + "\\" + filename + ".exo";
         }
+
     }
 }

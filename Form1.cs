@@ -246,7 +246,7 @@ namespace AqT_Utl
                         
 
                             GeneratePanel.BackColor = Color.Yellow;
-                        last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS);
+                        last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS, false);
                         if (last_generated_exo != "err")
                         {
                             generated = true;
@@ -260,6 +260,23 @@ namespace AqT_Utl
                 {
                     MessageBox.Show("aquestalkplayer/AquesTalkPlayer.exeを配置し\nアプリケーションを再起動してください");
                 }
+            }
+        }
+
+        private void PlayPanel_Click(object sender, EventArgs e)
+        {
+            if(setAquesTalkPlayer)
+            {
+                if (serifProfiles.Count == 0)
+                {
+                    MessageBox.Show("キャラクタプロファイルを作成してください");
+                    return;
+                }
+                if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
+                PlayPanel.BackColor = Color.Yellow;
+                //playerManager.VoiceTrialPlay(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex]);
+                playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], 30, true);
+                PlayPanel.BackColor = Color.Gainsboro;
             }
         }
 
@@ -293,6 +310,7 @@ namespace AqT_Utl
             Overview f = new Overview();
             f.ShowDialog();
         }
+
         
     }
 }

@@ -48,12 +48,15 @@
             this.JimakuCopy_Check = new System.Windows.Forms.CheckBox();
             this.HatsuonLabel = new System.Windows.Forms.Label();
             this.HatsuonBox = new System.Windows.Forms.TextBox();
+            this.RightSpritContainer = new System.Windows.Forms.SplitContainer();
             this.GeneratePanel = new System.Windows.Forms.Panel();
             this.GenerateLabel = new System.Windows.Forms.Label();
             this.ProfileListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.プロファイルを追加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを削除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PlayPanel = new System.Windows.Forms.Panel();
+            this.PlayLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -75,8 +78,13 @@
             this.HatsuonSprit.Panel1.SuspendLayout();
             this.HatsuonSprit.Panel2.SuspendLayout();
             this.HatsuonSprit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RightSpritContainer)).BeginInit();
+            this.RightSpritContainer.Panel1.SuspendLayout();
+            this.RightSpritContainer.Panel2.SuspendLayout();
+            this.RightSpritContainer.SuspendLayout();
             this.GeneratePanel.SuspendLayout();
             this.ProfileListContextMenu.SuspendLayout();
+            this.PlayPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -190,7 +198,7 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.GeneratePanel);
+            this.splitContainer2.Panel2.Controls.Add(this.RightSpritContainer);
             this.splitContainer2.Size = new System.Drawing.Size(578, 450);
             this.splitContainer2.SplitterDistance = 380;
             this.splitContainer2.TabIndex = 0;
@@ -314,6 +322,26 @@
             this.HatsuonBox.TabIndex = 0;
             this.HatsuonBox.TextChanged += new System.EventHandler(this.HatsuonBox_TextChanged);
             // 
+            // RightSpritContainer
+            // 
+            this.RightSpritContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RightSpritContainer.Location = new System.Drawing.Point(0, 0);
+            this.RightSpritContainer.Name = "RightSpritContainer";
+            this.RightSpritContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // RightSpritContainer.Panel1
+            // 
+            this.RightSpritContainer.Panel1.Controls.Add(this.PlayPanel);
+            this.RightSpritContainer.Panel1MinSize = 0;
+            // 
+            // RightSpritContainer.Panel2
+            // 
+            this.RightSpritContainer.Panel2.Controls.Add(this.GeneratePanel);
+            this.RightSpritContainer.Panel2MinSize = 0;
+            this.RightSpritContainer.Size = new System.Drawing.Size(194, 450);
+            this.RightSpritContainer.SplitterDistance = 64;
+            this.RightSpritContainer.TabIndex = 0;
+            // 
             // GeneratePanel
             // 
             this.GeneratePanel.BackColor = System.Drawing.Color.Gainsboro;
@@ -322,7 +350,7 @@
             this.GeneratePanel.Location = new System.Drawing.Point(0, 0);
             this.GeneratePanel.Margin = new System.Windows.Forms.Padding(4);
             this.GeneratePanel.Name = "GeneratePanel";
-            this.GeneratePanel.Size = new System.Drawing.Size(194, 450);
+            this.GeneratePanel.Size = new System.Drawing.Size(194, 382);
             this.GeneratePanel.TabIndex = 0;
             this.GeneratePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GeneratePanel_MouseDown);
             // 
@@ -330,7 +358,8 @@
             // 
             this.GenerateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GenerateLabel.AutoSize = true;
-            this.GenerateLabel.Location = new System.Drawing.Point(45, 224);
+            this.GenerateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.GenerateLabel.Location = new System.Drawing.Point(45, 190);
             this.GenerateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GenerateLabel.Name = "GenerateLabel";
             this.GenerateLabel.Size = new System.Drawing.Size(104, 15);
@@ -367,6 +396,29 @@
             this.プロファイルを削除ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.プロファイルを削除ToolStripMenuItem.Text = "プロファイルを削除";
             this.プロファイルを削除ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを削除ToolStripMenuItem_Click);
+            // 
+            // PlayPanel
+            // 
+            this.PlayPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.PlayPanel.Controls.Add(this.PlayLabel);
+            this.PlayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayPanel.Location = new System.Drawing.Point(0, 0);
+            this.PlayPanel.Name = "PlayPanel";
+            this.PlayPanel.Size = new System.Drawing.Size(194, 64);
+            this.PlayPanel.TabIndex = 0;
+            this.PlayPanel.Click += new System.EventHandler(this.PlayPanel_Click);
+            // 
+            // PlayLabel
+            // 
+            this.PlayLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PlayLabel.AutoSize = true;
+            this.PlayLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PlayLabel.Location = new System.Drawing.Point(59, 29);
+            this.PlayLabel.Name = "PlayLabel";
+            this.PlayLabel.Size = new System.Drawing.Size(71, 15);
+            this.PlayLabel.TabIndex = 0;
+            this.PlayLabel.Text = "クリックで再生";
+            this.PlayLabel.Click += new System.EventHandler(this.PlayPanel_Click);
             // 
             // Form1
             // 
@@ -408,9 +460,15 @@
             this.HatsuonSprit.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HatsuonSprit)).EndInit();
             this.HatsuonSprit.ResumeLayout(false);
+            this.RightSpritContainer.Panel1.ResumeLayout(false);
+            this.RightSpritContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RightSpritContainer)).EndInit();
+            this.RightSpritContainer.ResumeLayout(false);
             this.GeneratePanel.ResumeLayout(false);
             this.GeneratePanel.PerformLayout();
             this.ProfileListContextMenu.ResumeLayout(false);
+            this.PlayPanel.ResumeLayout(false);
+            this.PlayPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -441,6 +499,9 @@
         private System.Windows.Forms.ToolStripMenuItem aqtUtlを終了ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aqtUtlについてToolStripMenuItem;
         private System.Windows.Forms.Label ListAnnaiLabel;
+        private System.Windows.Forms.SplitContainer RightSpritContainer;
+        private System.Windows.Forms.Panel PlayPanel;
+        private System.Windows.Forms.Label PlayLabel;
     }
 }
 
