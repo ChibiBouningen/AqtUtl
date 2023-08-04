@@ -24,6 +24,7 @@ namespace AqT_Utl
             output_folderBox.Text = Properties.Settings.Default.output_folder;
             FPScomboBox.Text = Properties.Settings.Default.fps_AviUtl.ToString();
             JimakuCheck.Checked = Properties.Settings.Default.jimakuCopy_startup;
+            GCMZcheck.Checked = Properties.Settings.Default.useGCMZ;
         }
 
         private void Setting_FormClosing(object sender, FormClosingEventArgs e)
@@ -40,6 +41,7 @@ namespace AqT_Utl
                 e.Cancel = true;
             }
             Properties.Settings.Default.jimakuCopy_startup = JimakuCheck.Checked;
+            Properties.Settings.Default.useGCMZ = GCMZcheck.Checked;
         }
 
         private void DefaultButton_Click(object sender, EventArgs e)

@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.FPScomboBox = new System.Windows.Forms.ComboBox();
             this.JimakuCheck = new System.Windows.Forms.CheckBox();
+            this.GCMZcheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +51,7 @@
             // DefaultButton
             // 
             this.DefaultButton.Location = new System.Drawing.Point(242, 15);
-            this.DefaultButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DefaultButton.Margin = new System.Windows.Forms.Padding(4);
             this.DefaultButton.Name = "DefaultButton";
             this.DefaultButton.Size = new System.Drawing.Size(109, 29);
             this.DefaultButton.TabIndex = 1;
@@ -61,7 +62,7 @@
             // output_folderBox
             // 
             this.output_folderBox.Location = new System.Drawing.Point(17, 62);
-            this.output_folderBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.output_folderBox.Margin = new System.Windows.Forms.Padding(4);
             this.output_folderBox.Name = "output_folderBox";
             this.output_folderBox.Size = new System.Drawing.Size(336, 23);
             this.output_folderBox.TabIndex = 2;
@@ -84,7 +85,7 @@
             "30",
             "24"});
             this.FPScomboBox.Location = new System.Drawing.Point(17, 122);
-            this.FPScomboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FPScomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.FPScomboBox.Name = "FPScomboBox";
             this.FPScomboBox.Size = new System.Drawing.Size(119, 23);
             this.FPScomboBox.TabIndex = 5;
@@ -93,18 +94,29 @@
             // 
             this.JimakuCheck.AutoSize = true;
             this.JimakuCheck.Location = new System.Drawing.Point(150, 124);
-            this.JimakuCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.JimakuCheck.Margin = new System.Windows.Forms.Padding(4);
             this.JimakuCheck.Name = "JimakuCheck";
             this.JimakuCheck.Size = new System.Drawing.Size(174, 19);
             this.JimakuCheck.TabIndex = 7;
             this.JimakuCheck.Text = "起動時「字幕をコピー」にチェック";
             this.JimakuCheck.UseVisualStyleBackColor = true;
             // 
+            // GCMZcheck
+            // 
+            this.GCMZcheck.AutoSize = true;
+            this.GCMZcheck.Location = new System.Drawing.Point(17, 163);
+            this.GCMZcheck.Name = "GCMZcheck";
+            this.GCMZcheck.Size = new System.Drawing.Size(145, 19);
+            this.GCMZcheck.TabIndex = 8;
+            this.GCMZcheck.Text = "ごちゃまぜドロップスと連携";
+            this.GCMZcheck.UseVisualStyleBackColor = true;
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 181);
+            this.ClientSize = new System.Drawing.Size(365, 194);
+            this.Controls.Add(this.GCMZcheck);
             this.Controls.Add(this.JimakuCheck);
             this.Controls.Add(this.FPScomboBox);
             this.Controls.Add(this.label2);
@@ -113,7 +125,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Setting";
             this.Text = "設定";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Setting_FormClosing);
@@ -131,5 +143,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox FPScomboBox;
         private System.Windows.Forms.CheckBox JimakuCheck;
+        private System.Windows.Forms.CheckBox GCMZcheck;
     }
 }

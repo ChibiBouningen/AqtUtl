@@ -48,11 +48,13 @@ namespace AqT_Utl
             JimakuCopy_Check.Checked = Properties.Settings.Default.jimakuCopy_startup;
             JimakuCopyCheck_reflect();
             resetGenerated();
+            reloadSettings();
 
             if (serifProfiles.Count <= 0)
             {
                 ListAnnaiLabel.Visible = true;
             }
+            
 
         }
 
@@ -286,6 +288,24 @@ namespace AqT_Utl
             GenerateLabel.Text = "クリックで音声を生成";
         }
 
+        void reloadSettings()
+        {
+            Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.useGCMZ)
+            {
+                GenerateLabel.Text = "AviUtl拡張編集に挿入";
+                Size formsize = this.Size;
+
+                RightSpritContainer.SplitterDistance = this.ClientSize.Height /2;
+            }
+            else
+            {
+                GenerateLabel.Text = "クリックで音声を生成";
+
+                RightSpritContainer.SplitterDistance = 0;
+            }
+        }
+
         private void aquesTalkPlayerを起動ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             resetGenerated();
@@ -297,6 +317,7 @@ namespace AqT_Utl
             Setting f = new Setting();
             f.ShowDialog();
             f.Dispose();
+            reloadSettings();
         }
 
 
