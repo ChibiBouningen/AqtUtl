@@ -40,6 +40,7 @@ namespace AqT_Utl
                 p.Sort = 0;
                 p.Hosei=0;
                 p.Jimaku = false;
+                p.layer = 0;
                 serifProfiles.Add(p);
             }
         }

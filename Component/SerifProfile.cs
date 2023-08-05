@@ -15,6 +15,21 @@ namespace AqT_Utl
         public int Sort { get; set; }
         public int Hosei { get; set; }
         public bool Jimaku { get; set; }
+        private int _layer; //layerのバッキングフィールド　罰金バッキンガムよ！
+        public int layer
+        {
+            get
+            {
+                return _layer;
+            }
+            set
+            {
+                _layer = value;
+                if(_layer > 100) _layer = 100;
+                else if(_layer < -100) _layer = -100;
+            }
+        }
+        //public int layer { get; set; }
 
         public SerifProfile()
         {

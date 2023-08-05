@@ -35,11 +35,11 @@
             this.AquesPresetNameBox = new System.Windows.Forms.TextBox();
             this.exoLabel = new System.Windows.Forms.Label();
             this.exoBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.sortComboBox = new System.Windows.Forms.ComboBox();
             this.jimakuCheck = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.HoseiBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LayerBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -108,37 +108,6 @@
             this.exoBox.Size = new System.Drawing.Size(428, 184);
             this.exoBox.TabIndex = 6;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(246, 31);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(189, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "並べ替えの優先順位(大きいほど高い)";
-            // 
-            // sortComboBox
-            // 
-            this.sortComboBox.FormattingEnabled = true;
-            this.sortComboBox.Items.AddRange(new object[] {
-            "9",
-            "8",
-            "7",
-            "6",
-            "5",
-            "4",
-            "3",
-            "2",
-            "1",
-            "0"});
-            this.sortComboBox.Location = new System.Drawing.Point(248, 50);
-            this.sortComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.sortComboBox.Name = "sortComboBox";
-            this.sortComboBox.Size = new System.Drawing.Size(98, 23);
-            this.sortComboBox.TabIndex = 3;
-            this.sortComboBox.Text = "5";
-            // 
             // jimakuCheck
             // 
             this.jimakuCheck.AutoSize = true;
@@ -154,7 +123,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(246, 89);
+            this.label3.Location = new System.Drawing.Point(263, 31);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 15);
@@ -163,22 +132,38 @@
             // 
             // HoseiBox
             // 
-            this.HoseiBox.Location = new System.Drawing.Point(248, 108);
+            this.HoseiBox.Location = new System.Drawing.Point(266, 50);
             this.HoseiBox.Margin = new System.Windows.Forms.Padding(4);
             this.HoseiBox.Name = "HoseiBox";
-            this.HoseiBox.Size = new System.Drawing.Size(98, 23);
+            this.HoseiBox.Size = new System.Drawing.Size(100, 23);
             this.HoseiBox.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(263, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 15);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "挿入するレイヤー";
+            // 
+            // LayerBox
+            // 
+            this.LayerBox.Location = new System.Drawing.Point(266, 108);
+            this.LayerBox.Name = "LayerBox";
+            this.LayerBox.Size = new System.Drawing.Size(100, 23);
+            this.LayerBox.TabIndex = 12;
             // 
             // AddSerifProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 404);
+            this.Controls.Add(this.LayerBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.HoseiBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.jimakuCheck);
-            this.Controls.Add(this.sortComboBox);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.exoBox);
             this.Controls.Add(this.exoLabel);
             this.Controls.Add(this.AquesPresetNameBox);
@@ -204,12 +189,12 @@
         private System.Windows.Forms.Button MakeProfileButton;
         public System.Windows.Forms.TextBox ProfileNameBox;
         private System.Windows.Forms.Label exoLabel;
-        private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox AquesPresetNameBox;
         public System.Windows.Forms.TextBox exoBox;
-        public System.Windows.Forms.ComboBox sortComboBox;
         public System.Windows.Forms.CheckBox jimakuCheck;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox HoseiBox;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox LayerBox;
     }
 }

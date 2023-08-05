@@ -46,7 +46,7 @@ namespace AqT_Utl.Component
             return gcmzAPIexe_version;
         }
 
-        public int gcmzInsert(string exopath, int layer, int moveframe) //ごちゃまぜドロップス外部連携APIとgcmzAPI.exeでexoファイルを拡張編集に投げる
+        public int gcmzInsert(string exopath, int layer) //ごちゃまぜドロップス外部連携APIとgcmzAPI.exeでexoファイルを拡張編集に投げる
         {
             if (gcmzAPIexe_verCheck() == -1)    //gcmzAPI.exeが存在しない場合
             {
@@ -56,6 +56,8 @@ namespace AqT_Utl.Component
             string[] exoLines = File.ReadAllLines(exopath);     //exoファイルからendの値を出す
             string pattern = @"^end=(\d+)$";
             Regex regex = new Regex(pattern);
+
+            int moveframe = 0;
 
             foreach (string line in exoLines)
             {

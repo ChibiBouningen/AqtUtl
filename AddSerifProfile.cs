@@ -42,7 +42,7 @@ namespace AqT_Utl
 
             ProfileNameBox.Text = profile.ProfileName;
             AquesPresetNameBox.Text = profile.UsePreset;
-            sortComboBox.Text = profile.Sort.ToString();
+            LayerBox.Text = profile.layer.ToString();
             jimakuCheck.Checked = profile.Jimaku;
             exoBox.Text = profile.Exo;
             HoseiBox.Text = profile.Hosei.ToString();

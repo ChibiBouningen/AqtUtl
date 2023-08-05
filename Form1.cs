@@ -128,10 +128,11 @@ namespace AqT_Utl
             {
                 p.ProfileName = f.ProfileNameBox.Text;
                 p.UsePreset = f.AquesPresetNameBox.Text;
-                p.Sort = int.Parse(f.sortComboBox.Text);
+                //p.Sort = int.Parse(f.sortComboBox.Text);
                 p.Jimaku = f.jimakuCheck.Checked;
                 p.Exo = f.exoBox.Text;
                 p.Hosei = int.Parse(f.HoseiBox.Text);
+                p.layer = int.Parse(f.LayerBox.Text);
 
                 Random random = new Random();
                 p.Id = random.Next();
@@ -157,10 +158,11 @@ namespace AqT_Utl
             {
                 p.ProfileName = f.ProfileNameBox.Text;
                 p.UsePreset = f.AquesPresetNameBox.Text;
-                p.Sort = int.Parse(f.sortComboBox.Text);
+                //p.Sort = int.Parse(f.sortComboBox.Text);
                 p.Jimaku = f.jimakuCheck.Checked;
                 p.Exo = f.exoBox.Text;
                 p.Hosei = int.Parse(f.HoseiBox.Text);
+                p.layer = int.Parse(f.LayerBox.Text);
 
                 serifProfiles[selectIndex] = p;
 
@@ -240,7 +242,7 @@ namespace AqT_Utl
 
                         if (Properties.Settings.Default.useGCMZ)    //GCMZモード有効時
                         {
-                            gcmzAPI_Helper.gcmzInsert(last_generated_exo, 0, 100);
+                            gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
                         }
                     }
                     else
@@ -262,7 +264,7 @@ namespace AqT_Utl
                             
                             if(Properties.Settings.Default.useGCMZ) //GCMZモード有効時
                             {
-                                gcmzAPI_Helper.gcmzInsert(last_generated_exo, 0, 100);
+                                gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
                                 GenerateLabel.Text = "拡張編集に挿入しました";
                             }
                             else
