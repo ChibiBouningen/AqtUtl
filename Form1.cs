@@ -318,6 +318,7 @@ namespace AqT_Utl
             f.ShowDialog();
             f.Dispose();
             reloadSettings();
+            
         }
 
 
