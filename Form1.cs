@@ -323,8 +323,10 @@ namespace AqT_Utl
                 {
                     MessageBox.Show("gcmzAPI.exeを配置してください");
                     Properties.Settings.Default.useGCMZ = false;
+                    Properties.Settings.Default.Save();
 
                     reloadSettings();
+                    return;
                 }
 
 
