@@ -58,7 +58,7 @@ namespace AqT_Utl
             }
 
             KaisetsuTip.SetToolTip(ProfileListBox, "右クリックでプロファイルの作成や編集ができます。");
-            KaisetsuTip.SetToolTip(JimakuCopy_Check, "発音テキストを字幕テキストに合わせます。");
+            KaisetsuTip.SetToolTip(JimakuCopy_Check, "発音記号を字幕に合わせます。");
             KaisetsuTip.SetToolTip(PlayPanel, "クリックで音声を試聴します。ファイルには保存されません。");
 
         }
