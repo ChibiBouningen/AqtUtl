@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.ProfileNameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.HoseiBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.LayerBox = new System.Windows.Forms.TextBox();
+            this.KaisetsuTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -196,5 +198,6 @@
         public System.Windows.Forms.TextBox HoseiBox;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox LayerBox;
+        private System.Windows.Forms.ToolTip KaisetsuTip;
     }
 }

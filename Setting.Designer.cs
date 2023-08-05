@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.DefaultButton = new System.Windows.Forms.Button();
             this.output_folderBox = new System.Windows.Forms.TextBox();
@@ -35,6 +36,7 @@
             this.FPScomboBox = new System.Windows.Forms.ComboBox();
             this.JimakuCheck = new System.Windows.Forms.CheckBox();
             this.GCMZcheck = new System.Windows.Forms.CheckBox();
+            this.KaisetsuTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -144,5 +146,6 @@
         private System.Windows.Forms.ComboBox FPScomboBox;
         private System.Windows.Forms.CheckBox JimakuCheck;
         private System.Windows.Forms.CheckBox GCMZcheck;
+        private System.Windows.Forms.ToolTip KaisetsuTip;
     }
 }

@@ -57,6 +57,17 @@ namespace AqT_Utl
                 exoLabel.Enabled = false;
                 exoBox.Enabled = false;
             }
+
+            KaisetsuTip.SetToolTip(label1, "プロファイルの名前を設定します。");
+            KaisetsuTip.SetToolTip(ProfileNameBox, "プロファイルの名前を設定します。");
+            KaisetsuTip.SetToolTip(label2, "AquesTalkPlayerで設定したプリセット名を設定します");
+            KaisetsuTip.SetToolTip(AquesPresetNameBox, "AquesTalkPlayerで設定したプリセット名を設定します。");
+            KaisetsuTip.SetToolTip(label3, "拡張編集に追加するオブジェクトの長さを入力フレーム数分延長します。");
+            KaisetsuTip.SetToolTip(HoseiBox, "拡張編集に追加するオブジェクトの長さを入力フレーム数分延長します。");
+            KaisetsuTip.SetToolTip(label4, "音声が追加されるレイヤーを指定します。この設定はごちゃまぜドロップスとの連携設定を行っていない場合は機能しません。");
+            KaisetsuTip.SetToolTip(LayerBox, "音声が追加されるレイヤーを指定します。この設定はごちゃまぜドロップスとの連携設定を行っていない場合は機能しません。");
+            KaisetsuTip.SetToolTip(jimakuCheck, "字幕設定を有効化します。詳細は配布ページにある解説をご確認ください。");
+            KaisetsuTip.SetToolTip(exoBox, "exoファイルを編集後ここに貼り付けます。詳細は配布ページにある解説をご確認ください。");
         }
 
         private void MakeProfileButton_Click(object sender, EventArgs e)

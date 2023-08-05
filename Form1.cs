@@ -56,7 +56,10 @@ namespace AqT_Utl
             {
                 ListAnnaiLabel.Visible = true;
             }
-            
+
+            KaisetsuTip.SetToolTip(ProfileListBox, "右クリックでプロファイルの作成や編集ができます。");
+            KaisetsuTip.SetToolTip(JimakuCopy_Check, "発音テキストを字幕テキストに合わせます。");
+            KaisetsuTip.SetToolTip(PlayPanel, "クリックで音声を試聴します。ファイルには保存されません。");
 
         }
 
@@ -334,12 +337,14 @@ namespace AqT_Utl
                 Size formsize = this.Size;
 
                 RightSpritContainer.SplitterDistance = this.ClientSize.Height /2;
+                RightSpritContainer.IsSplitterFixed = false;
             }
             else
             {
                 GenerateLabel.Text = "クリックで音声を生成";
 
                 RightSpritContainer.SplitterDistance = 0;
+                RightSpritContainer.IsSplitterFixed = true;
             }
             resetGenerated();
         }

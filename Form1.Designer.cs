@@ -49,14 +49,15 @@
             this.HatsuonLabel = new System.Windows.Forms.Label();
             this.HatsuonBox = new System.Windows.Forms.TextBox();
             this.RightSpritContainer = new System.Windows.Forms.SplitContainer();
+            this.PlayPanel = new System.Windows.Forms.Panel();
+            this.PlayLabel = new System.Windows.Forms.Label();
             this.GeneratePanel = new System.Windows.Forms.Panel();
             this.GenerateLabel = new System.Windows.Forms.Label();
             this.ProfileListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.プロファイルを追加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを削除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PlayPanel = new System.Windows.Forms.Panel();
-            this.PlayLabel = new System.Windows.Forms.Label();
+            this.KaisetsuTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -82,9 +83,9 @@
             this.RightSpritContainer.Panel1.SuspendLayout();
             this.RightSpritContainer.Panel2.SuspendLayout();
             this.RightSpritContainer.SuspendLayout();
+            this.PlayPanel.SuspendLayout();
             this.GeneratePanel.SuspendLayout();
             this.ProfileListContextMenu.SuspendLayout();
-            this.PlayPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -342,6 +343,29 @@
             this.RightSpritContainer.SplitterDistance = 64;
             this.RightSpritContainer.TabIndex = 0;
             // 
+            // PlayPanel
+            // 
+            this.PlayPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.PlayPanel.Controls.Add(this.PlayLabel);
+            this.PlayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayPanel.Location = new System.Drawing.Point(0, 0);
+            this.PlayPanel.Name = "PlayPanel";
+            this.PlayPanel.Size = new System.Drawing.Size(194, 64);
+            this.PlayPanel.TabIndex = 0;
+            this.PlayPanel.Click += new System.EventHandler(this.PlayPanel_Click);
+            // 
+            // PlayLabel
+            // 
+            this.PlayLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PlayLabel.AutoSize = true;
+            this.PlayLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PlayLabel.Location = new System.Drawing.Point(59, 29);
+            this.PlayLabel.Name = "PlayLabel";
+            this.PlayLabel.Size = new System.Drawing.Size(71, 15);
+            this.PlayLabel.TabIndex = 0;
+            this.PlayLabel.Text = "クリックで試聴";
+            this.PlayLabel.Click += new System.EventHandler(this.PlayPanel_Click);
+            // 
             // GeneratePanel
             // 
             this.GeneratePanel.BackColor = System.Drawing.Color.Gainsboro;
@@ -398,29 +422,6 @@
             this.プロファイルを削除ToolStripMenuItem.Text = "プロファイルを削除";
             this.プロファイルを削除ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを削除ToolStripMenuItem_Click);
             // 
-            // PlayPanel
-            // 
-            this.PlayPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.PlayPanel.Controls.Add(this.PlayLabel);
-            this.PlayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlayPanel.Location = new System.Drawing.Point(0, 0);
-            this.PlayPanel.Name = "PlayPanel";
-            this.PlayPanel.Size = new System.Drawing.Size(194, 64);
-            this.PlayPanel.TabIndex = 0;
-            this.PlayPanel.Click += new System.EventHandler(this.PlayPanel_Click);
-            // 
-            // PlayLabel
-            // 
-            this.PlayLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PlayLabel.AutoSize = true;
-            this.PlayLabel.BackColor = System.Drawing.Color.Transparent;
-            this.PlayLabel.Location = new System.Drawing.Point(59, 29);
-            this.PlayLabel.Name = "PlayLabel";
-            this.PlayLabel.Size = new System.Drawing.Size(71, 15);
-            this.PlayLabel.TabIndex = 0;
-            this.PlayLabel.Text = "クリックで試聴";
-            this.PlayLabel.Click += new System.EventHandler(this.PlayPanel_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -465,11 +466,11 @@
             this.RightSpritContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RightSpritContainer)).EndInit();
             this.RightSpritContainer.ResumeLayout(false);
+            this.PlayPanel.ResumeLayout(false);
+            this.PlayPanel.PerformLayout();
             this.GeneratePanel.ResumeLayout(false);
             this.GeneratePanel.PerformLayout();
             this.ProfileListContextMenu.ResumeLayout(false);
-            this.PlayPanel.ResumeLayout(false);
-            this.PlayPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -503,6 +504,7 @@
         private System.Windows.Forms.SplitContainer RightSpritContainer;
         private System.Windows.Forms.Panel PlayPanel;
         private System.Windows.Forms.Label PlayLabel;
+        private System.Windows.Forms.ToolTip KaisetsuTip;
     }
 }
 
