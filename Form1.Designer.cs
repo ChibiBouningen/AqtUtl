@@ -365,6 +365,7 @@
             this.GenerateLabel.Size = new System.Drawing.Size(104, 15);
             this.GenerateLabel.TabIndex = 0;
             this.GenerateLabel.Text = "クリックで音声を生成";
+            this.GenerateLabel.TextChanged += new System.EventHandler(this.GenerateLabel_TextChanged);
             this.GenerateLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GeneratePanel_MouseDown);
             // 
             // ProfileListContextMenu
@@ -417,7 +418,7 @@
             this.PlayLabel.Name = "PlayLabel";
             this.PlayLabel.Size = new System.Drawing.Size(71, 15);
             this.PlayLabel.TabIndex = 0;
-            this.PlayLabel.Text = "クリックで再生";
+            this.PlayLabel.Text = "クリックで試聴";
             this.PlayLabel.Click += new System.EventHandler(this.PlayPanel_Click);
             // 
             // Form1

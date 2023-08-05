@@ -224,7 +224,7 @@ namespace AqT_Utl
         }
 
         
-        private void GeneratePanel_MouseDown(object sender, MouseEventArgs e)
+        private void GeneratePanel_MouseDown(object sender, MouseEventArgs e)   //生成パネルでマウスを押下
         {
             if(e.Button == MouseButtons.Left)
             {
@@ -301,7 +301,14 @@ namespace AqT_Utl
         void resetGenerated()   //生成リセット
         {
             generated = false;
-            GenerateLabel.Text = "クリックで音声を生成";
+            if(Properties.Settings.Default.useGCMZ) //GCMZモード有効時
+            {
+                GenerateLabel.Text = "クリックで拡張編集に挿入";
+            }
+            else
+            {
+                GenerateLabel.Text = "クリックで音声を生成";
+            }
         }
 
         void reloadSettings()   //設定読み込み＆反映
@@ -360,6 +367,11 @@ namespace AqT_Utl
             f.ShowDialog();
         }
 
-        
+        private void GenerateLabel_TextChanged(object sender, EventArgs e)      //生成ラベルの内容が変化したときに中央に寄せる処理
+        {
+            int x = (GeneratePanel.Width - GenerateLabel.Width) / 2;
+            int y = (GeneratePanel.Height - GenerateLabel.Height) / 2;
+            GenerateLabel.Location = new Point(x, y);
+        }
     }
 }
