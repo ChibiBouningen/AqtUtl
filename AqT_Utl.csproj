@@ -286,6 +286,7 @@
     </Compile>
     <Compile Include="Component\AquesTalkPlayerManager.cs" />
     <Compile Include="Component\ExoGenerate.cs" />
+    <Compile Include="Component\GcmzAPI_Helper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -46,7 +46,7 @@ namespace AqT_Utl
             
         }
 
-        public string VoiceGenerate(string hatsuon, string jimaku, SerifProfile p, int fps, bool interim)   //音声を生成
+        public string VoiceGenerate(string hatsuon, string jimaku, SerifProfile p, int fps, bool interim, bool OffSound)   //音声を生成
         {
 
             fps = Properties.Settings.Default.fps_AviUtl;
@@ -94,7 +94,10 @@ namespace AqT_Utl
             ListenProcessStartInfo.Arguments = "/T \"" + hatsuon + "\"" + "/P \"" + p.UsePreset + "\"";
 
             Process voiceGenerate = Process.Start(GenerateProcessStartInfo);
-            Process voiceListen = Process.Start(ListenProcessStartInfo);
+            if (OffSound == false)
+            {
+                Process voiceListen = Process.Start(ListenProcessStartInfo);
+            }
 
             voiceGenerate.WaitForExit();
 

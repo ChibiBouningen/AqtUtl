@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AqT_Utl.Component;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace AqT_Utl
         List<SerifProfile> serifProfiles;
         AquesTalkPlayerManager playerManager;
         ProfileLoader profileLoader;
+        GcmzAPI_Helper gcmzAPI_Helper;
 
         bool generated = false;
         bool setAquesTalkPlayer = false;
@@ -234,6 +236,12 @@ namespace AqT_Utl
                         var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
                         dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
                         GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
+
+                        if (Properties.Settings.Default.useGCMZ)
+                        {
+
+                            gcmzAPI_Helper.gcmzInsert(last_generated_exo, 0, 100);
+                        }
                     }
                     else
                     {
@@ -245,14 +253,23 @@ namespace AqT_Utl
                             return;
                         }
                         if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
-                        
 
-                            GeneratePanel.BackColor = Color.Yellow;
-                        last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS, false);
+                        GeneratePanel.BackColor = Color.Yellow;
+                        last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS, false, Properties.Settings.Default.useGCMZ);
                         if (last_generated_exo != "err")
                         {
                             generated = true;
-                            GenerateLabel.Text = "ここをD&&Dしてください";
+                            
+                            if(Properties.Settings.Default.useGCMZ)
+                            {
+                                gcmzAPI_Helper.gcmzInsert(last_generated_exo, 0, 100);
+                                GenerateLabel.Text = "拡張編集に挿入しました";
+                            }
+                            else
+                            {
+                                GenerateLabel.Text = "ここをD&&Dしてください";
+                            }
+                            
                         }
                         
                         GeneratePanel.BackColor = Color.Gainsboro;
@@ -277,7 +294,7 @@ namespace AqT_Utl
                 if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
                 PlayPanel.BackColor = Color.Yellow;
                 //playerManager.VoiceTrialPlay(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex]);
-                playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], 30, true);
+                playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], 30, true, false);
                 PlayPanel.BackColor = Color.Gainsboro;
             }
         }
@@ -293,6 +310,16 @@ namespace AqT_Utl
             Properties.Settings.Default.Save();
             if (Properties.Settings.Default.useGCMZ)
             {
+                if(gcmzAPI_Helper == null) gcmzAPI_Helper = new GcmzAPI_Helper();
+                if(gcmzAPI_Helper.gcmzAPIexe_verCheck() == -1)
+                {
+                    MessageBox.Show("gcmzAPI.exeを配置してください");
+                    Properties.Settings.Default.useGCMZ = false;
+
+                    reloadSettings();
+                }
+
+
                 GenerateLabel.Text = "AviUtl拡張編集に挿入";
                 Size formsize = this.Size;
 
@@ -304,6 +331,7 @@ namespace AqT_Utl
 
                 RightSpritContainer.SplitterDistance = 0;
             }
+            resetGenerated();
         }
 
         private void aquesTalkPlayerを起動ToolStripMenuItem_Click(object sender, EventArgs e)
