@@ -230,21 +230,21 @@ namespace AqT_Utl
             {
                 if(setAquesTalkPlayer)
                 {
-                    if (generated)
+                    if (generated)      //生成済みの場合
                     {
+                        //ドラッグアンドドロップ開始処理
                         string dragFilePath = last_generated_exo;
                         var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
                         dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
                         GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
 
-                        if (Properties.Settings.Default.useGCMZ)
+                        if (Properties.Settings.Default.useGCMZ)    //GCMZモード有効時
                         {
-
                             gcmzAPI_Helper.gcmzInsert(last_generated_exo, 0, 100);
                         }
                     }
                     else
-                    {
+                    {                //未生成の場合
                         int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
 
                         if (serifProfiles.Count == 0)
@@ -256,11 +256,11 @@ namespace AqT_Utl
 
                         GeneratePanel.BackColor = Color.Yellow;
                         last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS, false, Properties.Settings.Default.useGCMZ);
-                        if (last_generated_exo != "err")
+                        if (last_generated_exo != "err")    //生成できた場合
                         {
                             generated = true;
                             
-                            if(Properties.Settings.Default.useGCMZ)
+                            if(Properties.Settings.Default.useGCMZ) //GCMZモード有効時
                             {
                                 gcmzAPI_Helper.gcmzInsert(last_generated_exo, 0, 100);
                                 GenerateLabel.Text = "拡張編集に挿入しました";
@@ -282,7 +282,7 @@ namespace AqT_Utl
             }
         }
 
-        private void PlayPanel_Click(object sender, EventArgs e)
+        private void PlayPanel_Click(object sender, EventArgs e)    //再生パネルをクリック
         {
             if(setAquesTalkPlayer)
             {
@@ -291,21 +291,20 @@ namespace AqT_Utl
                     MessageBox.Show("キャラクタプロファイルを作成してください");
                     return;
                 }
-                if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
+                if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0; //もしプロファイルが選択されていなければ、一番上のプロファイルを選択
                 PlayPanel.BackColor = Color.Yellow;
-                //playerManager.VoiceTrialPlay(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex]);
-                playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], 30, true, false);
+                playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], 30, true, false); //仮モード、音声再生有効で生成
                 PlayPanel.BackColor = Color.Gainsboro;
             }
         }
 
-        void resetGenerated()
+        void resetGenerated()   //生成リセット
         {
             generated = false;
             GenerateLabel.Text = "クリックで音声を生成";
         }
 
-        void reloadSettings()
+        void reloadSettings()   //設定読み込み＆反映
         {
             Properties.Settings.Default.Save();
             if (Properties.Settings.Default.useGCMZ)

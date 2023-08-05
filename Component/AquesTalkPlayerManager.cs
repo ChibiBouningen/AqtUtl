@@ -122,7 +122,7 @@ namespace AqT_Utl
             }
 
 
-            if (interim)
+            if (interim)    //仮モード有効時、生成した音声ファイルを削除し終了する
             {
                 string wavfilepath = output_folder + "\\" + filename + ".wav";
                 File.Delete(wavfilepath);

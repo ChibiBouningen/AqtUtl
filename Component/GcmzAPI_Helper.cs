@@ -46,7 +46,7 @@ namespace AqT_Utl.Component
             return gcmzAPIexe_version;
         }
 
-        public int gcmzInsert(string exopath, int layer, int moveframe)
+        public int gcmzInsert(string exopath, int layer, int moveframe) //ごちゃまぜドロップス外部連携APIとgcmzAPI.exeでexoファイルを拡張編集に投げる
         {
             if (gcmzAPIexe_verCheck() == -1)    //gcmzAPI.exeが存在しない場合
             {
@@ -65,7 +65,7 @@ namespace AqT_Utl.Component
                     string endStr = match.Groups[1].Value;
                     if(int.TryParse(endStr, out int end))
                     {
-                        moveframe = end;
+                        moveframe = end;    //一番上にあるend=値の値をmoveframeに代入してループから抜ける
                         break;
                     }
                 }
