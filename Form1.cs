@@ -182,7 +182,7 @@ namespace AqT_Utl
         {
             string 項目名 = ProfileListBox.Text;
             int selectId = int.Parse(ProfileListBox.SelectedValue.ToString());
-            DialogResult result = MessageBox.Show("キャラクタプロファイル「" + 項目名 + "」を削除しようとしています。\n削除しますか？","キャラクタプロファイルの削除", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("プロファイル「" + 項目名 + "」を削除しようとしています。\n削除しますか？","プロファイルの削除", MessageBoxButtons.YesNo);
             if(result == DialogResult.Yes)
             {
                 serifProfiles.RemoveAll(profile => profile.Id == selectId);
@@ -257,7 +257,7 @@ namespace AqT_Utl
 
                         if (serifProfiles.Count == 0)
                         {
-                            MessageBox.Show("キャラクタプロファイルを作成してください");
+                            MessageBox.Show("プロファイルを作成してください");
                             return;
                         }
                         if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
@@ -296,7 +296,7 @@ namespace AqT_Utl
             {
                 if (serifProfiles.Count == 0)
                 {
-                    MessageBox.Show("キャラクタプロファイルを作成してください");
+                    MessageBox.Show("プロファイルを作成してください");
                     return;
                 }
                 if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0; //もしプロファイルが選択されていなければ、一番上のプロファイルを選択

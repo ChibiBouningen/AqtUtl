@@ -54,10 +54,10 @@
             this.GeneratePanel = new System.Windows.Forms.Panel();
             this.GenerateLabel = new System.Windows.Forms.Label();
             this.ProfileListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.プロファイルを追加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを削除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.KaisetsuTip = new System.Windows.Forms.ToolTip(this.components);
+            this.プロファイルを追加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -116,9 +116,9 @@
             this.ListAnnaiLabel.Location = new System.Drawing.Point(41, 221);
             this.ListAnnaiLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListAnnaiLabel.Name = "ListAnnaiLabel";
-            this.ListAnnaiLabel.Size = new System.Drawing.Size(134, 30);
+            this.ListAnnaiLabel.Size = new System.Drawing.Size(92, 30);
             this.ListAnnaiLabel.TabIndex = 1;
-            this.ListAnnaiLabel.Text = "右クリックで\r\nキャラクタプロファイルを作成";
+            this.ListAnnaiLabel.Text = "右クリックで\r\nプロファイルを作成";
             this.ListAnnaiLabel.Visible = false;
             this.ListAnnaiLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseDown);
             // 
@@ -162,6 +162,7 @@
             // aqtUtlについてToolStripMenuItem
             // 
             this.aqtUtlについてToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.aqtUtlについてToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.info;
             this.aqtUtlについてToolStripMenuItem.Name = "aqtUtlについてToolStripMenuItem";
             this.aqtUtlについてToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.aqtUtlについてToolStripMenuItem.Text = "AqtUtlについて";
@@ -178,6 +179,7 @@
             // 設定ToolStripMenuItem
             // 
             this.設定ToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.設定ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.setting;
             this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
             this.設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.設定ToolStripMenuItem.Text = "設定";
@@ -407,15 +409,9 @@
             this.ProfileListContextMenu.Name = "ProfileListContextMenu";
             this.ProfileListContextMenu.Size = new System.Drawing.Size(184, 70);
             // 
-            // プロファイルを追加ToolStripMenuItem
-            // 
-            this.プロファイルを追加ToolStripMenuItem.Name = "プロファイルを追加ToolStripMenuItem";
-            this.プロファイルを追加ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.プロファイルを追加ToolStripMenuItem.Text = "プロファイルを新規作成";
-            this.プロファイルを追加ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを追加ToolStripMenuItem_Click);
-            // 
             // プロファイルを編集ToolStripMenuItem
             // 
+            this.プロファイルを編集ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.edit;
             this.プロファイルを編集ToolStripMenuItem.Name = "プロファイルを編集ToolStripMenuItem";
             this.プロファイルを編集ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.プロファイルを編集ToolStripMenuItem.Text = "プロファイルを編集";
@@ -423,10 +419,19 @@
             // 
             // プロファイルを削除ToolStripMenuItem
             // 
+            this.プロファイルを削除ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.delete;
             this.プロファイルを削除ToolStripMenuItem.Name = "プロファイルを削除ToolStripMenuItem";
             this.プロファイルを削除ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.プロファイルを削除ToolStripMenuItem.Text = "プロファイルを削除";
             this.プロファイルを削除ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを削除ToolStripMenuItem_Click);
+            // 
+            // プロファイルを追加ToolStripMenuItem
+            // 
+            this.プロファイルを追加ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.add;
+            this.プロファイルを追加ToolStripMenuItem.Name = "プロファイルを追加ToolStripMenuItem";
+            this.プロファイルを追加ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.プロファイルを追加ToolStripMenuItem.Text = "プロファイルを新規作成";
+            this.プロファイルを追加ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを追加ToolStripMenuItem_Click);
             // 
             // Form1
             // 
