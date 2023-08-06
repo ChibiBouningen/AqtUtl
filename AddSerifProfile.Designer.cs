@@ -107,6 +107,7 @@
             this.exoBox.Margin = new System.Windows.Forms.Padding(4);
             this.exoBox.Multiline = true;
             this.exoBox.Name = "exoBox";
+            this.exoBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.exoBox.Size = new System.Drawing.Size(428, 184);
             this.exoBox.TabIndex = 6;
             // 

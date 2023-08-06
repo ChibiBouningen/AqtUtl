@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AqT_Utl
@@ -77,12 +78,14 @@ namespace AqT_Utl
                 if (index != ListBox.NoMatches)
                 {
                     ProfileListBox.SelectedIndex = index;
+                    プロファイルを複製ToolStripMenuItem.Visible = true;
                     プロファイルを編集ToolStripMenuItem.Visible = true;
                     プロファイルを削除ToolStripMenuItem.Visible = true;
                     ProfileListContextMenu.Show(ProfileListBox, e.Location);
                 }
                 else
                 {
+                    プロファイルを複製ToolStripMenuItem.Visible = false;
                     プロファイルを編集ToolStripMenuItem.Visible = false;
                     プロファイルを削除ToolStripMenuItem.Visible = false;
                     ProfileListContextMenu.Show(ProfileListBox, e.Location);
@@ -152,6 +155,22 @@ namespace AqT_Utl
             f.Dispose();
             ProfileListBoxReload();
             resetGenerated();
+        }
+
+        private void プロファイルを複製ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selectId = int.Parse(ProfileListBox.SelectedValue.ToString());
+            int selectIndex = ProfileListBox.SelectedIndex;
+            
+            //選択されているProfileをディープコピー
+            string serializedInstance = JsonSerializer.Serialize(serifProfiles.Find(x => x.Id == selectId));
+            SerifProfile p = JsonSerializer.Deserialize<SerifProfile>(serializedInstance);
+
+            Random random = new Random();
+            p.Id = random.Next();
+            p.ProfileName += "_copy";
+            serifProfiles.Add(p);
+            ProfileListBoxReload();
         }
 
         private void プロファイルを編集ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -388,5 +407,7 @@ namespace AqT_Utl
             int y = (GeneratePanel.Height - GenerateLabel.Height) / 2;
             GenerateLabel.Location = new Point(x, y);
         }
+
+        
     }
 }

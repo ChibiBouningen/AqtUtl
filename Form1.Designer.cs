@@ -51,6 +51,7 @@
             this.GenerateLabel = new System.Windows.Forms.Label();
             this.ProfileListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.KaisetsuTip = new System.Windows.Forms.ToolTip(this.components);
+            this.プロファイルを複製ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aqtUtlについてToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aquesTalkPlayerを起動ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -372,10 +373,19 @@
             // 
             this.ProfileListContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.プロファイルを追加ToolStripMenuItem,
+            this.プロファイルを複製ToolStripMenuItem,
             this.プロファイルを編集ToolStripMenuItem,
             this.プロファイルを削除ToolStripMenuItem});
             this.ProfileListContextMenu.Name = "ProfileListContextMenu";
-            this.ProfileListContextMenu.Size = new System.Drawing.Size(184, 70);
+            this.ProfileListContextMenu.Size = new System.Drawing.Size(184, 114);
+            // 
+            // プロファイルを複製ToolStripMenuItem
+            // 
+            this.プロファイルを複製ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.copy;
+            this.プロファイルを複製ToolStripMenuItem.Name = "プロファイルを複製ToolStripMenuItem";
+            this.プロファイルを複製ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.プロファイルを複製ToolStripMenuItem.Text = "プロファイルを複製";
+            this.プロファイルを複製ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを複製ToolStripMenuItem_Click);
             // 
             // aqtUtlについてToolStripMenuItem
             // 
@@ -520,6 +530,7 @@
         private System.Windows.Forms.Panel PlayPanel;
         private System.Windows.Forms.Label PlayLabel;
         private System.Windows.Forms.ToolTip KaisetsuTip;
+        private System.Windows.Forms.ToolStripMenuItem プロファイルを複製ToolStripMenuItem;
     }
 }
 

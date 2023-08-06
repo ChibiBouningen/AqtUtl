@@ -362,6 +362,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\copy.png" />
     <None Include="Resources\ad_group.png" />
     <None Include="Resources\exitapp.png" />
     <None Include="Resources\arrowcircle.png" />
