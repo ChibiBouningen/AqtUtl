@@ -51,12 +51,12 @@
             this.GenerateLabel = new System.Windows.Forms.Label();
             this.ProfileListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.KaisetsuTip = new System.Windows.Forms.ToolTip(this.components);
-            this.プロファイルを複製ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aqtUtlについてToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aquesTalkPlayerを起動ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aqtUtlを終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを追加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.プロファイルを複製ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを削除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -377,15 +377,7 @@
             this.プロファイルを編集ToolStripMenuItem,
             this.プロファイルを削除ToolStripMenuItem});
             this.ProfileListContextMenu.Name = "ProfileListContextMenu";
-            this.ProfileListContextMenu.Size = new System.Drawing.Size(184, 114);
-            // 
-            // プロファイルを複製ToolStripMenuItem
-            // 
-            this.プロファイルを複製ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.copy;
-            this.プロファイルを複製ToolStripMenuItem.Name = "プロファイルを複製ToolStripMenuItem";
-            this.プロファイルを複製ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.プロファイルを複製ToolStripMenuItem.Text = "プロファイルを複製";
-            this.プロファイルを複製ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを複製ToolStripMenuItem_Click);
+            this.ProfileListContextMenu.Size = new System.Drawing.Size(184, 92);
             // 
             // aqtUtlについてToolStripMenuItem
             // 
@@ -430,6 +422,14 @@
             this.プロファイルを追加ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.プロファイルを追加ToolStripMenuItem.Text = "プロファイルを新規作成";
             this.プロファイルを追加ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを追加ToolStripMenuItem_Click);
+            // 
+            // プロファイルを複製ToolStripMenuItem
+            // 
+            this.プロファイルを複製ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.copy;
+            this.プロファイルを複製ToolStripMenuItem.Name = "プロファイルを複製ToolStripMenuItem";
+            this.プロファイルを複製ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.プロファイルを複製ToolStripMenuItem.Text = "プロファイルを複製";
+            this.プロファイルを複製ToolStripMenuItem.Click += new System.EventHandler(this.プロファイルを複製ToolStripMenuItem_Click);
             // 
             // プロファイルを編集ToolStripMenuItem
             // 

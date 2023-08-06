@@ -365,7 +365,6 @@
     <None Include="Resources\copy.png" />
     <None Include="Resources\ad_group.png" />
     <None Include="Resources\exitapp.png" />
-    <None Include="Resources\arrowcircle.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\setting.png" />
