@@ -97,6 +97,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel1.Controls.Add(this.ListAnnaiLabel);
             this.splitContainer1.Panel1.Controls.Add(this.ProfileListBox);
             this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
@@ -113,7 +114,7 @@
             this.ListAnnaiLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ListAnnaiLabel.AutoSize = true;
             this.ListAnnaiLabel.BackColor = System.Drawing.Color.White;
-            this.ListAnnaiLabel.Location = new System.Drawing.Point(41, 221);
+            this.ListAnnaiLabel.Location = new System.Drawing.Point(41, 212);
             this.ListAnnaiLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListAnnaiLabel.Name = "ListAnnaiLabel";
             this.ListAnnaiLabel.Size = new System.Drawing.Size(92, 30);
@@ -126,8 +127,9 @@
             // 
             this.ProfileListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProfileListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProfileListBox.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ProfileListBox.FormattingEnabled = true;
-            this.ProfileListBox.ItemHeight = 15;
+            this.ProfileListBox.ItemHeight = 20;
             this.ProfileListBox.Location = new System.Drawing.Point(0, 32);
             this.ProfileListBox.Margin = new System.Windows.Forms.Padding(0);
             this.ProfileListBox.Name = "ProfileListBox";
@@ -193,7 +195,7 @@
             // 
             this.TextBoxSprit.Panel2.Controls.Add(this.HatsuonSprit);
             this.TextBoxSprit.Size = new System.Drawing.Size(380, 450);
-            this.TextBoxSprit.SplitterDistance = 220;
+            this.TextBoxSprit.SplitterDistance = 212;
             this.TextBoxSprit.SplitterWidth = 5;
             this.TextBoxSprit.TabIndex = 0;
             // 
@@ -214,7 +216,7 @@
             // JimakuSprit.Panel2
             // 
             this.JimakuSprit.Panel2.Controls.Add(this.JimakuBox);
-            this.JimakuSprit.Size = new System.Drawing.Size(380, 220);
+            this.JimakuSprit.Size = new System.Drawing.Size(380, 212);
             this.JimakuSprit.SplitterDistance = 28;
             this.JimakuSprit.SplitterWidth = 1;
             this.JimakuSprit.TabIndex = 1;
@@ -236,7 +238,7 @@
             this.JimakuBox.Margin = new System.Windows.Forms.Padding(4);
             this.JimakuBox.Multiline = true;
             this.JimakuBox.Name = "JimakuBox";
-            this.JimakuBox.Size = new System.Drawing.Size(380, 191);
+            this.JimakuBox.Size = new System.Drawing.Size(380, 183);
             this.JimakuBox.TabIndex = 0;
             this.JimakuBox.TextChanged += new System.EventHandler(this.JimakuBox_TextChanged);
             // 
@@ -258,7 +260,7 @@
             // HatsuonSprit.Panel2
             // 
             this.HatsuonSprit.Panel2.Controls.Add(this.HatsuonBox);
-            this.HatsuonSprit.Size = new System.Drawing.Size(380, 225);
+            this.HatsuonSprit.Size = new System.Drawing.Size(380, 233);
             this.HatsuonSprit.SplitterDistance = 25;
             this.HatsuonSprit.SplitterWidth = 5;
             this.HatsuonSprit.TabIndex = 0;
@@ -293,7 +295,7 @@
             this.HatsuonBox.Margin = new System.Windows.Forms.Padding(4);
             this.HatsuonBox.Multiline = true;
             this.HatsuonBox.Name = "HatsuonBox";
-            this.HatsuonBox.Size = new System.Drawing.Size(380, 195);
+            this.HatsuonBox.Size = new System.Drawing.Size(380, 203);
             this.HatsuonBox.TabIndex = 0;
             this.HatsuonBox.TextChanged += new System.EventHandler(this.HatsuonBox_TextChanged);
             // 
@@ -314,7 +316,7 @@
             this.RightSpritContainer.Panel2.Controls.Add(this.GeneratePanel);
             this.RightSpritContainer.Panel2MinSize = 0;
             this.RightSpritContainer.Size = new System.Drawing.Size(194, 450);
-            this.RightSpritContainer.SplitterDistance = 64;
+            this.RightSpritContainer.SplitterDistance = 62;
             this.RightSpritContainer.TabIndex = 0;
             // 
             // PlayPanel
@@ -324,7 +326,7 @@
             this.PlayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PlayPanel.Location = new System.Drawing.Point(0, 0);
             this.PlayPanel.Name = "PlayPanel";
-            this.PlayPanel.Size = new System.Drawing.Size(194, 64);
+            this.PlayPanel.Size = new System.Drawing.Size(194, 62);
             this.PlayPanel.TabIndex = 0;
             this.PlayPanel.Click += new System.EventHandler(this.PlayPanel_Click);
             // 
@@ -348,7 +350,7 @@
             this.GeneratePanel.Location = new System.Drawing.Point(0, 0);
             this.GeneratePanel.Margin = new System.Windows.Forms.Padding(4);
             this.GeneratePanel.Name = "GeneratePanel";
-            this.GeneratePanel.Size = new System.Drawing.Size(194, 382);
+            this.GeneratePanel.Size = new System.Drawing.Size(194, 384);
             this.GeneratePanel.TabIndex = 0;
             this.GeneratePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GeneratePanel_MouseDown);
             // 
