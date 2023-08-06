@@ -351,6 +351,7 @@ namespace AqT_Utl
                 RightSpritContainer.SplitterDistance = 0;
                 RightSpritContainer.IsSplitterFixed = true;
             }
+            this.TopMost = Properties.Settings.Default.TopMost;
             resetGenerated();
         }
 

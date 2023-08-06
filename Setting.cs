@@ -25,6 +25,7 @@ namespace AqT_Utl
             FPScomboBox.Text = Properties.Settings.Default.fps_AviUtl.ToString();
             JimakuCheck.Checked = Properties.Settings.Default.jimakuCopy_startup;
             GCMZcheck.Checked = Properties.Settings.Default.useGCMZ;
+            TopMostCheck.Checked = Properties.Settings.Default.TopMost;
 
             KaisetsuTip.SetToolTip(label1, "音声出力先のフォルダパスを指定します。\\から書き始めると相対パスで指定されます。");
             KaisetsuTip.SetToolTip(output_folderBox, "音声出力先のフォルダパスを指定します。\\から書き始めると相対パスで指定されます。");
@@ -32,6 +33,7 @@ namespace AqT_Utl
             KaisetsuTip.SetToolTip(FPScomboBox, "AviUtlのプロジェクトのフレームレートを指定します。");
             KaisetsuTip.SetToolTip(JimakuCheck, "チェックを入れると、AqtUtlの起動時に「字幕をコピー」にチェックが入ります。");
             KaisetsuTip.SetToolTip(GCMZcheck, "ごちゃまぜドロップスと連携し、1クリック挿入機能を有効にします。\ngcmzAPI.exeをAqtUtl.exeに配置し、AviUtlにごちゃまぜドロップスを導入している必要があります。\n詳しくは配布ページの解説をご覧ください。");
+            KaisetsuTip.SetToolTip(TopMostCheck, "AqtUtlのウィンドウを常に最前面に表示するようになります。");
         }
 
         private void Setting_FormClosing(object sender, FormClosingEventArgs e)
@@ -49,6 +51,7 @@ namespace AqT_Utl
             }
             Properties.Settings.Default.jimakuCopy_startup = JimakuCheck.Checked;
             Properties.Settings.Default.useGCMZ = GCMZcheck.Checked;
+            Properties.Settings.Default.TopMost = TopMostCheck.Checked;
         }
 
         private void DefaultButton_Click(object sender, EventArgs e)
@@ -58,6 +61,7 @@ namespace AqT_Utl
             FPScomboBox.Text = Properties.Settings.Default.fps_AviUtl.ToString();
             JimakuCheck.Checked = Properties.Settings.Default.jimakuCopy_startup;
             GCMZcheck.Checked = Properties.Settings.Default.useGCMZ;
+            TopMostCheck.Checked = Properties.Settings.Default.TopMost;
         }
     }
 }

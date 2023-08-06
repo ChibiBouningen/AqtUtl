@@ -37,6 +37,7 @@
             this.JimakuCheck = new System.Windows.Forms.CheckBox();
             this.GCMZcheck = new System.Windows.Forms.CheckBox();
             this.KaisetsuTip = new System.Windows.Forms.ToolTip(this.components);
+            this.TopMostCheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -95,7 +96,7 @@
             // JimakuCheck
             // 
             this.JimakuCheck.AutoSize = true;
-            this.JimakuCheck.Location = new System.Drawing.Point(150, 124);
+            this.JimakuCheck.Location = new System.Drawing.Point(177, 124);
             this.JimakuCheck.Margin = new System.Windows.Forms.Padding(4);
             this.JimakuCheck.Name = "JimakuCheck";
             this.JimakuCheck.Size = new System.Drawing.Size(174, 19);
@@ -113,11 +114,22 @@
             this.GCMZcheck.Text = "ごちゃまぜドロップスと連携";
             this.GCMZcheck.UseVisualStyleBackColor = true;
             // 
+            // TopMostCheck
+            // 
+            this.TopMostCheck.AutoSize = true;
+            this.TopMostCheck.Location = new System.Drawing.Point(177, 163);
+            this.TopMostCheck.Name = "TopMostCheck";
+            this.TopMostCheck.Size = new System.Drawing.Size(116, 19);
+            this.TopMostCheck.TabIndex = 9;
+            this.TopMostCheck.Text = "常に最前面に表示";
+            this.TopMostCheck.UseVisualStyleBackColor = true;
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 194);
+            this.Controls.Add(this.TopMostCheck);
             this.Controls.Add(this.GCMZcheck);
             this.Controls.Add(this.JimakuCheck);
             this.Controls.Add(this.FPScomboBox);
@@ -130,6 +142,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Setting";
             this.Text = "設定";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Setting_FormClosing);
             this.Load += new System.EventHandler(this.Setting_Load);
             this.ResumeLayout(false);
@@ -147,5 +160,6 @@
         private System.Windows.Forms.CheckBox JimakuCheck;
         private System.Windows.Forms.CheckBox GCMZcheck;
         private System.Windows.Forms.ToolTip KaisetsuTip;
+        public System.Windows.Forms.CheckBox TopMostCheck;
     }
 }
