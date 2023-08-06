@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -43,6 +44,7 @@ namespace AqT_Utl
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Text += "   v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
             VersionChangedConvert versionChangedConvert = new VersionChangedConvert();  //古いバージョンからexeを置き換えたときの処理
             ProfileListBoxReload();
             ProfileListBox.DisplayMember = "ProfileName";
