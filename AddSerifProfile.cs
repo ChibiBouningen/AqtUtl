@@ -72,6 +72,20 @@ namespace AqT_Utl
 
         private void MakeProfileButton_Click(object sender, EventArgs e)
         {
+            int i;
+            if (int.TryParse(HoseiBox.Text, out i) == false)
+            {
+                MessageBox.Show("音声の長さ補正には半角で整数値を入力してください。");
+                HoseiBox.Focus();
+                return;
+            }
+            if (int.TryParse(LayerBox.Text, out i) == false)
+            {
+                MessageBox.Show("挿入するレイヤーには半角で整数値を入力してください。");
+                LayerBox.Focus();
+                return;
+            }
+
             adaptted = true;
             this.Close();
         }

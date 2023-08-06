@@ -50,18 +50,19 @@ namespace AqT_Utl
         {
 
             fps = Properties.Settings.Default.fps_AviUtl;
-            string output_folder = "output";
+            string output_folder = Properties.Settings.Default.output_folder;
 
             if (hatsuon == "") hatsuon = "_"; //発音なしの場合発音しない適当な文字に置換
 
-            if (Properties.Settings.Default.output_folder == "output")
+            if (output_folder.StartsWith("\\"))     //出力フォルダ設定の最初が\だった場合、相対パスと判断する
             {
-                if(Directory.Exists("output") == false)
+                string currentDirectory = Directory.GetCurrentDirectory();
+                output_folder = currentDirectory + output_folder;
+
+                if(Directory.Exists(output_folder) == false)
                 {
-                    Directory.CreateDirectory("output");
-                    
+                    Directory.CreateDirectory(output_folder);
                 }
-                output_folder = Path.GetFullPath("output");
 
             }
             else

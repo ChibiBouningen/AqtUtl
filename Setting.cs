@@ -26,8 +26,8 @@ namespace AqT_Utl
             JimakuCheck.Checked = Properties.Settings.Default.jimakuCopy_startup;
             GCMZcheck.Checked = Properties.Settings.Default.useGCMZ;
 
-            KaisetsuTip.SetToolTip(label1, "音声出力先のフォルダを絶対パスで指定します。");
-            KaisetsuTip.SetToolTip(output_folderBox, "音声出力先のフォルダを絶対パスで指定します。");
+            KaisetsuTip.SetToolTip(label1, "音声出力先のフォルダパスを指定します。\\から書き始めると相対パスで指定されます。");
+            KaisetsuTip.SetToolTip(output_folderBox, "音声出力先のフォルダパスを指定します。\\から書き始めると相対パスで指定されます。");
             KaisetsuTip.SetToolTip(label2, "AviUtlのプロジェクトのフレームレートを指定します。");
             KaisetsuTip.SetToolTip(FPScomboBox, "AviUtlのプロジェクトのフレームレートを指定します。");
             KaisetsuTip.SetToolTip(JimakuCheck, "チェックを入れると、AqtUtlの起動時に「字幕をコピー」にチェックが入ります。");
@@ -57,6 +57,7 @@ namespace AqT_Utl
             output_folderBox.Text = Properties.Settings.Default.output_folder;
             FPScomboBox.Text = Properties.Settings.Default.fps_AviUtl.ToString();
             JimakuCheck.Checked = Properties.Settings.Default.jimakuCopy_startup;
+            GCMZcheck.Checked = Properties.Settings.Default.useGCMZ;
         }
     }
 }

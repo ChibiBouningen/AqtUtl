@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="output_folder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">output</Value>
+      <Value Profile="(Default)">\output</Value>
     </Setting>
     <Setting Name="jimakuCopy_startup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

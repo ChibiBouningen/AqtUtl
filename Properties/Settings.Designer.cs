@@ -25,7 +25,7 @@ namespace AqT_Utl.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("output")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\output")]
         public string output_folder {
             get {
                 return ((string)(this["output_folder"]));

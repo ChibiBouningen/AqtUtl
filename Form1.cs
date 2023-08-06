@@ -43,6 +43,7 @@ namespace AqT_Utl
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            VersionChangedConvert versionChangedConvert = new VersionChangedConvert();  //古いバージョンからexeを置き換えたときの処理
             ProfileListBoxReload();
             ProfileListBox.DisplayMember = "ProfileName";
             ProfileListBox.ValueMember = "Id";
@@ -60,6 +61,8 @@ namespace AqT_Utl
             KaisetsuTip.SetToolTip(ProfileListBox, "右クリックでプロファイルの作成や編集ができます。");
             KaisetsuTip.SetToolTip(JimakuCopy_Check, "発音記号を字幕に合わせます。");
             KaisetsuTip.SetToolTip(PlayPanel, "クリックで音声を試聴します。ファイルには保存されません。");
+
+            this.DoubleBuffered = true;     //Formのダブルバッファリングを有効化
 
         }
 
@@ -95,7 +98,7 @@ namespace AqT_Utl
             Point dragCurrentPoint = new Point(e.X, e.Y);
             int irekaesakiIndex = ProfileListBox.IndexFromPoint(dragCurrentPoint);
 
-            if (targetProfileIndex >= 0 && targetProfileIndex < ProfileListBox.Items.Count && ProfileListBox.SelectedIndex != targetProfileIndex)
+            if (targetProfileIndex >= 0 && targetProfileIndex < ProfileListBox.Items.Count && ProfileListBox.SelectedIndex != targetProfileIndex  && irekaesakiIndex >= 0)
             {
                 SerifProfile kari = serifProfiles[targetProfileIndex];
                 serifProfiles[targetProfileIndex] = serifProfiles[irekaesakiIndex];

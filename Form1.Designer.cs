@@ -128,22 +128,23 @@
             this.ProfileListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProfileListBox.FormattingEnabled = true;
             this.ProfileListBox.ItemHeight = 15;
-            this.ProfileListBox.Location = new System.Drawing.Point(0, 24);
+            this.ProfileListBox.Location = new System.Drawing.Point(0, 32);
             this.ProfileListBox.Margin = new System.Windows.Forms.Padding(0);
             this.ProfileListBox.Name = "ProfileListBox";
-            this.ProfileListBox.Size = new System.Drawing.Size(218, 426);
+            this.ProfileListBox.Size = new System.Drawing.Size(218, 418);
             this.ProfileListBox.TabIndex = 0;
             this.ProfileListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseDown);
             this.ProfileListBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseMove);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AutoSize = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ツールToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(218, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(218, 32);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -155,11 +156,12 @@
             this.設定ToolStripMenuItem,
             this.aqtUtlを終了ToolStripMenuItem});
             this.ツールToolStripMenuItem.Name = "ツールToolStripMenuItem";
-            this.ツールToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.ツールToolStripMenuItem.Size = new System.Drawing.Size(46, 28);
             this.ツールToolStripMenuItem.Text = "ツール";
             // 
             // aqtUtlについてToolStripMenuItem
             // 
+            this.aqtUtlについてToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.aqtUtlについてToolStripMenuItem.Name = "aqtUtlについてToolStripMenuItem";
             this.aqtUtlについてToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.aqtUtlについてToolStripMenuItem.Text = "AqtUtlについて";
@@ -167,6 +169,7 @@
             // 
             // aquesTalkPlayerを起動ToolStripMenuItem
             // 
+            this.aquesTalkPlayerを起動ToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.aquesTalkPlayerを起動ToolStripMenuItem.Name = "aquesTalkPlayerを起動ToolStripMenuItem";
             this.aquesTalkPlayerを起動ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.aquesTalkPlayerを起動ToolStripMenuItem.Text = "AquesTalkPlayerを起動";
@@ -174,6 +177,7 @@
             // 
             // 設定ToolStripMenuItem
             // 
+            this.設定ToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
             this.設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.設定ToolStripMenuItem.Text = "設定";
@@ -181,6 +185,7 @@
             // 
             // aqtUtlを終了ToolStripMenuItem
             // 
+            this.aqtUtlを終了ToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.aqtUtlを終了ToolStripMenuItem.Name = "aqtUtlを終了ToolStripMenuItem";
             this.aqtUtlを終了ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.aqtUtlを終了ToolStripMenuItem.Text = "AqtUtlを終了";
@@ -249,7 +254,7 @@
             // JimakuLabel
             // 
             this.JimakuLabel.AutoSize = true;
-            this.JimakuLabel.Location = new System.Drawing.Point(4, 11);
+            this.JimakuLabel.Location = new System.Drawing.Point(4, 9);
             this.JimakuLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.JimakuLabel.Name = "JimakuLabel";
             this.JimakuLabel.Size = new System.Drawing.Size(31, 15);
@@ -271,6 +276,7 @@
             // 
             this.HatsuonSprit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HatsuonSprit.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.HatsuonSprit.IsSplitterFixed = true;
             this.HatsuonSprit.Location = new System.Drawing.Point(0, 0);
             this.HatsuonSprit.Margin = new System.Windows.Forms.Padding(4);
             this.HatsuonSprit.Name = "HatsuonSprit";
@@ -293,7 +299,7 @@
             // 
             this.JimakuCopy_Check.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.JimakuCopy_Check.AutoSize = true;
-            this.JimakuCopy_Check.Location = new System.Drawing.Point(290, 7);
+            this.JimakuCopy_Check.Location = new System.Drawing.Point(290, 6);
             this.JimakuCopy_Check.Margin = new System.Windows.Forms.Padding(4);
             this.JimakuCopy_Check.Name = "JimakuCopy_Check";
             this.JimakuCopy_Check.Size = new System.Drawing.Size(86, 19);
@@ -305,7 +311,7 @@
             // HatsuonLabel
             // 
             this.HatsuonLabel.AutoSize = true;
-            this.HatsuonLabel.Location = new System.Drawing.Point(4, 8);
+            this.HatsuonLabel.Location = new System.Drawing.Point(4, 7);
             this.HatsuonLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.HatsuonLabel.Name = "HatsuonLabel";
             this.HatsuonLabel.Size = new System.Drawing.Size(55, 15);
