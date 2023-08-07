@@ -257,57 +257,62 @@ namespace AqT_Utl
         {
             if(e.Button == MouseButtons.Left)
             {
-                if(setAquesTalkPlayer)
+                generate();
+            }
+        }
+
+        private void generate()
+        {
+            if (setAquesTalkPlayer)
+            {
+                if (generated)      //生成済みの場合
                 {
-                    if (generated)      //生成済みの場合
+                    //ドラッグアンドドロップ開始処理
+                    string dragFilePath = last_generated_exo;
+                    var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
+                    dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
+                    GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
+
+                    if (Properties.Settings.Default.useGCMZ)    //GCMZモード有効時
                     {
-                        //ドラッグアンドドロップ開始処理
-                        string dragFilePath = last_generated_exo;
-                        var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
-                        dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
-                        GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
-
-                        if (Properties.Settings.Default.useGCMZ)    //GCMZモード有効時
-                        {
-                            gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
-                        }
-                    }
-                    else
-                    {                //未生成の場合
-                        int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
-
-                        if (serifProfiles.Count == 0)
-                        {
-                            MessageBox.Show("プロファイルを作成してください");
-                            return;
-                        }
-                        if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
-
-                        GeneratePanel.BackColor = Color.Yellow;
-                        last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS, false, Properties.Settings.Default.useGCMZ);
-                        if (last_generated_exo != "err")    //生成できた場合
-                        {
-                            generated = true;
-                            
-                            if(Properties.Settings.Default.useGCMZ) //GCMZモード有効時
-                            {
-                                gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
-                                GenerateLabel.Text = "拡張編集に挿入しました";
-                            }
-                            else
-                            {
-                                GenerateLabel.Text = "ここをD&&Dしてください";
-                            }
-                            
-                        }
-                        
-                        GeneratePanel.BackColor = Color.Gainsboro;
+                        gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
                     }
                 }
                 else
-                {
-                    MessageBox.Show("aquestalkplayer/AquesTalkPlayer.exeを配置し\nアプリケーションを再起動してください");
+                {                //未生成の場合
+                    int AviutlFPS = Properties.Settings.Default.fps_AviUtl;
+
+                    if (serifProfiles.Count == 0)
+                    {
+                        MessageBox.Show("プロファイルを作成してください");
+                        return;
+                    }
+                    if (ProfileListBox.SelectedIndex < 0) ProfileListBox.SelectedIndex = 0;
+
+                    GeneratePanel.BackColor = Color.Yellow;
+                    last_generated_exo = playerManager.VoiceGenerate(HatsuonBox.Text, JimakuBox.Text, serifProfiles[ProfileListBox.SelectedIndex], AviutlFPS, false, Properties.Settings.Default.useGCMZ);
+                    if (last_generated_exo != "err")    //生成できた場合
+                    {
+                        generated = true;
+
+                        if (Properties.Settings.Default.useGCMZ) //GCMZモード有効時
+                        {
+                            gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
+                            GenerateLabel.Text = "拡張編集に挿入しました";
+                        }
+                        else
+                        {
+                            GenerateLabel.Text = "ここをD&&Dしてください";
+                        }
+
+                    }
+
+                    GeneratePanel.BackColor = Color.Gainsboro;
                 }
+            }
+            else
+            {
+                MessageBox.Show("aquestalkplayer/AquesTalkPlayer.exeを配置し\nアプリケーションを再起動してください");
             }
         }
 
@@ -332,11 +337,11 @@ namespace AqT_Utl
             generated = false;
             if(Properties.Settings.Default.useGCMZ) //GCMZモード有効時
             {
-                GenerateLabel.Text = "クリックで拡張編集に挿入";
+                GenerateLabel.Text = "拡張編集に挿入(Ctrl + Insert)";
             }
             else
             {
-                GenerateLabel.Text = "クリックで音声を生成";
+                GenerateLabel.Text = "音声を生成(Ctrl + Insert)";
             }
         }
 
@@ -357,7 +362,7 @@ namespace AqT_Utl
                 }
 
 
-                GenerateLabel.Text = "AviUtl拡張編集に挿入";
+                GenerateLabel.Text = "AviUtlに挿入(Ctrl + Insert)";
                 Size formsize = this.Size;
 
                 RightSpritContainer.SplitterDistance = this.ClientSize.Height /2;
@@ -365,7 +370,7 @@ namespace AqT_Utl
             }
             else
             {
-                GenerateLabel.Text = "クリックで音声を生成";
+                GenerateLabel.Text = "音声を生成(Ctrl + Insert)";
 
                 RightSpritContainer.SplitterDistance = 0;
                 RightSpritContainer.IsSplitterFixed = true;
@@ -408,6 +413,33 @@ namespace AqT_Utl
             GenerateLabel.Location = new Point(x, y);
         }
 
-        
+        private void Form1_KeyDown(object sender, KeyEventArgs e)       //ショートカットイベントを記述
+        {
+            if(e.KeyData == (Keys.Control | Keys.Insert))
+            {
+                generate();
+            }
+            if(e.KeyData == Keys.F5)
+            {
+                object kariObject = new object();
+                EventArgs kariEventArgs = new EventArgs();
+                PlayPanel_Click(kariObject, kariEventArgs);
+            }
+            if(e.KeyData == (Keys.Control | Keys.Shift | Keys.O))
+            {
+                if(ProfileListBox.SelectedIndex > 0)
+                {
+                    ProfileListBox.SelectedIndex = ProfileListBox.SelectedIndex - 1;
+                }
+            }
+            if(e.KeyData == (Keys.Control | Keys.Shift | Keys.L))
+            {
+                if (ProfileListBox.SelectedIndex < ProfileListBox.Items.Count - 1)
+                {
+                    ProfileListBox.SelectedIndex = ProfileListBox.SelectedIndex + 1;
+                }
+            }
+
+        }
     }
 }

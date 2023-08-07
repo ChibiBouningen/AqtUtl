@@ -35,6 +35,10 @@
             this.ProfileListBox = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ツールToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aqtUtlについてToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aquesTalkPlayerを起動ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aqtUtlを終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.TextBoxSprit = new System.Windows.Forms.SplitContainer();
             this.JimakuSprit = new System.Windows.Forms.SplitContainer();
@@ -50,15 +54,11 @@
             this.GeneratePanel = new System.Windows.Forms.Panel();
             this.GenerateLabel = new System.Windows.Forms.Label();
             this.ProfileListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.KaisetsuTip = new System.Windows.Forms.ToolTip(this.components);
-            this.aqtUtlについてToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aquesTalkPlayerを起動ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aqtUtlを終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを追加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを複製ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プロファイルを削除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.KaisetsuTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -161,6 +161,42 @@
             this.ツールToolStripMenuItem.Name = "ツールToolStripMenuItem";
             this.ツールToolStripMenuItem.Size = new System.Drawing.Size(46, 28);
             this.ツールToolStripMenuItem.Text = "ツール";
+            // 
+            // aqtUtlについてToolStripMenuItem
+            // 
+            this.aqtUtlについてToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.aqtUtlについてToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.info;
+            this.aqtUtlについてToolStripMenuItem.Name = "aqtUtlについてToolStripMenuItem";
+            this.aqtUtlについてToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aqtUtlについてToolStripMenuItem.Text = "AqtUtlについて";
+            this.aqtUtlについてToolStripMenuItem.Click += new System.EventHandler(this.aqtUtlについてToolStripMenuItem_Click);
+            // 
+            // aquesTalkPlayerを起動ToolStripMenuItem
+            // 
+            this.aquesTalkPlayerを起動ToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.aquesTalkPlayerを起動ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.ad_group;
+            this.aquesTalkPlayerを起動ToolStripMenuItem.Name = "aquesTalkPlayerを起動ToolStripMenuItem";
+            this.aquesTalkPlayerを起動ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aquesTalkPlayerを起動ToolStripMenuItem.Text = "AquesTalkPlayerを起動";
+            this.aquesTalkPlayerを起動ToolStripMenuItem.Click += new System.EventHandler(this.aquesTalkPlayerを起動ToolStripMenuItem_Click);
+            // 
+            // 設定ToolStripMenuItem
+            // 
+            this.設定ToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.設定ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.setting;
+            this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
+            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.設定ToolStripMenuItem.Text = "設定";
+            this.設定ToolStripMenuItem.Click += new System.EventHandler(this.設定ToolStripMenuItem_Click);
+            // 
+            // aqtUtlを終了ToolStripMenuItem
+            // 
+            this.aqtUtlを終了ToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.aqtUtlを終了ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.exitapp;
+            this.aqtUtlを終了ToolStripMenuItem.Name = "aqtUtlを終了ToolStripMenuItem";
+            this.aqtUtlを終了ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.aqtUtlを終了ToolStripMenuItem.Text = "AqtUtlを終了";
+            this.aqtUtlを終了ToolStripMenuItem.Click += new System.EventHandler(this.aqtUtlを終了ToolStripMenuItem_Click);
             // 
             // splitContainer2
             // 
@@ -336,11 +372,12 @@
             this.PlayLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PlayLabel.AutoSize = true;
             this.PlayLabel.BackColor = System.Drawing.Color.Transparent;
-            this.PlayLabel.Location = new System.Drawing.Point(59, 29);
+            this.PlayLabel.Location = new System.Drawing.Point(68, 29);
             this.PlayLabel.Name = "PlayLabel";
-            this.PlayLabel.Size = new System.Drawing.Size(71, 15);
+            this.PlayLabel.Size = new System.Drawing.Size(55, 15);
             this.PlayLabel.TabIndex = 0;
-            this.PlayLabel.Text = "クリックで試聴";
+            this.PlayLabel.Text = "試聴(F5)";
+            this.PlayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PlayLabel.Click += new System.EventHandler(this.PlayPanel_Click);
             // 
             // GeneratePanel
@@ -360,12 +397,14 @@
             this.GenerateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GenerateLabel.AutoSize = true;
             this.GenerateLabel.BackColor = System.Drawing.Color.Transparent;
-            this.GenerateLabel.Location = new System.Drawing.Point(45, 190);
+            this.GenerateLabel.Location = new System.Drawing.Point(22, 184);
             this.GenerateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GenerateLabel.Name = "GenerateLabel";
-            this.GenerateLabel.Size = new System.Drawing.Size(104, 15);
+            this.GenerateLabel.Size = new System.Drawing.Size(148, 15);
             this.GenerateLabel.TabIndex = 0;
-            this.GenerateLabel.Text = "クリックで音声を生成";
+            this.GenerateLabel.Text = "音声を生成(Ctrl + Insert)";
+            this.GenerateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GenerateLabel.SizeChanged += new System.EventHandler(this.GenerateLabel_TextChanged);
             this.GenerateLabel.TextChanged += new System.EventHandler(this.GenerateLabel_TextChanged);
             this.GenerateLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GeneratePanel_MouseDown);
             // 
@@ -378,42 +417,6 @@
             this.プロファイルを削除ToolStripMenuItem});
             this.ProfileListContextMenu.Name = "ProfileListContextMenu";
             this.ProfileListContextMenu.Size = new System.Drawing.Size(184, 92);
-            // 
-            // aqtUtlについてToolStripMenuItem
-            // 
-            this.aqtUtlについてToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.aqtUtlについてToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.info;
-            this.aqtUtlについてToolStripMenuItem.Name = "aqtUtlについてToolStripMenuItem";
-            this.aqtUtlについてToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.aqtUtlについてToolStripMenuItem.Text = "AqtUtlについて";
-            this.aqtUtlについてToolStripMenuItem.Click += new System.EventHandler(this.aqtUtlについてToolStripMenuItem_Click);
-            // 
-            // aquesTalkPlayerを起動ToolStripMenuItem
-            // 
-            this.aquesTalkPlayerを起動ToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.aquesTalkPlayerを起動ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.ad_group;
-            this.aquesTalkPlayerを起動ToolStripMenuItem.Name = "aquesTalkPlayerを起動ToolStripMenuItem";
-            this.aquesTalkPlayerを起動ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.aquesTalkPlayerを起動ToolStripMenuItem.Text = "AquesTalkPlayerを起動";
-            this.aquesTalkPlayerを起動ToolStripMenuItem.Click += new System.EventHandler(this.aquesTalkPlayerを起動ToolStripMenuItem_Click);
-            // 
-            // 設定ToolStripMenuItem
-            // 
-            this.設定ToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.設定ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.setting;
-            this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
-            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.設定ToolStripMenuItem.Text = "設定";
-            this.設定ToolStripMenuItem.Click += new System.EventHandler(this.設定ToolStripMenuItem_Click);
-            // 
-            // aqtUtlを終了ToolStripMenuItem
-            // 
-            this.aqtUtlを終了ToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.aqtUtlを終了ToolStripMenuItem.Image = global::AqT_Utl.Properties.Resources.exitapp;
-            this.aqtUtlを終了ToolStripMenuItem.Name = "aqtUtlを終了ToolStripMenuItem";
-            this.aqtUtlを終了ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.aqtUtlを終了ToolStripMenuItem.Text = "AqtUtlを終了";
-            this.aqtUtlを終了ToolStripMenuItem.Click += new System.EventHandler(this.aqtUtlを終了ToolStripMenuItem_Click);
             // 
             // プロファイルを追加ToolStripMenuItem
             // 
@@ -455,11 +458,13 @@
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "AqtUtl";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
