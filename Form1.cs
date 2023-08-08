@@ -19,6 +19,7 @@ namespace AqT_Utl
     {
         List<SerifProfile> serifProfiles;
         AquesTalkPlayerManager playerManager;
+        SettingLoader settingLoader;
         ProfileLoader profileLoader;
         GcmzAPI_Helper gcmzAPI_Helper;
 
@@ -38,15 +39,19 @@ namespace AqT_Utl
             a = playerManager.RegistPlayer();
             if (a == 0) setAquesTalkPlayer = true;
             else setAquesTalkPlayer = false;
-            
+
+            settingLoader = new SettingLoader();
             profileLoader = new ProfileLoader();
-            profileLoader.Load(ref serifProfiles);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Text += "   v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            VersionChangedConvert versionChangedConvert = new VersionChangedConvert();  //古いバージョンからexeを置き換えたときの処理
+
+            settingLoader.Load();       //設定をjsonから読み込み
+            profileLoader.Load(ref serifProfiles);  //プロファイルをjsonから読み込み
+
             ProfileListBoxReload();
             ProfileListBox.DisplayMember = "ProfileName";
             ProfileListBox.ValueMember = "Id";
@@ -376,6 +381,9 @@ namespace AqT_Utl
                 RightSpritContainer.IsSplitterFixed = true;
             }
             this.TopMost = Properties.Settings.Default.TopMost;
+
+            settingLoader.Save();
+
             resetGenerated();
         }
 
