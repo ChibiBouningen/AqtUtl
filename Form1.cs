@@ -459,14 +459,16 @@ namespace AqT_Utl
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)    //Form標準のと重複するショートカットイベントはこっちに記述
         {
-            if (keyData == (Keys.Control | Keys.Shift | Keys.I))
+            if (keyData == (Keys.Control | Keys.Shift | Keys.I))    //字幕ボックスにフォーカス
             {
                 JimakuBox.Focus();
                 return true;
             }
-            if (keyData == (Keys.Control| Keys.Shift | Keys.K))
+            if (keyData == (Keys.Control| Keys.Shift | Keys.K))     //発音ボックスにフォーカスして字幕コピーモード有効化
             {
                 HatsuonBox.Focus();
+                JimakuCopy_Check.Checked = false;
+                JimakuCopyCheck_reflect();
                 return true;
             }
             if (keyData == (Keys.Control | Keys.Shift | Keys.M))  //Ctrl + Shift + M

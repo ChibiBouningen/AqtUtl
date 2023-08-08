@@ -178,6 +178,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddSerifProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "プロファイルの編集";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.AddSerifProfile_Load);

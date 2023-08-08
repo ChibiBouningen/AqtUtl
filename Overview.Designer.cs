@@ -80,6 +80,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Overview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AqtUtlについて";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Overview_Load);
