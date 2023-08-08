@@ -302,8 +302,13 @@ namespace AqT_Utl
 
                         if (Properties.Settings.Default.useGCMZ) //GCMZモード有効時
                         {
-                            gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
-                            GenerateLabel.Text = "拡張編集に挿入しました";
+                            int returnCode;
+                            returnCode = gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
+                            if (returnCode == 0)
+                            {
+                                GenerateLabel.Text = "拡張編集に挿入しました";
+                            }
+                            
                         }
                         else
                         {
