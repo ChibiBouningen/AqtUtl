@@ -438,21 +438,45 @@ namespace AqT_Utl
                 EventArgs kariEventArgs = new EventArgs();
                 PlayPanel_Click(kariObject, kariEventArgs);
             }
-            if(e.KeyData == (Keys.Control | Keys.Shift | Keys.O))
+            if(e.KeyData == (Keys.Control | Keys.Shift | Keys.O))   //Ctrl + Shift + O
             {
                 if(ProfileListBox.SelectedIndex > 0)
                 {
+                    e.SuppressKeyPress = true;
                     ProfileListBox.SelectedIndex = ProfileListBox.SelectedIndex - 1;
                 }
             }
-            if(e.KeyData == (Keys.Control | Keys.Shift | Keys.L))
+            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.L))  //Ctrl + Shift + L
             {
                 if (ProfileListBox.SelectedIndex < ProfileListBox.Items.Count - 1)
                 {
+                    e.SuppressKeyPress = true;
                     ProfileListBox.SelectedIndex = ProfileListBox.SelectedIndex + 1;
                 }
             }
+            
+        }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)    //Form標準のと重複するショートカットイベントはこっちに記述
+        {
+            if (keyData == (Keys.Control | Keys.Shift | Keys.I))
+            {
+                JimakuBox.Focus();
+                return true;
+            }
+            if (keyData == (Keys.Control| Keys.Shift | Keys.K))
+            {
+                HatsuonBox.Focus();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.Shift | Keys.M))  //Ctrl + Shift + M
+            {
+                JimakuCopy_Check.Checked = !JimakuCopy_Check.Checked;
+                JimakuCopyCheck_reflect();
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

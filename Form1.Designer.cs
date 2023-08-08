@@ -109,6 +109,7 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 218;
             this.splitContainer1.TabIndex = 0;
+            this.splitContainer1.TabStop = false;
             // 
             // ListAnnaiLabel
             // 
@@ -119,7 +120,7 @@
             this.ListAnnaiLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListAnnaiLabel.Name = "ListAnnaiLabel";
             this.ListAnnaiLabel.Size = new System.Drawing.Size(92, 30);
-            this.ListAnnaiLabel.TabIndex = 1;
+            this.ListAnnaiLabel.TabIndex = 0;
             this.ListAnnaiLabel.Text = "右クリックで\r\nプロファイルを作成";
             this.ListAnnaiLabel.Visible = false;
             this.ListAnnaiLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseDown);
@@ -136,6 +137,7 @@
             this.ProfileListBox.Name = "ProfileListBox";
             this.ProfileListBox.Size = new System.Drawing.Size(218, 418);
             this.ProfileListBox.TabIndex = 0;
+            this.ProfileListBox.TabStop = false;
             this.ProfileListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseDown);
             this.ProfileListBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ProfileListBox_MouseMove);
             // 
@@ -215,6 +217,7 @@
             this.splitContainer2.Size = new System.Drawing.Size(578, 450);
             this.splitContainer2.SplitterDistance = 380;
             this.splitContainer2.TabIndex = 0;
+            this.splitContainer2.TabStop = false;
             // 
             // TextBoxSprit
             // 
@@ -235,6 +238,7 @@
             this.TextBoxSprit.SplitterDistance = 212;
             this.TextBoxSprit.SplitterWidth = 5;
             this.TextBoxSprit.TabIndex = 0;
+            this.TextBoxSprit.TabStop = false;
             // 
             // JimakuSprit
             // 
@@ -256,7 +260,8 @@
             this.JimakuSprit.Size = new System.Drawing.Size(380, 212);
             this.JimakuSprit.SplitterDistance = 28;
             this.JimakuSprit.SplitterWidth = 1;
-            this.JimakuSprit.TabIndex = 1;
+            this.JimakuSprit.TabIndex = 0;
+            this.JimakuSprit.TabStop = false;
             // 
             // JimakuLabel
             // 
@@ -301,6 +306,7 @@
             this.HatsuonSprit.SplitterDistance = 25;
             this.HatsuonSprit.SplitterWidth = 5;
             this.HatsuonSprit.TabIndex = 0;
+            this.HatsuonSprit.TabStop = false;
             // 
             // JimakuCopy_Check
             // 
@@ -322,7 +328,7 @@
             this.HatsuonLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.HatsuonLabel.Name = "HatsuonLabel";
             this.HatsuonLabel.Size = new System.Drawing.Size(55, 15);
-            this.HatsuonLabel.TabIndex = 0;
+            this.HatsuonLabel.TabIndex = 1;
             this.HatsuonLabel.Text = "発音記号";
             // 
             // HatsuonBox
@@ -333,7 +339,7 @@
             this.HatsuonBox.Multiline = true;
             this.HatsuonBox.Name = "HatsuonBox";
             this.HatsuonBox.Size = new System.Drawing.Size(380, 203);
-            this.HatsuonBox.TabIndex = 0;
+            this.HatsuonBox.TabIndex = 2;
             this.HatsuonBox.TextChanged += new System.EventHandler(this.HatsuonBox_TextChanged);
             // 
             // RightSpritContainer
@@ -355,6 +361,7 @@
             this.RightSpritContainer.Size = new System.Drawing.Size(194, 450);
             this.RightSpritContainer.SplitterDistance = 62;
             this.RightSpritContainer.TabIndex = 0;
+            this.RightSpritContainer.TabStop = false;
             // 
             // PlayPanel
             // 
