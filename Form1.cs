@@ -438,33 +438,36 @@ namespace AqT_Utl
                 EventArgs kariEventArgs = new EventArgs();
                 PlayPanel_Click(kariObject, kariEventArgs);
             }
-            if(e.KeyData == (Keys.Control | Keys.Shift | Keys.O))   //Ctrl + Shift + O
-            {
-                if(ProfileListBox.SelectedIndex > 0)
-                {
-                    e.SuppressKeyPress = true;
-                    ProfileListBox.SelectedIndex = ProfileListBox.SelectedIndex - 1;
-                }
-            }
-            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.L))  //Ctrl + Shift + L
-            {
-                if (ProfileListBox.SelectedIndex < ProfileListBox.Items.Count - 1)
-                {
-                    e.SuppressKeyPress = true;
-                    ProfileListBox.SelectedIndex = ProfileListBox.SelectedIndex + 1;
-                }
-            }
+            
             
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)    //Form標準のと重複するショートカットイベントはこっちに記述
         {
-            if (keyData == (Keys.Control | Keys.Shift | Keys.I))    //字幕ボックスにフォーカス
+            if (keyData == (Keys.Control | Keys.Shift | Keys.I))   //Ctrl + Shift + O
+            {
+                if (ProfileListBox.SelectedIndex > 0)
+                {
+                    ProfileListBox.SelectedIndex = ProfileListBox.SelectedIndex - 1;
+                    
+                }
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.Shift | Keys.K))  //Ctrl + Shift + L
+            {
+                if (ProfileListBox.SelectedIndex < ProfileListBox.Items.Count - 1)
+                {
+                    ProfileListBox.SelectedIndex = ProfileListBox.SelectedIndex + 1;
+                    
+                }
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.Shift | Keys.O))    //字幕ボックスにフォーカス
             {
                 JimakuBox.Focus();
                 return true;
             }
-            if (keyData == (Keys.Control| Keys.Shift | Keys.K))     //発音ボックスにフォーカスして字幕コピーモード有効化
+            if (keyData == (Keys.Control| Keys.Shift | Keys.L))     //発音ボックスにフォーカスして字幕コピーモード有効化
             {
                 HatsuonBox.Focus();
                 JimakuCopy_Check.Checked = false;

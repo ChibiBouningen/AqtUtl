@@ -1,5 +1,5 @@
 ﻿# AqtUtl  -AquesTalkPlayerとAviUtlを連携で使いやすく！-  
-<img width="100%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/4aa5aa74-50ae-4888-b7ff-84d351e3bdcf"><br>  
+<img width="60%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/38a3febc-b60c-4c33-9d10-0a4e1489bcc8"><br>  
 音声合成ソフトのAquesTalkPlayerと動画編集ソフトのAviUtlを連携させ、動画作成を支援するツールです。  
 [mikado394m様のYukkuriUtil](https://github.com/mikado394m/yukkuriutil1)に近い機能を持ちます。YukkuriUtilの依存ソフトであるSoftalkがAquesTalkのサポートを終了したためAqtUtlを作成しました。  
 
@@ -11,52 +11,62 @@
   - [プロファイルの設定](#プロファイルの設定)  
   - [字幕の設定方法](#字幕の設定方法)  
   - [AqtUtlの設定](#aqtutlの設定)  
+  - [ショートカットキー](#ショートカットキー)
+- [1クリック挿入機能を使う](#1クリック挿入機能を使う)
 - [動作要件](#動作要件)  
-- [質問・バグ報告](#質問・バグ報告)  
+- [質問・要望・バグ報告](#質問・要望・バグ報告)  
 - [使用させて頂いた物](#使用させて頂いた物)  
 
 # 導入方法  
-## 事前準備  
-もしAviUtlにpatch.aul(https://github.com/ePi5131/patch.aul)を導入していなければ導入してください。  
+### 事前準備  
+もしAviUtlに[patch.aul](https://github.com/ePi5131/patch.aul)を導入していなければ導入してください。  
 
-## インストール  
-1. [Release](https://github.com/ChibiBouningen/AqtUtl/releases)からAqtUtlの最新版をダウンロード  
-<b>セキュリティソフトにより、ダウンロードしたAqtUtlのファイルが削除されてしまう場合があります。例外設定を行った後に再度ダウンロードしてください。</b>
+### インストール  
+1. [Release](https://github.com/ChibiBouningen/AqtUtl/releases)からAqtUtlの最新版をダウンロードする  
+<b>セキュリティソフトにより、ダウンロードしたAqtUtlのファイルが削除されてしまう場合があります。適宜例外設定を行ってください。</b>
 1. AquesTalkPlayerの最新版を[公式サイト](https://www.a-quest.com/products/aquestalkplayer.html)からダウンロード  
-1. ダウンロードいたAqtUtlとAquesTalkPlayerを解凍し、AqtUtl.exeの入ったフォルダにAquesTalkPlayerの入ったフォルダ「aquestalkplayer」をコピーする  
+1. ダウンロードしたAqtUtlとAquesTalkPlayerを解凍する  
+1. AqtUtl.exeの入ったフォルダにAquesTalkPlayerの入ったフォルダ「aquestalkplayer」をコピーする  
+画像のようになっていればOK  
+<img width="60%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/e706937c-bcd7-4322-8f71-f01e9b087aff"><br>  
 1. AqtUtl.exeを起動する  
 1. 「ツール」→「設定」から、AviUtlのプロジェクトに合わせてFPS(フレームレート)を設定する  
+
 導入に成功していれば、AqtUtlのツール→AquesTalkPlayerを起動 よりAquesTalkPlayerが起動できます。  
 <br>
 
-## 古いバージョンから更新する場合  
+### 古いバージョンから更新する場合  
 AqtUtl.exeを新しいバージョンに置き換えてください。  
 <br>
+
 # 使い方  
-プロファイルを指定し、"字幕"の入力欄に文字を入力、「クリックで音声を生成」という部分をクリックすると音声の再生・生成が始まります。  
+プロファイルを指定し、"字幕"の入力欄に文字を入力、「音声を生成」という部分をクリックすると音声の再生・生成が始まります。  
 すぐに「ここをD&Dしてください」という表示に切り替わるので、グレーになっている部分をそのままAviUtlの拡張編集にドラッグアンドドロップすると音声(及び設定していれば字幕)が現れます。  
 字幕と読みを別々にしたい場合、「字幕をコピー」にチェックを入れると"発音記号"の入力欄に発音を別で入力することができます。  
 
-AqtUtlでは、AquesTalkPlayerを用いて音声を生成しています。そのため、辞書登録や音声プリセットの作成はAquesTalkPlayer側にて行う必要があります。  
+AqtUtlでは、AquesTalkPlayerを用いて音声を生成しています。そのため、<span style="color: red; ">辞書登録や音声プリセットの作成はAquesTalkPlayer側にて行う必要があります</span>。 
 
-## プロファイルの設定  
-事前にAquesTalkPlayerにてオンラインマニュアル(https://www.a-quest.com/products/aquestalkplayer_man.html)  
-に従い、使用したい音声のプリセットを作成してください。  
-<img src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/b6223e50-5c12-4912-b884-d489ee3ba834"><br>
+
+
+### プロファイルの設定  
+事前にAquesTalkPlayerにて[AquesTalkPlayerのオンラインマニュアル](https://www.a-quest.com/products/aquestalkplayer_man.html)に従い、使用したい音声のプリセットを作成してください。  
+<br>
+<img src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/47464882-e0e6-4cdc-8610-40aa80312391"><br>
 画面左側を右クリックし、「プロファイルを新規作成」をクリックすると、新しいプロファイルを作成します。  
 既存のプロファイルを右クリックし「プロファイルを編集」をクリックすると、そのプロファイルを編集することができます。  
 「プロファイルの設定」というウィンドウが開きます。  
-<img src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/76c736d6-96b9-4c16-85b0-5865cb41b269"><br>
+<img src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/f75de3fb-1477-4c7c-8bd7-acd546d9be29"><br>
 「プロファイル名」には任意のプロファイル名  
 「AquesTalkPlayerのプリセット名」には、AquesTalkPlayerで設定したプリセットの名前を入力します。  
-「並べ替えの優先度」は、数字が大きいほどプロファイルがAqtUtl内で上位に表示されます。  
 「音声の長さ補正」は、AviUtlに音声(と字幕)を出力する際、長さを指定したフレーム数分伸ばします。  
+「挿入するレイヤー」は、後述する[1クリック挿入機能](#1クリック挿入機能を使う)の有効時に音声を挿入するレイヤーを指定します。    
 「字幕を付与」の項目は[字幕の設定方法](#字幕の設定方法)にて解説しています。  
 作成(もしくは適用)ボタンを押すと、設定した内容が反映され、新規作成の場合は設定したプロファイルが選択できるようになっています。  
 <br>
 
-## 字幕の設定方法  
+### 字幕の設定方法  
 プロファイルごとに字幕を設定することができます。  
+ゆくサクとほぼ同じ方法で登録することができます。  
 1. AviUtlを起動しプロジェクトを新規に作成する。  
 1. 字幕を設定したいプロファイルを使って一度適当な音声を作り拡張編集に投げる。  
 1. 音声を拡張編集のレイヤー1に移動する。  
@@ -78,13 +88,50 @@ AqtUtlでは、AquesTalkPlayerを用いて音声を生成しています。そ�
 設定が完了したら、字幕が正しく表示されるかを確認してください。  
 <br>
 
-## AqtUtlの設定  
+### AqtUtlの設定  
+<img width="30%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/51c08d7b-cfdf-44fe-bcc0-7403da0f83f2"><br>  
 「ツール」→「設定」からAqtUtl全体に関係する設定を変更することができます。  
-「音声出力パス」には音声とexoファイルを出力するフォルダを絶対パスで指定します。但しoutputと設定した場合はAqtUtl.exeと同じフォルダのoutputフォルダに出力されます。  
-「AviUtlのFPS」には、AviUtlで編集するプロジェクトのフレームレートを記述してください。  
+「音声出力パス」には音声とexoファイルを出力するフォルダを指定します。￥から記述するとAqtUtl.exeからの相対パスで記述することができます。  
+「AviUtlのFPS」には、AviUtlで編集するプロジェクトのフレームレートを記述します。  
 「起動時「字幕をコピー」にチェックを入れる」はそのままです。  
+「ごちゃまぜドロップスと連携」は[1クリック挿入機能を使う](#1クリック挿入機能を使う)をご確認ください。  
+「常に最前面に表示」にチェックを入れると、AqtUtlが他のアプリの裏に隠れず、常に最前面に表示されるようになります。  
+
 <br>
 
+### ショートカットキー  
+AqtUtlの主要な操作にはショートカットキーが割り振られています。  
+<img width="60%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/c4495e48-a812-4a92-b565-0722a6423bcd"><br>  
+| 動作 | 割り当てキー |
+|:-----------|:------------|
+| 1つ上のプロファイルを選択 | Ctrl + Shift + I |
+| 1つ下のプロファイルを選択 | Ctrl + Shift + K |
+| 字幕入力欄にフォーカス | Ctrl + Shift + O |
+| 発音入力欄にフォーカスし、字幕をコピーのチェックを外す | Ctrl + Shift + L |
+| 字幕をコピーのチェックを切り替える | Ctrl + Shift + M |
+| 音声を試聴する | F5 |
+| 音声を生成(もしくは拡張編集に挿入) | Ctrl + Insert |
+
+現状ユーザーによってショートカットをカスタマイズする機能の実装は予定していません。メニューを作るのが面倒で...。  
+カスタマイズできるようにするPR待ってます。  
+<br>
+
+# 1クリック挿入機能を使う  
+oov氏の公開しているAviUtlプラグイン[「ごちゃまぜドロップス」](https://github.com/oov/aviutl_gcmzdrops)の外部連携APIを使用して、１クリックで拡張編集タイムラインに音声や字幕を投入することができます。  
+ショートカットキーを同時に活用するとキーボード操作のみで次々と音声字幕を挿入していくことができるので、動画作成をより高速に行うことができます。  
+ごちゃまぜドロップスとの連携は自作の連携用CLIアプリ[gcmzAPI.exe](https://github.com/ChibiBouningen/gcmzAPIexe)を呼び出すことで実現します。  
+<img width="60%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/f74a162e-0ff6-46c1-8d9f-e8c5649b8249"><br>  
+
+### 導入方法  
+1. ごちゃまぜドロップスとの連携に必要な[gcmzAPI.exeの最新版をダウンロード](https://github.com/ChibiBouningen/gcmzAPIexe/releases/latest)  
+1. AqtUtl.exeと同じ場所にgcmzAPI.exeを配置  
+1. AqtUtlを起動し、「ツール」→「設定」→「ごちゃまぜドロップスと連携」にチェックを入れ、設定ウィンドウを閉じる  
+
+### 使用方法  
+ごちゃまぜドロップスを導入したAviUtl起動し、<span style="color: red; ">必ずプロジェクトを開いた状態で</span>「拡張編集に挿入」をクリックします。  
+音声の生成が完了した後、プロファイルに設定した音声と字幕がAviUtl拡張編集タイムラインの再生位置に挿入されます。  
+この時挿入されたオブジェクトの長さ分再生位置が移動します。  
+挿入するレイヤーは「プロファイルの編集」の「挿入するレイヤー」によって指定することができます。  
 # 動作要件
 - CPU x86系 (ARM系は検証環境がないので保障できません)  
 - OS Windows10 64bit 1909以降  
@@ -92,10 +139,16 @@ AqtUtlでは、AquesTalkPlayerを用いて音声を生成しています。そ�
 - 拡張編集プラグイン 0.92  
 - [patch.aul](https://github.com/ePi5131/patch.aul) r42以降  
 - AquesTalkPlayer Ver.1.0.1.1以降  
+
+1クリック挿入機能有効時には追加で  
+- ごちゃまぜドロップス v0.3.25以上  
+
+が必要です。
 <br>
 
-# 質問・バグ報告  
+# 質問・要望・バグ報告  
 [GitHubのIssues](https://github.com/ChibiBouningen/AqtUtl/issues)にて受け付けております。  
+その他[作者X](https://twitter.com/tiisanapeople)や動画サイトのコメント欄でお気軽にどうぞ。  
 <br>
 
 # 使用させて頂いた物 
