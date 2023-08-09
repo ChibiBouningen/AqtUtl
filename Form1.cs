@@ -232,6 +232,7 @@ namespace AqT_Utl
             {
                 HatsuonBox.Text = JimakuBox.Text;
             }
+            resetGenerated();
         }
 
         private void HatsuonBox_TextChanged(object sender, EventArgs e)
