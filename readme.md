@@ -101,7 +101,7 @@ AqtUtlでは、AquesTalkPlayerを用いて音声を生成しています。そ�
 
 ### ショートカットキー  
 AqtUtlの主要な操作にはショートカットキーが割り振られています。  
-<img width="60%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/c4495e48-a812-4a92-b565-0722a6423bcd"><br>  
+<img width="100%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/c4495e48-a812-4a92-b565-0722a6423bcd"><br>  
 | 動作 | 割り当てキー |
 |:-----------|:------------|
 | 1つ上のプロファイルを選択 | Ctrl + Shift + I |
