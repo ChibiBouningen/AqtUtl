@@ -22,7 +22,7 @@
 もしAviUtlに[patch.aul](https://github.com/ePi5131/patch.aul)を導入していなければ導入してください。  
 
 ### インストール  
-1. [Release](https://github.com/ChibiBouningen/AqtUtl/releases)からAqtUtlの最新版をダウンロードする  
+1. [Release](https://github.com/ChibiBouningen/AqtUtl/releases/latest)からAqtUtlの最新版をダウンロードする  
 <b>セキュリティソフトにより、ダウンロードしたAqtUtlのファイルが削除されてしまう場合があります。適宜例外設定を行ってください。</b>
 1. AquesTalkPlayerの最新版を[公式サイト](https://www.a-quest.com/products/aquestalkplayer.html)からダウンロード  
 1. ダウンロードしたAqtUtlとAquesTalkPlayerを解凍する  
@@ -132,6 +132,13 @@ oov氏の公開しているAviUtlプラグイン[「ごちゃまぜドロップ�
 音声の生成が完了した後、プロファイルに設定した音声と字幕がAviUtl拡張編集タイムラインの再生位置に挿入されます。  
 この時挿入されたオブジェクトの長さ分再生位置が移動します。  
 挿入するレイヤーは「プロファイルの編集」の「挿入するレイヤー」によって指定することができます。  
+
+### うまく動かない！  
+挿入するレイヤーと再生位置にすでにオブジェクトが存在すると音声を挿入できません。  
+AviUtlで必ずプロジェクトを作成してください。
+プロジェクトを開かず挿入操作を行うと「拡張編集に挿入しました」という表示になりますが実際には挿入できません。  
+連続で同じ内容を挿入しようとすると10秒ほどかかる現象を確認しています。  
+
 # 動作要件
 - CPU x86系 (ARM系は検証環境がないので保障できません)  
 - OS Windows10 64bit 1909以降  
