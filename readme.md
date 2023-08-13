@@ -127,6 +127,7 @@ oov氏の公開しているAviUtlプラグイン[「ごちゃまぜドロップ�
 <img width="60%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/d6622fb4-114e-406c-86ee-4bbb8a8c2119"><br>
 画像の赤丸のところからダウンロードし、インストールする  
 1. ごちゃまぜドロップスとの連携に必要な[gcmzAPI.exeの最新版をダウンロード](https://github.com/ChibiBouningen/gcmzAPIexe/releases/latest)  
+<img width="60%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/ef1151c1-92b9-4473-b7f9-377f77ea79c4"><br>
 1. AqtUtl.exeと同じ場所にgcmzAPI.exeを配置  
 1. AqtUtlを起動し、「ツール」→「設定」→「ごちゃまぜドロップスと連携」にチェックを入れ、設定ウィンドウを閉じる  
 
