@@ -263,25 +263,38 @@ namespace AqT_Utl
         {
             if(e.Button == MouseButtons.Left)
             {
-                generate();
+                generate(false);
             }
         }
 
-        private void generate()
+        private void generate(bool useShortcutKey)
         {
             if (setAquesTalkPlayer)
             {
                 if (generated)      //生成済みの場合
                 {
                     //ドラッグアンドドロップ開始処理
-                    string dragFilePath = last_generated_exo;
-                    var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
-                    dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
-                    GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
+                    if(!useShortcutKey)
+                    {
+                        string dragFilePath = last_generated_exo;
+                        var dataObject = new DataObject(DataFormats.FileDrop, new string[] { dragFilePath });
+                        dataObject.SetData("Preferred DropEffect", new MemoryStream(new byte[] { 5, 0, 0, 0 }));
+                        GeneratePanel.DoDragDrop(dataObject, DragDropEffects.Copy);
+                    }
+                    
 
                     if (Properties.Settings.Default.useGCMZ)    //GCMZモード有効時
                     {
-                        gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
+                        Point cursorPosition = Control.MousePosition;
+                        if(this.Bounds.Contains(cursorPosition) || useShortcutKey)
+                        {
+                            int returnCode = gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
+                            if (returnCode == 0)
+                            {
+                                GenerateLabel.Text = "拡張編集に挿入しました";
+                            }
+                        }
+
                     }
                 }
                 else
@@ -303,12 +316,7 @@ namespace AqT_Utl
 
                         if (Properties.Settings.Default.useGCMZ) //GCMZモード有効時
                         {
-                            int returnCode;
-                            returnCode = gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
-                            if (returnCode == 0)
-                            {
-                                GenerateLabel.Text = "拡張編集に挿入しました";
-                            }
+                            generate(useShortcutKey);
                             
                         }
                         else
@@ -431,7 +439,7 @@ namespace AqT_Utl
         {
             if(e.KeyData == (Keys.Control | Keys.Insert))
             {
-                generate();
+                generate(true);
             }
             if(e.KeyData == Keys.F5)
             {
