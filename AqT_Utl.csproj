@@ -289,7 +289,6 @@
     <Compile Include="Component\AquesTalkPlayerManager.cs" />
     <Compile Include="Component\ExoGenerate.cs" />
     <Compile Include="Component\GcmzAPI.cs" />
-    <Compile Include="Component\GcmzAPI_Helper.cs" />
     <Compile Include="Component\SettingLoader.cs" />
     <Compile Include="Component\VersionChangedConvert.cs" />
     <Compile Include="Form1.cs">

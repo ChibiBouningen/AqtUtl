@@ -14,6 +14,7 @@ namespace AqT_Utl.Component
     {
 
         //ごちゃまぜドロップス作者様のC#使用例を参照させていただきました https://gist.github.com/oov/fc81cea1bf1bd0500f92ac0599cc0edd
+
         const uint MUTEX_ALL_ACCESS = 0x1F0001;
         [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         static extern SafeWaitHandle OpenMutex(

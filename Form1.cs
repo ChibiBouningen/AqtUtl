@@ -21,7 +21,6 @@ namespace AqT_Utl
         AquesTalkPlayerManager playerManager;
         SettingLoader settingLoader;
         ProfileLoader profileLoader;
-        GcmzAPI_Helper gcmzAPI_Helper;
         GcmzAPI gcmzAPI;
 
         bool generated = false;
@@ -296,7 +295,7 @@ namespace AqT_Utl
                             }
                             else
                             {
-                                MessageBox.Show("挿入に失敗しました。\nエラーコード " + returnCode);
+                                MessageBox.Show("ごちゃまぜドロップスへのアクセスに失敗しました。\nエラーコード " + returnCode);
                             }
                         }
 
