@@ -32,7 +32,7 @@ namespace AqT_Utl
             KaisetsuTip.SetToolTip(label2, "AviUtlのプロジェクトのフレームレートを指定します。");
             KaisetsuTip.SetToolTip(FPScomboBox, "AviUtlのプロジェクトのフレームレートを指定します。");
             KaisetsuTip.SetToolTip(JimakuCheck, "チェックを入れると、AqtUtlの起動時に「字幕をコピー」にチェックが入ります。");
-            KaisetsuTip.SetToolTip(GCMZcheck, "ごちゃまぜドロップスと連携し、1クリック挿入機能を有効にします。\ngcmzAPI.exeをAqtUtl.exeと同じフォルダに配置し、AviUtlにごちゃまぜドロップスを導入している必要があります。\n詳しくは配布ページの解説をご覧ください。");
+            KaisetsuTip.SetToolTip(GCMZcheck, "ごちゃまぜドロップスと連携し、1クリック挿入機能を有効にします。\nAviUtlにプラグイン「ごちゃまぜドロップス」を導入している必要があります。");
             KaisetsuTip.SetToolTip(TopMostCheck, "AqtUtlのウィンドウを常に最前面に表示するようになります。");
         }
 

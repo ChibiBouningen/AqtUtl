@@ -51,6 +51,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>419A04095A1FC199303417D3F19B14FD72649D01</ManifestCertificateThumbprint>
@@ -287,6 +288,7 @@
     </Compile>
     <Compile Include="Component\AquesTalkPlayerManager.cs" />
     <Compile Include="Component\ExoGenerate.cs" />
+    <Compile Include="Component\GcmzAPI.cs" />
     <Compile Include="Component\GcmzAPI_Helper.cs" />
     <Compile Include="Component\SettingLoader.cs" />
     <Compile Include="Component\VersionChangedConvert.cs" />

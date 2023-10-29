@@ -22,6 +22,7 @@ namespace AqT_Utl
         SettingLoader settingLoader;
         ProfileLoader profileLoader;
         GcmzAPI_Helper gcmzAPI_Helper;
+        GcmzAPI gcmzAPI;
 
         bool generated = false;
         bool setAquesTalkPlayer = false;
@@ -288,10 +289,14 @@ namespace AqT_Utl
                         Point cursorPosition = Control.MousePosition;
                         if(this.Bounds.Contains(cursorPosition) || useShortcutKey)
                         {
-                            int returnCode = gcmzAPI_Helper.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
+                            int returnCode = gcmzAPI.gcmzInsert(last_generated_exo, serifProfiles[ProfileListBox.SelectedIndex].layer);
                             if (returnCode == 0)
                             {
                                 GenerateLabel.Text = "拡張編集に挿入しました";
+                            }
+                            else
+                            {
+                                MessageBox.Show("挿入に失敗しました。\nエラーコード " + returnCode);
                             }
                         }
 
@@ -369,16 +374,7 @@ namespace AqT_Utl
             Properties.Settings.Default.Save();
             if (Properties.Settings.Default.useGCMZ)
             {
-                if(gcmzAPI_Helper == null) gcmzAPI_Helper = new GcmzAPI_Helper();
-                if(gcmzAPI_Helper.gcmzAPIexe_verCheck() == -1)
-                {
-                    MessageBox.Show("gcmzAPI.exeを配置してください");
-                    Properties.Settings.Default.useGCMZ = false;
-                    Properties.Settings.Default.Save();
-
-                    reloadSettings();
-                    return;
-                }
+                if(gcmzAPI == null) gcmzAPI = new GcmzAPI();
 
 
                 GenerateLabel.Text = "AviUtlに挿入(Ctrl + Insert)";
