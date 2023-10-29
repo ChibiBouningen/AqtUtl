@@ -120,16 +120,10 @@ AqtUtlの主要な操作にはショートカットキーが割り振られて�
 # 1クリック挿入機能を使う  
 oov氏の公開しているAviUtlプラグイン[「ごちゃまぜドロップス」](https://github.com/oov/aviutl_gcmzdrops)の外部連携APIを使用して、１クリックで拡張編集タイムラインに音声や字幕を投入することができます。  
 ショートカットキーを同時に活用するとキーボード操作のみで次々と音声字幕を挿入していくことができるので、動画作成をより高速に行うことができます。  
-ごちゃまぜドロップスとの連携は自作の連携用CLIアプリ[gcmzAPI.exe](https://github.com/ChibiBouningen/gcmzAPIexe)を呼び出すことで実現します。  
+
 <img width="60%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/f74a162e-0ff6-46c1-8d9f-e8c5649b8249"><br>  
 
 ### 導入方法  
-1. [Visual C++再頒布可能パッケージ](https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist?view=msvc-170)のVisualStudio2022 x64向けのものをダウンロードし、インストールする  
-<img width="60%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/d6622fb4-114e-406c-86ee-4bbb8a8c2119"><br>
-画像の赤丸のところからダウンロードし、インストールする  
-1. ごちゃまぜドロップスとの連携に必要な[gcmzAPI.exeの最新版をダウンロード](https://github.com/ChibiBouningen/gcmzAPIexe/releases/latest)  
-<img width="60%" src="https://github.com/ChibiBouningen/AqtUtl/assets/84241001/ef1151c1-92b9-4473-b7f9-377f77ea79c4"><br>
-1. AqtUtl.exeと同じ場所にgcmzAPI.exeを配置  
 1. AqtUtlを起動し、「ツール」→「設定」→「ごちゃまぜドロップスと連携」にチェックを入れ、設定ウィンドウを閉じる  
 
 ### 使用方法  
@@ -142,7 +136,6 @@ oov氏の公開しているAviUtlプラグイン[「ごちゃまぜドロップ�
 挿入するレイヤーと再生位置にすでにオブジェクトが存在すると音声を挿入できません。  
 AviUtlで必ずプロジェクトを作成してください。
 プロジェクトを開かず挿入操作を行うと「拡張編集に挿入しました」という表示になりますが実際には挿入できません。  
-連続で同じ内容を挿入しようとすると10秒ほどかかる現象を確認しています。  
 
 # PSDToolkitとの連携(上級者向け)  
 PSDToolkitを使用したことがある方向けの内容です。導入方法等の説明は割愛させていただきます。  
