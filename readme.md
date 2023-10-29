@@ -171,3 +171,6 @@ PSDToolkitを使用したことがある方向けの内容です。導入方法�
 - Fody Costura  
 	https://github.com/Fody/Costura  
 	MIT license  
+
+- ごちゃまぜドロップス
+	https://github.com/oov/aviutl_gcmzdrops	MIT license
