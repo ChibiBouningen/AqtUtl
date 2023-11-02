@@ -448,7 +448,7 @@ namespace AqT_Utl
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)    //Form標準のと重複するショートカットイベントはこっちに記述
         {
-            if (keyData == (Keys.Control | Keys.Shift | Keys.I))   //Ctrl + Shift + O
+            if (keyData == (Keys.Control | Keys.Shift | Keys.I))   //Ctrl + Shift + I
             {
                 if (ProfileListBox.SelectedIndex > 0)
                 {
@@ -458,7 +458,7 @@ namespace AqT_Utl
                 }
                 return true;
             }
-            if (keyData == (Keys.Control | Keys.Shift | Keys.K))  //Ctrl + Shift + L
+            if (keyData == (Keys.Control | Keys.Shift | Keys.K))  //Ctrl + Shift + K
             {
                 if (ProfileListBox.SelectedIndex < ProfileListBox.Items.Count - 1)
                 {
