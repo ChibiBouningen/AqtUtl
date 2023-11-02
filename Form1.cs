@@ -453,6 +453,7 @@ namespace AqT_Utl
                 if (ProfileListBox.SelectedIndex > 0)
                 {
                     ProfileListBox.SelectedIndex = ProfileListBox.SelectedIndex - 1;
+                    resetGenerated();
                     
                 }
                 return true;
@@ -462,7 +463,8 @@ namespace AqT_Utl
                 if (ProfileListBox.SelectedIndex < ProfileListBox.Items.Count - 1)
                 {
                     ProfileListBox.SelectedIndex = ProfileListBox.SelectedIndex + 1;
-                    
+                    resetGenerated();
+
                 }
                 return true;
             }
